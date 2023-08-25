@@ -3,8 +3,8 @@ session_start();
 
   include("connect.php");
   include("functions.php");
-
-
+//jerwin tite
+//torres gumising ka
 if($_SERVER['REQUEST_METHOD'] == "POST")
 {
     // SOMETHING WAS POSTED
