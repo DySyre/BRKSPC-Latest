@@ -4,7 +4,6 @@ session_start();
   include("connect.php");
   include("functions.php");
 
-
 if($_SERVER['REQUEST_METHOD'] == "POST")
 {
     // SOMETHING WAS POSTED
@@ -304,7 +303,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
     </div> -->
     <form class="login" action="login.php" method="post">
     
-      <div class="title">Barkspace</div>
+      <div class="title"><span style="color: pink;">Bark</span><span style="color: skyblue;">Space</span></div>
       <input type="email" name="email" placeholder="Email" />
       <input id="password_validation" type="password" name="password" placeholder="Password" required />
       <div class="password_required">
