@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="images/logo.png" type="image/icon type" />
+    <!--MATERIAL CDN-->
+    <title>Barkspace</title>
+    <!--STYLE SHEET-->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="dash.css" />
+  </head>
+  <body>
+    <div class="container">
+      <aside>
+        <div class="top">
+          <div class="logo">
+            <img src="images/logo.png" alt="" />
+            <h2 class="text-muted">Barkspace</h2>
+          </div>
+          <div class="close" id="close-btn">
+            <span class="material-icons-sharp">close</span>
+          </div>
+        </div>
+        <div class="sidebar">
+          <!-- <a href="#" class="active">
+            <span class="material-icons-sharp">dashboard</span>
+            <h3>Dashboard</h3>
+          </a> -->
+          <a href="#" class="active">
+            <span class="material-icons-sharp">report</span>
+            <h3>Reports</h3>
+          </a>
+          <a href="#">
+            <span class="material-icons-sharp">schedule</span>
+            <h3>Appointment Request</h3>
+          </a>
+          <a href="#">
+            <span class="material-icons-sharp">pets</span>
+            <h3>Pet Records</h3>
+          </a>
+          <a href="#">
+            <span class="material-icons-sharp">volunteer_activism</span>
+            <h3>Services</h3>
+          </a>
+          <a href="#">
+            <span class="material-icons-sharp">attach_money</span>
+            <h3>Billing Invoice</h3>
+          </a>
+          <a href="#">
+            <span class="material-icons-sharp">engineering</span>
+            <h3>Maintenance</h3>
+          </a>
+          <a href="doctor/index.php">
+            <span class="material-icons-sharp">person_add</span>
+            <h3>Add Doctors</h3>
+          </a>
+          <a href="#">
+            <span class="material-icons-sharp">logout</span>
+            <h3>Logout</h3>
+          </a>
+        </div>
+      </aside>
+      <!--============================ END OF ASIDE ============================-->
+      <main>
+        <h1>Dashboard</h1>
+        <div class="date">
+          <input type="date" />
+        </div>
+        <div class="insights">
+         
+
+          <!--=============================== END OF SALES ===============================-->
+          <div class="expenses">
+            <span class="material-icons-sharp">pets</span>
+            <div class="middle">
+              <div class="left">
+                <h3>Total Appointment Scheduled</h3>
+                <h1>10</h1>
+              </div>
+              <div class="progress">
+                <svg>
+                  <circle cx="38" cy="38" r="36"></circle>
+                </svg>
+                <div class="number">
+                  <p>84%</p>
+                </div>
+              </div>
+            </div>
+            <small class="text-muted">Last 24 Hours</small>
+          </div>
+          <!--=============================== END OF EXPENSES ===============================-->
+          <div class="income">
+            <span class="material-icons-sharp">sell</span>
+            <div class="middle">
+              <div class="left">
+                <h3>Total Revenue</h3>
+                <h1>₱9,025</h1>
+              </div>
+              <div class="progress">
+                <svg>
+                  <circle cx="38" cy="38" r="36"></circle>
+                </svg>
+                <div class="number">
+                  <p>60%</p>
+                </div>
+              </div>
+            </div>
+            <small class="text-muted">Last 24 Hours</small>
+          </div>
+          <!--=============================== END OF INCOME ===============================-->
+        </div>
+        <!--=============================== END OF INSIGHTS ===============================-->
+        <div class="recent-patient">
+          <h2>Recent Patient</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Client Name</th>
+                <th>Client Number</th>
+                <th>Client Pet</th>
+                <th>Pet Breed</th>
+                <th>Address</th>
+                <th>Status</th>
+                <th>Details</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Jerwin Tugas</td>
+                <td>01</td>
+                <td>Cat</td>
+                <td>Persian Cat</td>
+                <td>Calvario</td>
+                <td class="warning">Pending</td>
+                <td class="primary">Details</td>
+              </tr>
+              <tr>
+                <td>Shiena Bernaldo</td>
+                <td>02</td>
+                <td>Dog</td>
+                <td>German Sheperd</td>
+                <td>Calvario</td>
+                <td class="warning">Pending</td>
+                <td class="primary">Details</td>
+              </tr>
+              <tr>
+                <td>David Jonathan Torres</td>
+                <td>03</td>
+                <td>Dog</td>
+                <td>Bulldog</td>
+                <td>Malhacan</td>
+                <td class="warning">Pending</td>
+                <td class="primary">Details</td>
+              </tr>
+              <tr>
+                <td>Alexander Inciong</td>
+                <td>04</td>
+                <td>Dog</td>
+                <td>Husky</td>
+                <td>Marilao</td>
+                <td class="warning">Pending</td>
+                <td class="primary">Details</td>
+              </tr>
+              <tr>
+                <td>Jennisa Lingamen</td>
+                <td>05</td>
+                <td>Rabbit</td>
+                <td>Angora Rabbit</td>
+                <td>Manila</td>
+                <td class="warning">Pending</td>
+                <td class="primary">Details</td>
+              </tr>
+            </tbody>
+          </table>
+          <a href="#">Show All</a>
+        </div>
+      </main>
+      <!--=============================== END OF MAIN ===============================-->
+
+      <div class="right">
+        <div class="top">
+          <button id="menu-btn">
+            <span class="material-icons-sharp">menu</span>
+          </button>
+          <div class="theme-toggler">
+            <span class="material-icons-sharp active">light_mode</span>
+            <span class="material-icons-sharp">dark_mode</span>
+          </div>
+          <div class="profile">
+            <div class="info">
+              <p>Hello, <b>Doc. Ever</b></p>
+              <small class="text-muted">Admin</small>
+            </div>
+            <div class="profile-photo">
+              <img src="images/pp.png" />
+            </div>
+          </div>
+        </div>
+        <!--END OF TOP-->
+        <div class="recent-updates">
+          <h2>Recent Updates</h2>
+          <div class="updates">
+            <div class="update">
+              <div class="profile-photo">
+                <img src="images/pp2.png" />
+              </div>
+              <div class="messaage">
+                <p><b>Jerwin Tugas</b> Received treatments for cats</p>
+                <small class="text-muted">2 Minutes Ago</small>
+              </div>
+            </div>
+            <div class="update">
+              <div class="profile-photo">
+                <img src="images/pp3.png" />
+              </div>
+              <div class="messaage">
+                <p><b>Jonathan David Torres</b> Received vaccine</p>
+                <small class="text-muted">1 hour Ago</small>
+              </div>
+            </div>
+            <div class="update">
+              <div class="profile-photo">
+                <img src="images/pp4.png" />
+              </div>
+              <div class="messaage">
+                <p><b>Alexander Inciong</b> Received Supplies</p>
+                <small class="text-muted">15 Minutes Ago</small>
+              </div>
+            </div>
+            <div class="update">
+              <div class="profile-photo">
+                <img src="images/pp5.png" />
+              </div>
+              <div class="messaage">
+                <p><b>Lebron James</b> Received treatments for cat</p>
+                <small class="text-muted">30 Minutes Ago</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- ===========================END OF RECENT UPDATES =========================== -->
+        <div class="sales-analytics">
+          <h2>Sales Analytics</h2>
+          <div class="item patients">
+            <div class="icon">
+              <span class="material-icons-sharp">groups</span>
+            </div>
+            <div class="right">
+              <div class="info">
+                <h3>TOTAL PATIENTS</h3>
+                <small class="text-muted">Last 24 Hours</small>
+              </div>
+              <h5 class="success">+40%</h5>
+              <h3>(6)</h3>
+            </div>
+          </div>
+          <div class="item sales">
+            <div class="icon">
+              <span class="material-icons-sharp">shopping_cart</span>
+            </div>
+            <div class="right">
+              <div class="info">
+                <h3>TOTAL SALES</h3>
+                <small class="text-muted">Last 24 Hours</small>
+              </div>
+              <h5 class="danger">-70%</h5>
+              <h3>(3849)</h3>
+            </div>
+          </div>
+          <div class="item clients">
+            <div class="icon">
+              <span class="material-icons-sharp">person</span>
+            </div>
+            <div class="right">
+              <div class="info">
+                <h3>NEW CLIENTS</h3>
+                <small class="text-muted">Last 24 Hours</small>
+              </div>
+              <h5 class="success">+20%</h5>
+              <h3>(2)</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="java/patient.js"></script>
+    <script src="java/index.js"></script>
+  </body>
+</html>
