@@ -42,6 +42,9 @@ session_start();
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/6b23de7647.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="CSS/style.css">
     <title>Barkspace</title>
   </head>
   <body>
@@ -98,6 +101,17 @@ session_start();
         <a href="record.php"> <?php echo $fname?> </a>
         <a href="record.php"> Record </a>
            <a href="logout.php"> LOGOUT </a>
+           <li class="dropdown">
+                            <div  class="dropdown-toggle text-light" id="noti_count" style="cursor: pointer;" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="counter">0</span><i class="fas fa-bell" style="font-size: 20px;"></i>
+                            </div>
+                            
+                            <div class="dropdown-menu overflow-h-menu dropdown-menu-right">
+                                <div class="notification">
+
+                                </div>
+                            </div>
+                        </li>
         <!-- <button href="login.php" class="read-btn">
           LOGIN <i class="uil uil-arrow-right"></i>
         </button> -->
