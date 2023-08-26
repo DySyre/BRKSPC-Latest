@@ -26,7 +26,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 
               $user_data = mysqli_fetch_assoc($result2);
               
-              if($user_data['password'] === $password)
+              if($user_data['password'] === md5($password))
               {
                 $_SESSION['user_id'] = $user_data['user_id'];
                 $_SESSION['client_id'] = $user_data['user_id'];
