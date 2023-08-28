@@ -10,18 +10,35 @@ require('assets/libs/email/PHPMailer/Exception.php');
 require('assets/libs/email/PHPMailer/SMTP.php');
 require('assets/libs/email/PHPMailer/PHPMailer.php');
 
-$Firstname = $_POST['user_name'];
-$Lastname = $_POST['last_name'];
-$Email = $_POST['email'];
-$Password = $_POST['password'];
-$confirmPassword = $_POST['confirmPassword'];
-$branch = $_POST['branch'];
+
+$Firstname = test_input($_POST['user_name']);
+$Lastname = test_input($_POST['last_name']);
+$Fname = preg_replace("/[^a-zA-Z0-9]+/", "", $Firstname);
+$Lname = preg_replace("/[^a-zA-Z0-9]+/", "", $Lastname);
+$Email = test_input($_POST['email']);
+$Password = test_input($_POST['password']);
+$confirmPassword = test_input($_POST['confirmPassword']);
+$branch = test_input($_POST['branch']);
+
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
+
+// function name($str) {
+//   $str= preg_replace("/[^a-zA-Z0-9]/",'', $str);
+//   return $str;
+// }
+ 
+  
 
 if($Password != $confirmPassword)
 {
   $data = array(
             'status'=>'passnotmacth',
-            );
+  );
   echo json_encode($data);
 
 }
@@ -52,6 +69,8 @@ else
     }
     else
     {
+       $_SESSION['Fname'] = $Fname;
+        $_SESSION['Lname'] =$Lname;
         $_SESSION['Firstname'] = $Firstname;
         $_SESSION['Lastname'] =$Lastname;
         $_SESSION['Email'] =$Email;
