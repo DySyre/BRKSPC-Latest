@@ -42,9 +42,6 @@ session_start();
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://kit.fontawesome.com/6b23de7647.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="CSS/style.css">
     <title>Barkspace</title>
   </head>
   <body>
@@ -101,17 +98,6 @@ session_start();
         <a href="record.php"> <?php echo $fname?> </a>
         <a href="record.php"> Record </a>
            <a href="logout.php"> LOGOUT </a>
-           <li class="dropdown">
-                            <div  class="dropdown-toggle text-light" id="noti_count" style="cursor: pointer;" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="counter">0</span><i class="fas fa-bell" style="font-size: 20px;"></i>
-                            </div>
-                            
-                            <div class="dropdown-menu overflow-h-menu dropdown-menu-right">
-                                <div class="notification">
-
-                                </div>
-                            </div>
-                        </li>
         <!-- <button href="login.php" class="read-btn">
           LOGIN <i class="uil uil-arrow-right"></i>
         </button> -->
@@ -120,87 +106,24 @@ session_start();
     </header>
     <section class="home" style="background:#202834;">
 
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-
-<script type="text/javascript">
-
-    $(document).ready(function (){
-
-        $('.notification').load('Ajax/Notification.php');
-        $('.counter').text('0').hide();
-
-        var counter = 0;
-
-        $('#form-submit').on('submit', function(event){
-            event.preventDefault();
-            
-            var subject = $('#subject').val().trim();
-            var comment = $('#comment').val().trim();
-
-            $('#sub-error').text('');
-            $('#com-error').text('');
-
-            if(subject != '' && comment != ''){
-                
-                $.ajax({
-                    type: "POST",
-                    url: "Ajax/Ins_notification.php",
-                    data: { 'subject' : subject, 'comment' : comment },
-                    success: function (response) {
-                        var status = JSON.parse(response);
-                        if(status.status == 101){
-                            counter++;
-                            $('.counter').text(counter).show();
-                            $('.notification').load('Ajax/Notification.php');
-                            $("#form-submit").trigger("reset");
-                            console.log(status.msg);
-                        }
-                        else{
-                           console.log(status.msg);
-                        }
-                    }
-                });
-
-            }
-            else{
-            
-                if(subject == ''){
-                    $('#sub-error').text("Please Enter Subject");
-                }
-                if(comment == ''){
-                    $('#com-error').text("Please Enter Comment");
-                }
-            }
-
-        });
-
-        $('#noti_count').on('click',function (){
-            counter = 0;
-            $('.counter').text('0').hide();
-        });
-
-    });
-
-</script>
-
       <div class="swiper bg-slider">
         <div class="swiper-wrapper">
           <div class="swiper-slide dark-layer" >
             
-            <div class="row mt-2" style="background: #202834;">
+            <div class="row mt-2" style="background: #202834; ">
             
-                <div class="row mt-5" style="background: #202834;">
+                <div class="row mt-5" style="background: #202834; justify-content: center; align-items:center; text-align:center;">
+                <h1>Welcome to <span class="red" style="color: pink">Bark</span>
+            <span class="red" style="color: skyblue">space</span> Inc.</h1>
                 
-                  <div class="col-md-2 mt-5" style="background: ;">
+                  <div class="col-md-2 mt-5" style=" margin: 50px; padding: 30px; box-shadow: 10px 5px #fff; margin: 0; background-color: pink; ">
                     
-                   <div class="form-group">
+                   <div class="form-group" style="margin: 2px;">
                     
                    
              
-                       <select class="form-control" name="branchId" id="idBranch" onchange="selectBranch()" >
-                        <option hidden >Branches</option>
+                       <select class="form-control" style=" color: black; text-shadow: 0 0 3px #FF0000; justify-content: center; align-items:center; text-align:center; margin: 2%; " name="branchId" id="idBranch" onchange="selectBranch()" >
+                        <option hidden>Make an Appointment</option>
                         
                       <?php
                       $queryBranch = "select * from branch_tbl where branch_isactive = '1' and branch_id !='3'";
@@ -227,8 +150,7 @@ session_start();
               </div>
             </div>
             </div>
-            <h1>Welcome to <span class="red" style="color: pink">Bark</span>
-            <span class="red" style="color: skyblue">space</span> Inc.</h1>
+            
             <style>
               h1{
                 padding: 30px;
@@ -244,23 +166,24 @@ session_start();
             <div class="imgDog" style="background: ;">
             
             
-               <img src="images/h1.jpg" />
+               <img src="images/11.jpg" />
                <style>
                 .imgDog{
-                  width : auto;
+                  padding: 50px;
+                  width : 100%;
                   /* left: 15%; */
-                  height : auto%;
+                  height : 100%;
                   position: relative;
-                  
-                  box-shadow:  0px 0px 20px white,
-            inset 0px 0px 5px rgba(0, 0, 0, 0.1);
+                  /* box-shadow:  0px 0px 20px white, inset 0px 0px 5px rgba(0, 0, 0, 0.1); */
                   }
                   .img{
                     position: absolute !important;;
                     top: -6px!important;
                     left:-79%!important;}
                     @media only screen and (max-width: 600px)
-                    {.img{position: relative}}
+                    {
+                    .img{position: relative}
+                  }
                     
                   
                </style>
@@ -326,7 +249,7 @@ session_start();
               >of everything We Do</span
             >
           </h1>
-          <img src="images/pic.jpg" width="300" height="450" alt="" />
+          <img src="images/22.jpg" width="300" height="450" alt="" />
         </div>
         <div class="aboutList" data-aos="fade-left" data-aous-duration="1000">
           <ol>
@@ -447,7 +370,7 @@ session_start();
       </div>
       <div class="modal-body modalresponseViewAppointment">
                        
-                        </div>
+      </div>
     </div>
   </div>
 

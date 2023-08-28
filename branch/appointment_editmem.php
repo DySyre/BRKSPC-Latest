@@ -14,9 +14,9 @@ while( $row = mysqli_fetch_array($result) ){
    
  
  </div>
-   <div class="row">
+   <div class="row" style="margin: 2%;">
 
-            <div class="col-md-4">
+            <div class="col-md-12 mt-4" style=" margin: 20px; padding: 10px; box-shadow: 10px 5px #888888; margin: 0; background-color: whitesmoke; ">
                    <div class="form-group">
                     <?php
                     $date = $row['schedule_date'];
@@ -44,10 +44,10 @@ while( $row = mysqli_fetch_array($result) ){
               </div>
 
         </div>
-        <div class="row">
+        <div class="row" style="margin: 2%;">
            
            
-            <div class="col-md-4">
+            <div class="col-md-12 mt-4" style=" margin: 20px; padding: 10px; box-shadow: 10px 5px #888888; margin: 0; background-color: whitesmoke; ">
                    <div class="form-group">
                       <label style="font-size: 1rem; font-weight: bold;" for="fname">Firstname</label><br>
                       <label style="font-size: 1rem;" for="fname"><?php echo $row['user_name']; ?></label>
@@ -55,7 +55,7 @@ while( $row = mysqli_fetch_array($result) ){
                        
                   </div>
               </div>
-               <div class="col-md-4">
+               <div class="col-md-12 mt-4" style=" margin: 20px; padding: 10px; box-shadow: 10px 5px #888888; margin: 0; background-color: whitesmoke; ">
                    <div class="form-group">
                       <label style="font-size: 1rem; font-weight: bold;" for="fname">Lastname</label><br>
                       <label style="font-size: 1rem;" for="fname"><?php echo $row['last_name']; ?></label>
@@ -64,7 +64,7 @@ while( $row = mysqli_fetch_array($result) ){
                        
                   </div>
               </div>
-               <div class="col-md-4">
+               <div class="col-md-12 mt-4" style=" margin: 20px; padding: 10px; box-shadow: 10px 5px #888888; margin: 0; background-color: whitesmoke; ">
                    <div class="form-group">
                       <label style="font-size: 1rem; font-weight: bold;" for="fname">Email</label><br>
                       <label style="font-size: 1rem;" for="fname"><?php echo $row['email']; ?></label>
@@ -105,14 +105,14 @@ while( $row = mysqli_fetch_array($result) ){
 
             
         </div>
-         <div class="row">
-            <div class="col-md-4">
+         <div class="row" style="margin: 2%;">
+            <div class="col-md-12 mt-4" style=" margin: 20px; padding: 10px; box-shadow: 10px 5px #888888; margin: 0; background-color: whitesmoke; ">
                    <div class="form-group">
                       <label style="font-size: 1rem; font-weight: bold;" for="fname">Status</label><br>
                       <label style="font-size: 1rem;" for="fname"><?php echo $row['appointment_payment_status']; ?></label>   
                   </div>
               </div>
-              <div class="col-md-4">
+              <div class="col-md-12 mt-4" style=" margin: 20px; padding: 10px; box-shadow: 10px 5px #888888; margin: 0; background-color: whitesmoke; ">
                    <div class="form-group">
                       <label style="font-size: 1rem; font-weight: bold;" for="fname">Staff Asigned</label><br>
                       <?php
@@ -133,7 +133,7 @@ while( $row = mysqli_fetch_array($result) ){
                   </div>
               </div>
 
-              <div class="col-md-4">
+              <div class="col-md-12 mt-4" style=" margin: 20px; padding: 10px; box-shadow: 10px 5px #888888; margin: 0; background-color: whitesmoke; ">
                    <div class="form-group">
                       <label style="font-size: 1rem; font-weight: bold;" for="fname">Time</label><br>
                       <?php
@@ -153,9 +153,9 @@ while( $row = mysqli_fetch_array($result) ){
                   </div>
               </div>
         </div>
-      <div class="row">
+      <div class="row" style="margin: 2%;">
 
-            <div class="col-md-6 mt-4">
+            <div class="col-md-12 mt-4" style=" margin: 20px; padding: 10px; box-shadow: 10px 5px #888888; margin: 0; background-color: whitesmoke; ">
                    <div class="form-group">
 
                     <?php 
@@ -263,7 +263,7 @@ while( $row = mysqli_fetch_array($result) ){
 
 
         </div>
-        <div class="row">
+        <div class="row" style="margin: 5%;">
             <div class="col-md-4">
                 <input type="hidden" name="SumConsume" value="<?php echo $SumConsume ?>">
                 <select class="form-control" id="ChooseActionId" onchange="ChooseAction()">

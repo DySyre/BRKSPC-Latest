@@ -4,6 +4,7 @@ session_start();
   include("connect.php");
   include("functions.php");
 
+
 if($_SERVER['REQUEST_METHOD'] == "POST")
 {
     // SOMETHING WAS POSTED
@@ -26,7 +27,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 
               $user_data = mysqli_fetch_assoc($result2);
               
-              if($user_data['password'] === md5($password))
+              if($user_data['password'] === $password)
               {
                 $_SESSION['user_id'] = $user_data['user_id'];
                 $_SESSION['client_id'] = $user_data['user_id'];
@@ -116,14 +117,17 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
   <head>
     <title>BarkspaceLogin Form</title>
     <!-- CSS -->
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/login1.css">
+
   </head>
   <body>
     <style>
         body {
   background-color: #454f6b;
   font-family: "Asap", sans-serif;
-}
+  font-size: 1.5rem;
+  color: #fff;
+  }
 .logo{
     width: 100%;
     height: 100%;
@@ -288,9 +292,15 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
     <form class="login" action="login.php" method="post">
     
       <div class="title"><span style="color: pink;">Bark</span><span style="color: skyblue;">Space</span></div>
+      <style>
+        .title{
+          text-transform: uppercase;
+        }
+      </style>
       <input type="email" name="email" placeholder="Email" />
       <input id="password_validation" type="password" name="password" placeholder="Password" required />
       
+<<<<<<< Updated upstream
       <div class="password_required">
               <ul>
                 <li class="lowercase"><span></span>One lower case letter</li>
@@ -328,6 +338,10 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
               </style>
             </div>
              <a href="forgot.php">Forgot password?</a>
+=======
+    
+            
+>>>>>>> Stashed changes
      
       <br/>
       <!-- <a href="signup.php">Click to Signup</a>
@@ -388,8 +402,6 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
       </div> -->
       </div> <br/><br/><br/>
       <a href="landing.html">Back</a>
-      
-      
       
     </form>
   </body>

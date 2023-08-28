@@ -12,8 +12,8 @@ while( $row = mysqli_fetch_array($result) ){
     <div class="row">
         
  </div>
-   <div class="row">
-            <div class="col-md-4">
+   <div class="row" style="margin: 2%;">
+   <div class="col-md-12 mt-4" style=" margin: 20px; padding: 10px; box-shadow: 0 0 5px; margin: 0; background-color: whitesmoke; ">
                    <div class="form-group">
                     <?php
                     $date = $row['schedule_date'];
@@ -41,18 +41,18 @@ while( $row = mysqli_fetch_array($result) ){
               </div>
 
         </div>
-        <div class="row">
+        <div class="row" style="margin: 2%;">
            
            
-            <div class="col-md-4">
+        <div class="col-md-12 mt-4" style=" margin: 20px; padding: 10px; box-shadow: 0 0 5px; margin: 0; background-color: whitesmoke;  ">
                    <div class="form-group">
-                      <label style="font-size: 1rem; font-weight: bold;" for="fname">Firstname</label><br>
+                      <label style="font-size: 1rem; font-weight: bold; " for="fname">Firstname</label><br>
                       <label style="font-size: 1rem;" for="fname"><?php echo $row['user_name']; ?></label>
                       <!-- <input type="text" class="form-control nborder" name="estaff_fname" id="eclassroom_name" required placeholder="" value="<?php echo $row['user_name']; ?>" readonly> -->
                        
                   </div>
               </div>
-               <div class="col-md-4">
+              <div class="col-md-12 mt-4" style=" margin: 20px; padding: 10px; box-shadow: 0 0 5px; margin: 0; background-color: whitesmoke; ">
                    <div class="form-group">
                       <label style="font-size: 1rem; font-weight: bold;" for="fname">Lastname</label><br>
                       <label style="font-size: 1rem;" for="fname"><?php echo $row['last_name']; ?></label>
@@ -61,7 +61,7 @@ while( $row = mysqli_fetch_array($result) ){
                        
                   </div>
               </div>
-               <div class="col-md-4">
+              <div class="col-md-12 mt-4" style=" margin: 20px; padding: 10px; box-shadow: 0 0 5px; margin: 0; background-color: whitesmoke; ">
                    <div class="form-group">
                       <label style="font-size: 1rem; font-weight: bold;" for="fname">Email</label><br>
                       <label style="font-size: 1rem;" for="fname"><?php echo $row['email']; ?></label>
@@ -102,14 +102,14 @@ while( $row = mysqli_fetch_array($result) ){
 
             
         </div>
-         <div class="row">
-            <div class="col-md-4">
+         <div class="row" style="margin: 1%;">
+         <div class="col-md-12 mt-4" style=" margin: 20px; padding: 10px; box-shadow: 0 0 5px; margin: 0; background-color: whitesmoke; ">
                    <div class="form-group">
                       <label style="font-size: 1rem; font-weight: bold;" for="fname">Status</label><br>
                       <label style="font-size: 1rem;" for="fname"><?php echo $row['appointment_payment_status']; ?></label>   
                   </div>
               </div>
-              <div class="col-md-4">
+              <div class="col-md-12 mt-4" style=" margin: 20px; padding: 10px; box-shadow: 0 0 5px; margin: 0; background-color: whitesmoke; ">
                    <div class="form-group">
                       <label style="font-size: 1rem; font-weight: bold;" for="fname">Staff Asigned</label><br>
                       <?php
@@ -130,7 +130,7 @@ while( $row = mysqli_fetch_array($result) ){
                   </div>
               </div>
 
-              <div class="col-md-4">
+              <div class="col-md-12 mt-4" style=" margin: 20px; padding: 10px; box-shadow: 0 0 5px; margin: 0; background-color: whitesmoke; ">
                    <div class="form-group">
                       <label style="font-size: 1rem; font-weight: bold;" for="fname">Time</label><br>
                       <?php
@@ -150,9 +150,9 @@ while( $row = mysqli_fetch_array($result) ){
                   </div>
               </div>
         </div>
-      <div class="row">
+      <div class="row" style="margin: 2%;">
 
-            <div class="col-md-6 mt-4">
+      <div class="col-md-12 mt-4" style=" margin: 20px; padding: 10px; box-shadow: 0 0 5px; margin: 0; background-color: whitesmoke; ">
                    <div class="form-group">
 
                     <?php 
@@ -173,14 +173,14 @@ while( $row = mysqli_fetch_array($result) ){
 
                       while($rowrCheckpetNameId = mysqli_fetch_assoc($reCheckpetNameId)){
                         ?>
-                        <label style="font-size: 1rem;" for="fname"><?php echo $rowrCheckpetNameId['pet_name']; ?></label>
+                        <label style="font-size: 1rem; text-shadow: 2px 2px 5px green; text-transform: capitalize; text-decoration: underline;" for="fname"><?php echo $rowrCheckpetNameId['pet_name']; ?></label>
 
-                         <label style="font-size: 1rem; font-weight: bold;" for="fname">Age:</label>
-                         <label style="font-size: 1rem;" for="fname"><?php echo $rowrCheckpetNameId['pet_age'].'Months'; ?></label>
-                         <label style="font-size: 1rem; font-weight: bold;" for="fname">Type:</label>
-                         <label style="font-size: 1rem;" for="fname"><?php echo $rowrCheckpetNameId['pet_type']; ?></label>
-                          <label style="font-size: 1rem; font-weight: bold;" for="fname">Breed:</label>
-                         <label style="font-size: 1rem;" for="fname"><?php echo $rowrCheckpetNameId['pet_breed']; ?></label>
+                        <br><label style="font-size: 1rem; font-weight: bold; padding: 5px; " for="fname">Age:</label>
+                         <label style="font-size: 1rem; text-shadow: 2px 2px 5px green; text-decoration: underline;" for="fname"><?php echo $rowrCheckpetNameId['pet_age'].'Months'; ?></label>
+                         <br><label style="font-size: 1rem; font-weight: bold;  padding: 5px; " for="fname">Type:</label>
+                         <label style="font-size: 1rem; text-shadow: 2px 2px 5px green; text-transform: capitalize; text-decoration: underline; " for="fname"><?php echo $rowrCheckpetNameId['pet_type']; ?></label>
+                         <br><label style="font-size: 1rem;  padding: 5px; font-weight: bold;" for="fname">Breed:</label>
+                         <label style="font-size: 1rem; text-shadow: 2px 2px 5px green; text-transform: capitalize; text-decoration: underline;" for="fname"><?php echo $rowrCheckpetNameId['pet_breed']; ?></label>
                          <br>
                         <?php
 
@@ -217,10 +217,10 @@ while( $row = mysqli_fetch_array($result) ){
                                         $catIdnew = $rowreCheckServId['category_idfk'];
 
                                         ?>
-                                         <label style="font-size: 1rem; font-weight: bold;" for="fname">Category:</label>
+                                         <label style="font-size: 1rem; font-weight: bold; " for="fname">Category:</label>
 
-                                        <label class="" style="font-size: 1rem; font-weight:bold; font-style: italic;" for="fname"><?php echo $rowreCheckcatId['category_name']; ?></label><br>
-                                        <label class="ms-2" style="font-size: 1rem; font-weight:bold; font-style: italic;" for="fname">Services</label><br>
+                                        <label class="" style="font-size: 1rem; text-shadow: 2px 2px 5px green; text-transform: capitalize; text-decoration: underline;" for="fname"><?php echo $rowreCheckcatId['category_name']; ?></label><br>
+                                        <label class="ms-2" style="font-size: 1rem; font-weight:bold; font-style: bold;" for="fname">Services:</label><br>
                                         <?php
 
                                      }
@@ -231,11 +231,7 @@ while( $row = mysqli_fetch_array($result) ){
                                 $SumConsume += $rowreCheckServId['services_tconsume'];
 
                               ?>
-
-                                
-
-
-                                 <label class="ms-2" style="font-size: 1rem;" for="fname"><?php echo $rowreCheckServId['services_name']; ?></label><br>
+                               <label class="ms-2" style="font-size: 1rem; text-shadow: 2px 2px 5px green; text-transform: capitalize; text-decoration: underline;" for="fname"><?php echo $rowreCheckServId['services_name']; ?></label><br>
 
                                  <!-- <input type="text" name="timeConsume[]" value="<?php echo $SumConsume; ?>"> -->
 
@@ -252,16 +248,16 @@ while( $row = mysqli_fetch_array($result) ){
                    
                   </div>
               </div>
-            <div class="col-md-6 mt-4" style="text-align: center;">
-                 <label style="font-size: 1rem; font-weight: bold;" for="fname">Proof of Payment</label><br>
-                   <img src="../images/<?php echo $row['appointment_payment_proof']; ?>" style="max-width: 80%; height: auto;">  
+            <div class="col-md-6 mt-4" style="justify-content:center; align-items: center; text-align: center">
+                 <label style="font-size: 1rem; font-weight: bold; " for="fname">Proof of Payment</label><br>
+                   <img src="../images/<?php echo $row['appointment_payment_proof']; ?>" style="max-width: 80%; height: auto; ">  
             </div>
 
 
 
         </div>
-        <div class="row">
-            <div class="col-md-4">
+        <div class="row" style="margin: 2%;" >
+            <div class="col-md-5">
                 <input type="hidden" name="SumConsume" value="<?php echo $SumConsume ?>">
                 <select class="form-control" id="ChooseActionId" onchange="ChooseAction()">
                     <option hidden >Choose Action</option>
