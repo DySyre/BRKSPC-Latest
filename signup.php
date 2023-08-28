@@ -41,10 +41,10 @@
               </style>
         <form id="signUpForm" class="login col-md-12" method="post" enctype="multipart/form-data" >
             <div class="title">Signup</div>
-            
+
             <input id="last_name" type="text" name="last_name" placeholder="e.g. Dela Cruz" required="required" >
             <input id="user_name" type="text" name="user_name" placeholder="e.g. Pedro" required="required">
-
+            
             <input id="email" type="email" name="email" placeholder="e.g. pedrodelacruz@gmail.com"required="required" >
             <input id="password_validation" type="password" name="password" placeholder="Password" required="required">
             <div class="password_required">
@@ -130,7 +130,7 @@
 
         </div>
 
-        
+  
         <script src="java/signup.js"></script>
     </body>
     <!-- modal -->
@@ -157,18 +157,13 @@
                 <input type="text" class="form-control" id="vericode" name="vericode" required>
               </div>
           <div class="row mt-3">
-          <div class="col-sm-12 col-md-12" align="center">
-                          <button type="submit" name="btnSave" value="submit" id="submit" class="btn-primary">SUBMIT</button>
-                          <style>
-              .btn-primary{
-                pointer-events: none;
-              }
-              .btn-primary{
-                pointer-events: auto;
-              }
-            </style>
+                        <div class="col-sm-12 col-md-12" align="center">
+                          <button type="submit" name="btnSave" value="submit" id="submit" class="btn btn-primary">SUBMIT</button>
                         </div>
           </div>
+        
+              
+
             </form>
           </div>
         </div>
