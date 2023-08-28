@@ -340,7 +340,7 @@ session_start();
                 <div class="modal-dialog modal-xl">
                 <style>
                     .modal-content{
-                      background: pink;
+                      background: #fff;
                       border-radius: 10px !important ;
                       box-shadow: none!important
                       ;;
@@ -358,7 +358,7 @@ session_start();
 
                       </style>
                         <div class="modal-header">
-                            <h4 class="modal-title">Details</h4>
+                            <h4 class="modal-title" style=" color: white; text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;">Details</h4>
                             <style>
                               /* The Modal (background) */
                               .modal {
@@ -370,6 +370,7 @@ session_start();
                                 width: 100%;
                                 height: 100vh; /* Full height */
                                 overflow: auto; /* Enable scroll if needed */
+      
                                 background-color:transparent;/* Fallback color */
                                 padding-top: 3rem;
                                 border-radius:.2em;

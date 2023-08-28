@@ -24,21 +24,19 @@ $delQuery2 =mysqli_query($con,$sql2);
                 </div>
             <div class="container-fluid" >
               <div class="row">
-                            <div class="col-xl-6" style="background-color: skyblue; height: 100vh;">
+                            <div class="col-xl-6" style="background-color: #EAD2D2; height: 100%; box-shadow: 5px 10px #888888;">
                                 <div class="card">
-                                 
-                                    <div class="card-header" style="background-color: skyblue; font-weight: bold; justify-content: center; align-items: center; text-align: center;">
+                                    <div class="card-header" style="background-color: #EAD2D2; font-weight: bold; justify-content: center; align-items: center; text-align: center; font-size: 1.8rem;">
                                         <i class="fas fa-chart-area me-1"></i>
-                                        ITEM
+                                        POS
                                         <input type="hidden" id="orderNumId" value="<?php  echo $orderNumber;?>" name="ordernumberName">
                                     </div>
                                     <div class="card-body">
                                       <!-- <canvas id="myAreaChart" width="100%" height="40"></canvas> -->
                                    
-                                   <div class="form-group">
+                                   <div class="form-group" >
                                       <label style="font-size: 1.5rem; font-weight: bold;" for="fname">Select Item:</label>
-                                      
-                                <input type="text" class="form-control" id="searchInput" placeholder="Search for an item">
+                          <input type="text" class="form-control" id="searchInput" placeholder="Search for an item">
                                      
 
                                       <select class="form-control" name="ebranchIdSelectNmae" id="ebranchIdSelect" >
@@ -82,8 +80,10 @@ $delQuery2 =mysqli_query($con,$sql2);
                                       <!-- <canvas id="myAreaChart" width="100%" height="40"></canvas> -->
                                    
                                    <div class="form-group" id="">
-                                      <label style="font-size: 1.5rem; font-weight:bold;" for="fname">Order List</label>
+                                      <label style="font-size: 1.5rem; font-weight:bold; " for="fname"><i class="fa-solid fa-cart-shopping"></i> Cart</label>
+                                      
                                       <div class="row" id="ShowOrder">
+                                       
                                         
                                       </div>
                                      
@@ -98,9 +98,9 @@ $delQuery2 =mysqli_query($con,$sql2);
                             </div>
 
                            <div class="col-xl-6" style="height: 90vh;">
-                              <div class="card mb-4" style="height: 100vh; background-color: pink; font-weight: bold; font-size: 1.5rem; justify-content: center; align-items: center; text-align: center;">
+                              <div class="card mb-4" style="height: 50vh; background-color: skyblue; font-weight: bold; font-size: 1.5rem; justify-content: center; align-items: center; text-align: center; box-shadow:  5px 10px #888888;">
                                 <div class="card-header">
-                                  <i class="fas fa-chart-bar me-1"></i>
+                                <i class="fa-solid fa-sort"></i>
                                   ORDER SUMMARY
                                 </div>
                                 <style>
