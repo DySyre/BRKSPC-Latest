@@ -9,8 +9,8 @@
 
     // When Sign Up Button Clicked
     if (isset($_POST['signup'])) {
-        $fname = mysqli_real_escape_string($con, $_POST['fname']);
-        $lname = mysqli_real_escape_string($con, $_POST['lname']);
+        $user_name = mysqli_real_escape_string($con, $_POST['user_name']);
+        $last_name = mysqli_real_escape_string($con, $_POST['']);
         $email = mysqli_real_escape_string($con, $_POST['email']);
         $gender = mysqli_real_escape_string($con, $_POST['gender']);
 
@@ -147,11 +147,11 @@
                     $message = "our verification code is $code";
                     $sender = 'From: ma382793@gmail.com';
 
-                    if (mail($email, $subject, $message, $sender)) {
-                        $message = "We've sent a verification code to your Email <br> $email";
+                    // if (mail($email, $subject, $message, $sender)) {
+                    //     $message = "We've sent a verification code to your Email <br> $email";
 
-                        $_SESSION['message'] = $message;
-                        header('location: verifyEmail.php');
+                    //     $_SESSION['message'] = $message;
+                    //     header('location: verifyEmail.php');
                     } else {
                         $errors['otp_errors'] = 'Failed while sending code!';
                     }
@@ -164,7 +164,8 @@
         }else {
             $errors['db_error'] = "Failed while checking email from database!";
         }
-    }
+    
+
 if(isset($_POST['verifyEmail'])){
     $_SESSION['message'] = "";
     $OTPverify = mysqli_real_escape_string($con, $_POST['OTPverify']);

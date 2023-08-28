@@ -14,7 +14,6 @@ $('#password_validation').on('keyup', function(){
     }else{
         $('.lowercase').removeClass('active');
     }
-
     if(passValue.match(/[A-Z]/g)){
         $('.capital').addClass('active');
     }else{

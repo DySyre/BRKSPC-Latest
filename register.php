@@ -10,12 +10,19 @@ require('assets/libs/email/PHPMailer/Exception.php');
 require('assets/libs/email/PHPMailer/SMTP.php');
 require('assets/libs/email/PHPMailer/PHPMailer.php');
 
-$Firstname = $_POST['user_name'];
-$Lastname = $_POST['last_name'];
-$Email = $_POST['email'];
-$Password = $_POST['password'];
-$confirmPassword = $_POST['confirmPassword'];
-$branch = $_POST['branch'];
+$Firstname = test_input($_POST['user_name']);
+$Lastname = test_input($_POST['last_name']);
+$Email = test_input($_POST['email']);
+$Password = test_input($_POST['password']);
+$confirmPassword = test_input($_POST['confirmPassword']);
+$branch = test_input($_POST['branch']);
+
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
 
 if($Password != $confirmPassword)
 {
