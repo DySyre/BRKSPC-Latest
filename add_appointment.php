@@ -18,7 +18,7 @@ $schedule = $_GET['schedule'] = 3;
                     <legend class="text-muted">Owner Information</legend>
                     <div class="form-group">
                         <label for="owner_name" class="control-label">Name</label>
-                        <input type="text" name="owner_name" id="owner_name" class="form-control form-control-border" placeholder="John D Smith" value ="<?php echo isset($owner_name) ? $owner_name : '' ?>" required>
+                        <input type="text" name="owner_name" id="owner_name" class="form-control form-control-border" pattern="[A-Za-z]{1,}" placeholder="John D Smith" value ="<?php echo isset($owner_name) ? $owner_name : '' ?>" required>
                     </div>
                     <div class="form-group">
                         <label for="contact" class="control-label">Contact #</label>
@@ -51,7 +51,7 @@ $schedule = $_GET['schedule'] = 3;
                     </div>
                     <div class="form-group">
                         <label for="breed" class="control-label">Breed</label>
-                        <input type="text" name="breed" id="breed" class="form-control form-control-border" placeholder="Siberian Husky" value ="<?php echo isset($breed) ? $breed : '' ?>" required>
+                        <input type="text" name="breed" id="breed" class="form-control form-control-border" pattern="[A-Za-z]{1,}" placeholder="Siberian Husky" value ="<?php echo isset($breed) ? $breed : '' ?>" required>
                     </div>
                     <div class="form-group">
                         <label for="age" class="control-label">Age</label>

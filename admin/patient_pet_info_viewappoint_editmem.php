@@ -134,7 +134,7 @@ while( $row = mysqli_fetch_array($result) ){
                    <div class="form-group">
                       <label style="font-size: 1rem; font-weight: bold;" for="fname">Comment</label><br>
                       
-                      <label style="font-size: 1rem;" for="fname"><?php echo  $row['appointment_coment']?></label>   
+                      <label style="font-size: 1rem;" for="fname"><?php echo  $row['history_coment']?></label>   
                   </div>
               </div>
         </div>
