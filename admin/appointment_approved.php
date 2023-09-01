@@ -99,7 +99,7 @@
            
                       </style>
                         <div class="modal-header">
-                            <h4 class="modal-title">Appointment Details</h4>
+                            <h4 class="modal-title" style=" color: white; text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;">Appointment Details</h4>
                             <style>
                               /* The Modal (background) */
                               .modal {
@@ -131,6 +131,7 @@
                         </div>
                         <div class="modal-body modalresponseViewAppointment2">
                         <style>
+                          
                              table {
                             text-align: center !important;
                             padding:5px;

@@ -158,7 +158,7 @@
               </div>
           <div class="row mt-3">
                         <div class="col-sm-12 col-md-12" align="center">
-                          <button type="submit" name="btnSave" value="submit" id="submit" class="btn-primary">SUBMIT</button>
+                          <button type="submit" name="btnSave" value="submit" id="submit" class="btn btn-primary">SUBMIT</button>
                         </div>
           </div>
         

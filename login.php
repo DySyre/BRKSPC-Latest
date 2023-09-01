@@ -4,6 +4,7 @@ session_start();
   include("connect.php");
   include("functions.php");
 
+
 if($_SERVER['REQUEST_METHOD'] == "POST")
 {
     // SOMETHING WAS POSTED
@@ -117,13 +118,16 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
     <title>BarkspaceLogin Form</title>
     <!-- CSS -->
     <link rel="stylesheet" href="css/login.css">
+
   </head>
   <body>
     <style>
         body {
   background-color: #454f6b;
   font-family: "Asap", sans-serif;
-}
+  font-size: 1.5rem;
+  color: #fff;
+  }
 .logo{
     width: 100%;
     height: 100%;
@@ -217,7 +221,23 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 .login > button:hover {
   background-color: #2a2f3b;
 }
-
+.login a{
+    font-family: "Asap", sans-serif;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    padding: 10px 10px;
+    margin-top: 10px;
+    margin-left: 160px;
+    text-transform: uppercase;
+    width: 10px;
+    border-radius: 10px;
+    background-color: #586279;
+    transition: background-color 300ms;
+}
+.login a:hover{
+    background-color: #2a2f3b;
+}
 .dropbtn {
   background-color: #586279;
   color: white;
@@ -282,52 +302,24 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 }
 
     </style>
-    <!-- <div class="logo">
-          <img src="images/dog.png" alt="logo" />
-    </div> -->
+    <div class="logo">
+    <img src="images/1.jpg" alt="" style="height: 100%; width: 100%; background: transparent;">
+    </div>
+  
     <form class="login" action="login.php" method="post">
+     
     
       <div class="title"><span style="color: pink;">Bark</span><span style="color: skyblue;">Space</span></div>
+      <style>
+        .title{
+          text-transform: uppercase;
+        }
+      </style>
       <input type="email" name="email" placeholder="Email" />
       <input id="password_validation" type="password" name="password" placeholder="Password" required />
       
-      <div class="password_required">
-              <ul>
-                <li class="lowercase"><span></span>One lower case letter</li>
-                <li class="capital"><span></span>One Capital Letter</li>
-                <li class="number"><span></span>One number</li>
-                <li class="special"><span></span>One Special Character</li>
-                <li class="eight_characters"><span></span>At least 8 Characters</li>
-              </ul>
-              <style>
-                .password_required{
-                  display: none;
-                }
-                .password_required ul{
-                  padding: 0;
-                  margin: 0 0 15px;
-                  list-style: none;
-                }
-                .password_required ul li{
-                  margin-bottom: 8px;
-                  color: red;
-                  font-weight: 700;
-                  text-align: left;
-                }
-                .password_required ul li.active{
-                  color: #02af02;
-                }
-                .password_required ul li span:before{
-                  content: "X  "; 
-                }
-                .password_required ul li.active span:before{
-                  content: "✅"; 
-                }
-
-                
-              </style>
-            </div>
-             <a href="forgot.php">Forgot password?</a>
+    
+            
      
       <br/>
       <!-- <a href="signup.php">Click to Signup</a>
@@ -350,9 +342,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
         }
       </style>
       <button type="submit">Login</button> -->
-      
-     <button type="submit" class="btn active">Login</button><br>
-    
+     <button type="submit" class="btn active">Login</button>
      <style>
               .btn{
                 pointer-events: none;
@@ -360,20 +350,20 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
               .btn.active{
                 pointer-events: auto;
               }
-            </style><br>
-      Don't have a account? <a href="signup.php">Click to Signup</a><br>
+            </style>
+      <a href="signup.php">Click to Signup</a><br>
       <style>
         a, button{
           text-decoration:none !important ;
-          font-size : medium!important;
+          font-size : small!important;
           font-weight: bold!important;
-          /* text-transform: uppercase; */
+          text-transform: uppercase;
           font-family:'Poppins', sans-serif;
           font-weight:bold;
-          /* padding:.5em  4em; */
-          /* border-radius:7%;
+          padding:.5em  4em;
+          border-radius:7%;
           border:solid thin white;
-          box-shadow:-8px -9px 10px rgba(255,255,255,.1), */
+          box-shadow:-8px -9px 10px rgba(255,255,255,.1),
           inset 8px 9px 10px rgba(0,0,0,.1) ,
         }
         a{
@@ -388,8 +378,6 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
       </div> -->
       </div> <br/><br/><br/>
       <a href="landing.html">Back</a>
-      
-      
       
     </form>
   </body>

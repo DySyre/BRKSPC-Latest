@@ -545,7 +545,30 @@ header .nav-bar a:hover{
 
 }   
     
+/* Dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
 
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    min-width: 100px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .dropdown-content > a {
+    display: block;
+    margin-bottom: 10px; /* Add spacing between items */
+  }
 
 
 /* ============== MEDI ICONS =================== */
@@ -696,19 +719,20 @@ li span i{
                     margin-bottom: 40px;
                 }
                 .infoSection .infoHeader h1{
-                    color: #fff;
+                    color: red;
                 }
                 .infoCards{
                     display: flex;
                     flex-direction: row;
                     justify-content: space-around;
                     align-items: center;
-                    padding: 40px 0 40px 0;
+                    padding: 100px;
+                    background-color: red;
                     
                 }
                 .infoCards .card{
-                    width: 300px;
-                    height: 300px;
+                    width: 800px;
+                    height: 900px;
                     border-radius: 5px;
                     background: #fff;
                     box-shadow: 0 5px 10px rgba(0,0,0,.1);

@@ -10,19 +10,12 @@ require('assets/libs/email/PHPMailer/Exception.php');
 require('assets/libs/email/PHPMailer/SMTP.php');
 require('assets/libs/email/PHPMailer/PHPMailer.php');
 
-$Firstname = test_input($_POST['user_name']);
-$Lastname = test_input($_POST['last_name']);
-$Email = test_input($_POST['email']);
-$Password = test_input($_POST['password']);
-$confirmPassword = test_input($_POST['confirmPassword']);
-$branch = test_input($_POST['branch']);
-
-function test_input($data) {
-  $data = trim($data);
-  $data = stripslashes($data);
-  $data = htmlspecialchars($data);
-  return $data;
-}
+$Firstname = $_POST['user_name'];
+$Lastname = $_POST['last_name'];
+$Email = $_POST['email'];
+$Password = $_POST['password'];
+$confirmPassword = $_POST['confirmPassword'];
+$branch = $_POST['branch'];
 
 if($Password != $confirmPassword)
 {
@@ -62,7 +55,7 @@ else
         $_SESSION['Firstname'] = $Firstname;
         $_SESSION['Lastname'] =$Lastname;
         $_SESSION['Email'] =$Email;
-        $_SESSION['Password'] =md5($Password);
+        $_SESSION['Password'] = md5($Password);
         $_SESSION['confirmPassword'] =$confirmPassword;
          $_SESSION['branch'] =$branch;
         $verification = (rand(000000,999999));

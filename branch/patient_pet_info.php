@@ -127,7 +127,7 @@ $sumRem = 0;
                     </form>  
                     <!-- billing history -->
                    
-                    <div class="row" id="printableContent" style="display:;">
+                    <div class="row" id="printableContent">
                     
                        <form id="MyForm1">   
                         <div class="col-md-10 mt-5">

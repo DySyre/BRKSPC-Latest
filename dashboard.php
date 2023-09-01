@@ -27,6 +27,7 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"> -->
     <link rel="stylesheet" href="css/swiper-bundle.min.css" />
     <link rel="icon" href="images/logo.png" type="image/icon type" />
     <link
@@ -40,12 +41,15 @@ session_start();
 
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
+ 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://kit.fontawesome.com/6b23de7647.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="CSS/style.css">
+     <script src="https://kit.fontawesome.com/6b23de7647.js" crossorigin="anonymous"></script>
     <title>Barkspace</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/6b23de7647.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/stylenotif.css">
   </head>
   <body>
     <header class="sticky">
@@ -69,13 +73,7 @@ session_start();
               header nav ul li a span i::before{
                 display: none !important ;
                 }
-                }
-                
-                  
-                 
-                  
-                       
-                
+                }   
         </style>
         <a href="" class="logo"
           ><span class="red" style="color: pink">Bark</span
@@ -101,7 +99,23 @@ session_start();
         <a href="record.php"> <?php echo $fname?> </a>
         <a href="record.php"> Record </a>
            <a href="logout.php"> LOGOUT </a>
-           <li class="dropdown">
+
+                    <ul class="nav justify-content-end" >
+                    <li class="dropdown">
+                            <div class="dropdown-toggle text-light" style="cursor: pointer;" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="counter">5</span><i class="fas fa-bell" style="font-size: 20px;"></i>
+                            </div>
+                            <div class="dropdown-menu overflow-h-menu dropdown-menu-right">
+                                <div class="notification" >
+
+                                    <hr class="mt-1 mb-1">
+                                </div>
+
+                            </div>
+                        </li>
+                        </li>
+                    </ul>
+           <!-- <li class="dropdown">
                             <div  class="dropdown-toggle text-light" id="noti_count" style="cursor: pointer;" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="counter">0</span><i class="fas fa-bell" style="font-size: 20px;"></i>
                             </div>
@@ -111,7 +125,8 @@ session_start();
 
                                 </div>
                             </div>
-                        </li>
+                        </li> -->
+
         <!-- <button href="login.php" class="read-btn">
           LOGIN <i class="uil uil-arrow-right"></i>
         </button> -->
@@ -120,87 +135,30 @@ session_start();
     </header>
     <section class="home" style="background:#202834;">
 
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+ <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="java/notification.js"></script>
 
-<script type="text/javascript">
-
-    $(document).ready(function (){
-
-        $('.notification').load('Ajax/Notification.php');
-        $('.counter').text('0').hide();
-
-        var counter = 0;
-
-        $('#form-submit').on('submit', function(event){
-            event.preventDefault();
-            
-            var subject = $('#subject').val().trim();
-            var comment = $('#comment').val().trim();
-
-            $('#sub-error').text('');
-            $('#com-error').text('');
-
-            if(subject != '' && comment != ''){
-                
-                $.ajax({
-                    type: "POST",
-                    url: "Ajax/Ins_notification.php",
-                    data: { 'subject' : subject, 'comment' : comment },
-                    success: function (response) {
-                        var status = JSON.parse(response);
-                        if(status.status == 101){
-                            counter++;
-                            $('.counter').text(counter).show();
-                            $('.notification').load('Ajax/Notification.php');
-                            $("#form-submit").trigger("reset");
-                            console.log(status.msg);
-                        }
-                        else{
-                           console.log(status.msg);
-                        }
-                    }
-                });
-
-            }
-            else{
-            
-                if(subject == ''){
-                    $('#sub-error').text("Please Enter Subject");
-                }
-                if(comment == ''){
-                    $('#com-error').text("Please Enter Comment");
-                }
-            }
-
-        });
-
-        $('#noti_count').on('click',function (){
-            counter = 0;
-            $('.counter').text('0').hide();
-        });
-
-    });
-
-</script>
 
       <div class="swiper bg-slider">
         <div class="swiper-wrapper">
           <div class="swiper-slide dark-layer" >
             
-            <div class="row mt-2" style="background: #202834;">
+            <div class="row mt-2" style="background: #202834; ">
             
-                <div class="row mt-5" style="background: #202834;">
+                <div class="row mt-5" style="background: #202834; justify-content: center; align-items:center; text-align:center;">
+                <h1>Welcome to <span class="red" style="color: pink">Bark</span>
+            <span class="red" style="color: skyblue">space</span> Inc.</h1>
                 
-                  <div class="col-md-2 mt-5" style="background: ;">
+                  <div class="col-md-2 mt-5" style=" margin: 50px; padding: 30px; box-shadow: 10px 5px #fff; margin: 0; background-color: pink; ">
                     
-                   <div class="form-group">
+                   <div class="form-group" style="margin: 2px;">
                     
                    
              
-                       <select class="form-control" name="branchId" id="idBranch" onchange="selectBranch()" >
-                        <option hidden >Branches</option>
+                       <select class="form-control" style=" color: black; text-shadow: 0 0 3px #FF0000; justify-content: center; align-items:center; text-align:center; margin: 2%; " name="branchId" id="idBranch" onchange="selectBranch()" >
+                        <option hidden>Make an Appointment</option>
                         
                       <?php
                       $queryBranch = "select * from branch_tbl where branch_isactive = '1' and branch_id !='3'";
@@ -227,8 +185,7 @@ session_start();
               </div>
             </div>
             </div>
-            <h1>Welcome to <span class="red" style="color: pink">Bark</span>
-            <span class="red" style="color: skyblue">space</span> Inc.</h1>
+            
             <style>
               h1{
                 padding: 30px;
@@ -241,26 +198,27 @@ session_start();
                 text-transform: uppercase;
               }
             </style>
-            <div class="imgDog" style="background: ;">
+            <div class="imgDog">
             
             
-               <img src="images/h1.jpg" />
+               <img src="images/11.jpg" />
                <style>
                 .imgDog{
-                  width : auto;
+                  padding: 50px;
+                  width : 100%;
                   /* left: 15%; */
-                  height : auto%;
+                  height : 100%;
                   position: relative;
-                  
-                  box-shadow:  0px 0px 20px white,
-            inset 0px 0px 5px rgba(0, 0, 0, 0.1);
+                  /* box-shadow:  0px 0px 20px white, inset 0px 0px 5px rgba(0, 0, 0, 0.1); */
                   }
                   .img{
                     position: absolute !important;;
                     top: -6px!important;
                     left:-79%!important;}
                     @media only screen and (max-width: 600px)
-                    {.img{position: relative}}
+                    {
+                    .img{position: relative}
+                  }
                     
                   
                </style>
@@ -291,6 +249,7 @@ session_start();
                
                 
                     <div id='calendar'>
+                      
                       
                     </div>
                    
@@ -326,7 +285,7 @@ session_start();
               >of everything We Do</span
             >
           </h1>
-          <img src="images/pic.jpg" width="300" height="450" alt="" />
+          <img src="images/22.jpg" width="300" height="450" alt="" />
         </div>
         <div class="aboutList" data-aos="fade-left" data-aous-duration="1000">
           <ol>
@@ -358,74 +317,78 @@ session_start();
             <span style="color: #e0501b">In Order to Top Services</span>
           </h1>
         </div>
+        
         <div class="infoCards">
           <div class="card one" data-aos="fade-up" data-aous-duration="1000">
-            <img
+            <!-- <img
               src="images/protect.png"
               class="cardoneImg"
               alt=""
               data-aos="fade-up"
               data-aous-duration="1100"
-            />
+            /> -->
             <div class="cardbgone">
               <div class="cardContent">
-                <h2>Health Services</h2>
+                <h2>About Us</h2>
                 <p>
                   An so vulgar to on points wanted rapture our resolving
                   continued household.
                 </p>
-                <a href="services.html">
+                <!-- <a href="services.html">
                   <div class="cardBtn">
                     <img src="images/right.png" alt="" class="cardIcon" />
                   </div>
-                </a>
+                </a> -->
               </div>
             </div>
           </div>
           <div class="card two" data-aos="fade-up" data-aous-duration="1300">
-            <img
+            <!-- <img
               src="images/protect.png"
               class="cardtwoImg"
               alt=""
               data-aos="fade-up"
               data-aous-duration="1300"
-            />
+            /> -->
             <div class="cardbgtwo">
               <div class="cardContent">
-                <h2>Appointment</h2>
-                <p>
-                  An so vulgar to on points wanted rapture our resolving
-                  continued household.
-                </p>
-                <a href="calendar.html">
-                  <div class="cardBtn">
-                    <img src="images/right.png" alt="" class="cardIcon" />
+                <h2>Barkspace</h2>
+                
+                <!-- <a href="">
+                  <div class="cardBtn" style="justify-content: center; align-items: center; text-align: center;">
+                    <img src="images/right.png" alt="" class="cardIcon"  />
                   </div>
-                </a>
+                </a> -->
               </div>
             </div>
           </div>
 
           <div class="card three" data-aos="fade-up" data-aous-duration="1600">
-            <img
+            <!-- <img
               src="images/protect.png"
               class="cardthreeImg"
               alt=""
               data-aos="fade-up"
               data-aous-duration="1300"
-            />
+            /> -->
             <div class="cardbgthree">
+              <style>
+                .cardbgthree{
+                  background-color: red;
+                
+                }
+              </style>
               <div class="cardContent">
-                <h2>Treatments</h2>
-                <p>
-                  An so vulgar to on points wanted rapture our resolving
-                  continued household.
-                </p>
-                <a href="treatment.html">
+                <h2>Developer</h2>
+                <ul>
+                <a href="https://www.facebook.com/profile.php?id=100088500110682"><i class="fa-brands fa-facebook-f"></i> Jerwin Tugas</a><br>
+                <a href="" style="text-decoration: none; color: gray; font-size: 1.2rem; position: flex-box;"><br><i class="fa-brands fa-facebook-f"></i> Alexander Inciong</a>
+                </ul>
+                <!-- <a href="dashboard.php">
                   <div class="cardBtn">
                     <img src="images/right.png" alt="" class="cardIcon" />
                   </div>
-                </a>
+                </a> -->
               </div>
             </div>
           </div>
@@ -446,8 +409,9 @@ session_start();
          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body modalresponseViewAppointment">
+        
                        
-                        </div>
+      </div>
     </div>
   </div>
 

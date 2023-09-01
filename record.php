@@ -80,6 +80,85 @@ session_start();
         <a href="record.php"> <?php echo $fname?> </a>
         <a href=""> Record </a>
            <a href="logout.php"> LOGOUT </a>
+           <li class="dropdown">
+                            <div  class="dropdown-toggle text-light" id="noti_count" style="cursor: pointer;" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="counter">0</span><i class="fas fa-bell" style="font-size: 20px;"></i>
+                            </div>
+                            
+                            <div class="dropdown-menu overflow-h-menu dropdown-menu-right">
+                                <div class="notification">
+
+                                </div>
+                            </div>
+                        </li>
+
+
+                        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+
+    $(document).ready(function (){
+
+        $('.notification').load('Ajax/Notification.php');
+        $('.counter').text('0').hide();
+
+        var counter = 0;
+
+        $('#form-submit').on('submit', function(event){
+            event.preventDefault();
+            
+            var subject = $('#subject').val().trim();
+            var comment = $('#comment').val().trim();
+
+            $('#sub-error').text('');
+            $('#com-error').text('');
+
+            if(subject != '' && comment != ''){
+                
+                $.ajax({
+                    type: "POST",
+                    url: "Ajax/Ins_notification.php",
+                    data: { 'subject' : subject, 'comment' : comment },
+                    success: function (response) {
+                        var status = JSON.parse(response);
+                        if(status.status == 101){
+                            counter++;
+                            $('.counter').text(counter).show();
+                            $('.notification').load('Ajax/Notification.php');
+                            $("#form-submit").trigger("reset");
+                            console.log(status.msg);
+                        }
+                        else{
+                           console.log(status.msg);
+                        }
+                    }
+                });
+
+            }
+            else{
+            
+                if(subject == ''){
+                    $('#sub-error').text("Please Enter Subject");
+                }
+                if(comment == ''){
+                    $('#com-error').text("Please Enter Comment");
+                }
+            }
+
+        });
+
+        $('#noti_count').on('click',function (){
+            counter = 0;
+            $('.counter').text('0').hide();
+        });
+
+    });
+
+</script>
+                        
+                        
         <!-- <button href="login.php" class="read-btn">
           LOGIN <i class="uil uil-arrow-right"></i>
         </button> -->
@@ -146,6 +225,8 @@ session_start();
             }
 
         </style>
+
+
 
      <center><h4>My Appointment's Record</h4></center> 
      <style>
@@ -340,7 +421,7 @@ session_start();
                 <div class="modal-dialog modal-xl">
                 <style>
                     .modal-content{
-                      background: pink;
+                      background: #fff;
                       border-radius: 10px !important ;
                       box-shadow: none!important
                       ;;
@@ -358,7 +439,7 @@ session_start();
 
                       </style>
                         <div class="modal-header">
-                            <h4 class="modal-title">Details</h4>
+                            <h4 class="modal-title" style=" color: white; text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;">Details</h4>
                             <style>
                               /* The Modal (background) */
                               .modal {
@@ -370,6 +451,7 @@ session_start();
                                 width: 100%;
                                 height: 100vh; /* Full height */
                                 overflow: auto; /* Enable scroll if needed */
+      
                                 background-color:transparent;/* Fallback color */
                                 padding-top: 3rem;
                                 border-radius:.2em;
