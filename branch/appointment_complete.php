@@ -19,7 +19,7 @@ while( $row = mysqli_fetch_array($result) ){
 
     <div class="row">
  </div>
-   <div class="row">
+   <div class="row" style="margin: 2%;">
             <div class="col-md-4">
                    <div class="form-group">
                     <?php
@@ -40,9 +40,9 @@ while( $row = mysqli_fetch_array($result) ){
                   </div>
               </div>
         </div>
-      <div class="row">
+      <div class="row" style="margin: 2%;">
 
-            <div class="col-md-12 mt-4">
+            <div class="col-md-11 mt-4" style=" margin: 20px; padding: 10px; box-shadow: 10px 5px #888888; margin: 0; background-color: whitesmoke; ">
                    <div class="form-group">
 
                     <?php 
@@ -225,7 +225,7 @@ function CashChange(){
             </div> -->
         </div>
          <div class="row">
-             <div class="col-md-6 mt-2">
+             <div class="col-md-11 mt-4" style=" margin: 20px; padding: 10px;  justify-content: center; text-align: center; align-items: center;">
                 <div class="form-group">              
                 <a href="javascript:void(0)" class="add-more-services float-left btn btn-primary" id="addServ">ADD SERVICES</a>
 
@@ -238,29 +238,30 @@ function CashChange(){
             
            </div>
 
-        <div class="row">
-            <div class="col-md-12 mt-4">
+        <div class="row" style="margin: 2%;">
+            <div class="col-md-11 mt-4" style=" margin: 20px; padding: 10px; color: blue; font-weight: bold; box-shadow: 10px 5px #888888; margin: 0; background-color: whitesmoke; ">
                 <label>TOTAL:</label>
-              <input type="text" id="totalAmountInput" name=""  style="background-color: transparent; width: 15%; margin-left: 100px; border: none;" readonly value="₱<?php echo $price2Sum ?>">
+              <input type="text" id="totalAmountInput" name=""  style="background-color: transparent; color: red; width: 15%; margin-left: 100px; border: none;" readonly value="₱<?php echo $price2Sum ?>">
 
               <input type="hidden" id="totalAmountInput2" name="grandTotal"  style="background-color: transparent; width: 15%; margin-left: 50px; border: none;" readonly value="<?php echo $price2Sum ?>">
 
 
             </div>
 
-             <div class="col-md-12 mt-4">
+             <div class="col-md-11 mt-4" style=" margin: 20px; padding: 10px; color: green; font-weight: bold; box-shadow: 10px 5px #888888; margin: 0; background-color: whitesmoke; ">
                 <label>PAYMENT:</label>
               <input type="text" id="cashAmountId" name="cashAmount" onchange="CashChange()" style="width: 15%; margin-left: 80px;" required>
 
               
             </div>
 
-            <div class="col-md-12 mt-4">
+            <div class="col-md-11 mt-4" style=" margin: 20px; padding: 10px; font-weight: bold; box-shadow: 10px 5px #888888; margin: 0; background-color: whitesmoke; ">
                 <label>CHANGE/BAL:</label>
               <input type="text" id="changeBalAmountId" name="changeBalAmount"  style="background-color: transparent; width: 15%; margin-left: 45px; border: none;"  value="" readonly>
 
-                <br><br><label for="noteName">Note:</label>
+                
             </div>
+            <label for="noteName" style="color: blue; font-weight: bold;">Note:</label>
             <div class="col-md-12 mt-4">
 
                  <style>

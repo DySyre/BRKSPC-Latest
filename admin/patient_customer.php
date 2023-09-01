@@ -14,7 +14,7 @@
                   <div class="input-group">
     
                      <!-- <a href="#!" data-id="" data-bs-toggle="modal" data-bs-target="#addStaffModal" class="btn btn-primary btn-sm me-md-2">ADD STAFF</a> -->
-                         <h2>Customer </h2>
+                         <h2 style=" color: black; text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;">Customer </h2>
                 </div>
 
                 <div class="table-responsive">

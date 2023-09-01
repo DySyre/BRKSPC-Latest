@@ -14,6 +14,7 @@ $('#password_validation').on('keyup', function(){
     }else{
         $('.lowercase').removeClass('active');
     }
+
     if(passValue.match(/[A-Z]/g)){
         $('.capital').addClass('active');
     }else{
@@ -36,13 +37,13 @@ $('#password_validation').on('keyup', function(){
     }
 
 
-    // $('.password_required ul li').each(function(index, el){
-    //     if(!$(this).hasClass('active')){
-    //         $('.btn').removeClass('active')
-    //     }else{
-    //         $('.btn').addClass('active')
-    //     }
-    // });
+    $('.password_required ul li').each(function(index, el){
+        if(!$(this).hasClass('active')){
+            $('.btn').removeClass('active')
+        }else{
+            $('.btn').addClass('active')
+        }
+    });
 
 
      

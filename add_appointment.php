@@ -51,7 +51,7 @@ $schedule = $_GET['schedule'] = 3;
                     </div>
                     <div class="form-group">
                         <label for="breed" class="control-label">Breed</label>
-                        <input type="text" name="breed" id="breed" class="form-control form-control-border" pattern="[A-Za-z]{1,}" placeholder="Siberian Husky" value ="<?php echo isset($breed) ? $breed : '' ?>" required>
+                        <input type="text" name="breed" id="breed" class="form-control form-control-border" pattern="[A-Za-z]{1,}"  placeholder="Siberian Husky" value ="<?php echo isset($breed) ? $breed : '' ?>" required>
                     </div>
                     <div class="form-group">
                         <label for="age" class="control-label">Age</label>

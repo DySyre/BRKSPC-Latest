@@ -18,12 +18,12 @@ $noApp = 'maybe';
      <div class="row">
 
         <div class="container">
- <div class="input-group">
+        <div class="input-group">
     
                      <!-- <a href="#!" data-id="" data-bs-toggle="modal" data-bs-target="#addStaffModal" class="btn btn-primary btn-sm me-md-2">ADD STAFF</a> -->
                 
                 </div>
-                <div class="row col-md-4">
+                <div class="row col-md-4" style="justify-content: center; text-align: center; align-items: center;">
                   <select class="form-control" name="newStudSelectDepart" id="potek" onchange="selectDep()" required>
         <?php 
         include('connection.php');

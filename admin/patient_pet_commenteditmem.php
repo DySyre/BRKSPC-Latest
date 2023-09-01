@@ -30,9 +30,9 @@ $row3 = mysqli_fetch_assoc($totalQuery3);
     }
   </style>
                
-  
+        
 
-    <textarea id="payments"><?php echo $row3['history_coment']; ?></textarea>
+               <textarea id="payments"><?php echo $row3['history_coment']; ?></textarea>
   </div>
   </div>
 

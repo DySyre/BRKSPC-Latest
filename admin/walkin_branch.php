@@ -8,11 +8,11 @@ $branchID = $_POST['id'];
 
 <form id="MYformS">
               <div class="row">
-                            <div class="col-xl-6" style="background-color:; height: 20vh;">
-                                <div class="card">
-                                    <div class="card-header">
+                            <div class="col-xl-6" style=" height: 20vh;">
+                                <div class="card" style="background-color: #FFF0F5;">
+                                    <div class="card-header" style="background-color:  #FFF0F5; ">
                                         <input type="hidden" name="branchIDName" value="<?php echo $branchID ?>">
-                                        <h3>Walk In Form</h3>
+                                        <h3 style="justify-content: center; align-items: center; text-align: center; color: blue; ">Walk In Form</h3>
                                         <input type="hidden" id="orderNumId" value="<?php  echo $orderNumber;?>" name="ordernumberName">
                                     </div>
                                     <div class="card-body">
@@ -22,7 +22,7 @@ $branchID = $_POST['id'];
 
                                     <div class="col-md-6">
                                   
-                                      <label style="font-size: 1rem;" for="fname">Firstname</label>
+                                      <label style="font-size: 1rem; font-weight: bold;" for="fname">Firstname</label>
 
                                      <input type="text" name="custfName" required class="form-control" placeholder="">
                                       
@@ -30,7 +30,7 @@ $branchID = $_POST['id'];
                                       <div class="col-md-6">
                                       
                                      
-                                      <label style="font-size: 1rem;" for="fname">Lastname</label>
+                                      <label style="font-size: 1rem; font-weight: bold;" for="fname">Lastname</label>
 
                                      <input type="text" name="custlName" required class="form-control" placeholder="">
                                       
@@ -42,7 +42,7 @@ $branchID = $_POST['id'];
 
                                     <div class="col-md-12 mt-3">
                                   
-                                      <label style="font-size: 1rem;" for="fname">Email</label>
+                                      <label style="font-size: 1rem; font-weight: bold;" for="fname">Email</label>
                                      
 
                                      <input type="email" name="custeName" required class="form-control" placeholder="">
@@ -57,11 +57,11 @@ $branchID = $_POST['id'];
                                     </div>
                                 </div>
                                 
-                                <div class="card mb-4" style="height:68vh;">
+                                <div class="card mb-4" style="height:68vh; background-color: #FFD1DA;">
                                     <div class="card-body">
                                       <!-- <canvas id="myAreaChart" width="100%" height="40"></canvas> -->
                                    
-                                   <div class="form-group" id="">
+                                   <div class="form-group" id="" style="justify-content: center; align-items: center; text-align: center; color: blue; padding: 10px; font-weight: bold; ">
                                       <label style="font-size: 1.5rem;" for="fname">Pet's Info</label>
                                       <div class="row" id="ShowOrder">
                                         
@@ -109,7 +109,7 @@ $branchID = $_POST['id'];
 
                                   </div>
                                  
-    <div class="col-md-4 mb-2">
+    <div class="col-md-12 mt-4" style=" margin: 20px; padding: 10px; box-shadow: 10px 5px #888888; margin: 0; background-color:  #FFF0F5; " >
         <label style="font-size: 1rem;" for="fname">Services</label>
 
         <select class="form-control" name="petServices" onchange="addSelectedValue(this)">
@@ -130,7 +130,16 @@ $branchID = $_POST['id'];
                       ?>
         </select>
     </div>
-    <ul id="selectedValue"></ul>
+    <ul id="selectedValue" style="text-align: justify; text-decoration: underline; font-size: 1.3rem; font-weight: large;"></ul>
+    <style>
+      #selectedValue{
+        background-color: #FFF0F5;
+        border-style: solid;
+        border-color: #FFF0F5;
+        box-shadow: 10px 5px #888888;
+      }
+      
+    </style>
    
                                     </div>
                                 </div>

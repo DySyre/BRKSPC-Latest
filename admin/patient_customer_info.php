@@ -103,7 +103,7 @@ $sumRem = 0;
                     </div>
                     <!-- billing history -->
                      <h4>Billing History</h4>
-                    <div class="row" id="printableContent" style="display:;">
+                    <div class="row" id="printableContent">
                     <form id="MyForm">
                        
                         <div class="col-md-10 mt-5">
@@ -222,7 +222,7 @@ $sumRem = 0;
                 <div class="modal-dialog modal-xl">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h4 class="modal-title">Details</h4>
+                            <h4 class="modal-title" style=" color: white; text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;">Details</h4>
                         </div>
                         <div class="modal-body modalresponseViewAppointment1">
                        

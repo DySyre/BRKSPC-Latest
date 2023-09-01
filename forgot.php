@@ -1,3 +1,4 @@
+@@ -0,0 +1,288 @@
 <?php 
 include_once ("controller.php");
 include("connect.php");
@@ -245,7 +246,7 @@ if (strlen($_POST['password']) < 8) {
         $email = $_SESSION['email'];
         $updatePassword = "UPDATE users_balagtas SET password = '$password' WHERE email = '$email'";
         $updatePass = mysqli_query($con, $updatePassword) or die("Query Failed");
-        session_unset($email);
+        // session_unset($email);
         session_destroy();
         header('location: login.php');
     }
