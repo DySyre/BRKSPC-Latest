@@ -132,10 +132,10 @@ while( $row = mysqli_fetch_array($result) )
 	}
 	else
 	{ //start else
-		$sql3 = "INSERT INTO pos_order_list_tbl`(pos_order_list_itemidfk`, pos_order_list_itemName, pos_order_list_itemprice,`pos_order_list_ordernum`,`pos_order_list_itmstock`) VALUES ('$item_id','$itemName','$item_selling_price','$orderNumId','$item_stock')";
+		$sql3 = "INSERT INTO pos_order_list_tbl (`pos_order_list_itemidfk`, `pos_order_list_itemName`, `pos_order_list_itemprice`,`pos_order_list_ordernum`,`pos_order_list_itmstock`) VALUES ('$item_id','$itemName','$item_selling_price','$orderNumId','$item_stock')";
 	$query3= mysqli_query($con,$sql3);
 	$lastId3 = mysqli_insert_id($con);
-
+	
 	?>
 	 <style>
       .responsive-th {

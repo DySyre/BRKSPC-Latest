@@ -134,17 +134,27 @@ if($selectPetd == 'newPet')
             <div class="col-md-2">
                 <div class="form-group">
                  <label for="gender">Pet Type <label style="color: #435D7D;"></label> <label style="color:red; font-size: 1.2rem;">*</label></label>
-                  <select name="petType1[]"  class="form-control" required="required">
-                    <option value="cat">Cat</option>
-                    <option value="dog">Dog</option>
-                     <option value="fosh">Fish</option>
-                 </select>
+                 <input list="petType1[]" pattern="[A-Za-z]{1,}" class="form-control" required="required">
+                  <datalist id="petType1[]">
+                                      <option value="Cat">
+                                      <option value="Dog">
+                                      <option value="Fish">
+                                      <option value="Rabbit">
+                                      <option value="Bird">
+                                      </datalist>
               </div>
             </div>
              <div class="col-md-3">
                 <div class="form-group">
                 <label for="dob">Breed(optional)<label style="color: #435D7D;"></label><label style="color:red; font-size: 1.2rem;"></label></label>
-                <input type="text" class="form-control" name="breed1[] ">
+                <input list="text" name="petBreed1[]" class="form-control" pattern="[A-Za-z]{1,}" name="breed1[] ">
+                                      <datalist id="petBreed1[]">
+                                      <option value="Aspin">
+                                      <option value="Puspin">
+                                      <option value="Siamese">
+                                      <option value="Bulldog">
+                                      <option value="Persian">
+                                      </datalist>
               </div>
             </div>
             

@@ -24,7 +24,7 @@ $branchID = $_POST['id'];
                                   
                                       <label style="font-size: 1rem; font-weight: bold;" for="fname">Firstname</label>
 
-                                     <input type="text" name="custfName" required class="form-control" placeholder="">
+                                     <input type="text" name="custfName" pattern="[A-Za-z]{1,}" required class="form-control" placeholder="">
                                       
                                     </div>
                                       <div class="col-md-6">
@@ -32,7 +32,7 @@ $branchID = $_POST['id'];
                                      
                                       <label style="font-size: 1rem; font-weight: bold;" for="fname">Lastname</label>
 
-                                     <input type="text" name="custlName" required class="form-control" placeholder="">
+                                     <input type="text" name="custlName" pattern="[A-Za-z]{1,}" required class="form-control" placeholder="">
                                       
                                     </div>
                                      
@@ -74,18 +74,32 @@ $branchID = $_POST['id'];
                                     <div class="col-md-6" >
                                       <label style="font-size: 1rem;" for="fname">Pet Name</label>
 
-                                      <input type="text" name="petName" class="form-control" required placeholder="">
+                                      <input type="text" name="petName"pattern="[A-Za-z]{1,}"  class="form-control" required placeholder="">
                                     </div>
                                     <div class="col-md-6" >
                                       <label style="font-size: 1rem;" for="fname">Breed</label>
 
-                                      <input type="text" name="petBreed" class="form-control" placeholder="">
+                                      <input list="petBreed" name="petBreed"  pattern="[A-Za-z]{1,}" class="form-control" placeholder="">
+                                      <datalist id="petBreed">
+                                      <option value="Aspin">
+                                      <option value="Puspin">
+                                      <option value="Siamese">
+                                      <option value="Bulldog">
+                                      <option value="Persian">
+                                      </datalist>
                                     </div>
 
                                      <div class="col-md-4" >
                                       <label style="font-size: 1rem;" for="fname">Pet Type</label>
 
-                                      <input type="text" name="petType" class="form-control" placeholder="">
+                                      <input list="petType" name="petType" pattern="[A-Za-z]{1,}" class="form-control" placeholder="">
+                                      <datalist id="petType">
+                                      <option value="Cat">
+                                      <option value="Dog">
+                                      <option value="Fish">
+                                      <option value="Rabbit">
+                                      <option value="Bird">
+                                      </datalist>
                                     </div>
 
 
@@ -94,7 +108,8 @@ $branchID = $_POST['id'];
                                       <label style="font-size: 1rem;" for="fname">Gender</label>
 
                                   <select class="form-control" name="petGender">
-                                      <option value="female">Female</option>
+                                  <option value="unisex">Unisex</option>
+                                    <option value="female">Female</option>
                                      <option value="male">Male</option>
                                        
                                   </select>

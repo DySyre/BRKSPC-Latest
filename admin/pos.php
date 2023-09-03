@@ -39,7 +39,7 @@ $delQuery2 =mysqli_query($con,$sql2);
                                    <input type="text" class="form-control" id="searchInput" placeholder="Search for an item">
                                      
 
-                                      <select class="form-control" name="ebranchIdSelectNmae" id="ebranchIdSelect" style=" padding: 10px; font-size: 1.2rem;" >
+                                      <select class="form-control" onclick="itemSelected()" name="ebranchIdSelectNmae" id="ebranchIdSelect" style=" padding: 10px; font-size: 1.2rem;" >
                                         <option hidden >Choose</option>
                                       <?php
                                       $queryBranch = "SELECT * FROM `item_tbl` join item_category_tbl ON item_tbl.item_categoryidfk = item_category_tbl.item_category_id JOIN branch_tbl ON item_category_tbl.item_category_branch = branch_tbl.branch_id where item_stock != '0'";
