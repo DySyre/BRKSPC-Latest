@@ -168,7 +168,7 @@ $sumRem = 0;
 
                                          
                                           <td><?php echo $rowtotasqlHis1['services_name'] ?></td>
-                                          <td><?php echo $rowtotasqlHis1['appointment_coment'] ?></td>
+                                          <td><?php echo $rowtotasqlHis1['history_coment'] ?></td>
                                                                                       
                                           <td><a href="javascript:void();" data-id="<?php echo $rowtotasqlHis1['pet_services_his_id'] ?>"  class="btn btn-sm btnRegisPayComment text-white"style="border: none; background-color: brown;">Comment</a></td>
                                           </tr>

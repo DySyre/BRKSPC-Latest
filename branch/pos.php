@@ -37,11 +37,12 @@ $delQuery2 =mysqli_query($con,$sql2);
                                       <!-- <canvas id="myAreaChart" width="100%" height="40"></canvas> -->
                                    
                                    <div class="form-group">
-                                      <label style="font-size: 1.5rem; font-weight: bold;" for="fname">Select Item:</label>
-                                     
+                                      <label style="font-size: 1.5rem; font-weight: bold;" for="fname">Select Item:</label>        
                       <input type="text" class="form-control" id="searchInput" placeholder="Search for an item">
-                      <select class="form-control" name="ebranchIdSelectNmae" id="ebranchIdSelect">
-    <option hidden>Choose</option>
+                      <label for="">Select Branch</label><br/>
+                      
+                      <select class="form-control" name="ebranchIdSelectNmae" id="ebranchIdSelect" onclick="itemSelected()">
+                       <option hidden>Choose</option>
     <?php
     $queryBranch = "SELECT * FROM `item_tbl` join item_category_tbl ON item_tbl.item_categoryidfk = item_category_tbl.item_category_id JOIN branch_tbl ON item_category_tbl.item_category_branch = branch_tbl.branch_id where item_stock != '0' AND branch_id = '$branchId' order by item_name asc";
     $resqueryBranch = mysqli_query($con, $queryBranch);
@@ -65,6 +66,17 @@ $delQuery2 =mysqli_query($con,$sql2);
 
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+   // Function to filter the dropdown options based on user input
+   $(document).ready(function() {
+        $("#searchInput").on("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            $("#ebranchIdSelect option").filter(function() {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+            });
+        });
+    });
+</script>
 
 
               
@@ -77,7 +89,8 @@ $delQuery2 =mysqli_query($con,$sql2);
                                       <!-- <canvas id="myAreaChart" width="100%" height="40"></canvas>  -->
                                    
                                    <div class="form-group" id="">
-                                   <label style="font-size: 1.5rem; font-weight:bold; " for="fname"><i class="fa-solid fa-cart-shopping"></i> Cart</label>
+                                   <label style="font-size: 1.5rem; font-weight: bold; color: green; " for="fname"><i class="fa-solid fa-cart-shopping"></i> Cart</label>
+
                                       <div class="row" id="ShowOrder">
                                         
                                       </div>
@@ -92,10 +105,10 @@ $delQuery2 =mysqli_query($con,$sql2);
                                  
                             </div>
 
-                           <div class="col-xl-6" style="height: 90vh;">
-                              <div class="card mb-4" style="height: 50vh; background-color: skyblue; font-weight: bold; font-size: 1.5rem;  box-shadow: 5px 10px #888888; text-transform: capitalize;">
-                                <div class="card-header" id="ordersum">
-                                  <i class="fas fa-chart-bar me-1"></i>
+                            <div class="col-xl-6" style="height: 90vh;">
+                              <div class="card mb-4" style="height: 90vh; color: black; background-color: whitesmoke; font-weight: bold; font-size: 1rem; font-size:1.3rem; box-shadow:  5px 10px #888888;">
+                                <div class="card-header">
+                                <i class="fa-solid fa-sort"></i>
                                   ORDER SUMMARY
                                 </div>
                                 <style>
@@ -107,17 +120,13 @@ $delQuery2 =mysqli_query($con,$sql2);
                               }
                               
                             </style>
-                            
                                 <div class="card-body" style="height: 100%;">
-                                  <div class="table-responsive" style="height: 100%; background-color: whitesmoke; " id="orderSummaryBody">
-                                  
-                                  
+                                  <div class="table-responsive" style="height: 100%;" id="ShowPruchases">
                                     
                                       
                                   </div>
 
                                 </div>
-                                
                               </div>
                             </div>
 
@@ -300,6 +309,28 @@ $delQuery2 =mysqli_query($con,$sql2);
 });
 
 
+function itemSelected(){
+      
+      var x = document.getElementById("ebranchIdSelect").value;
+      var orderNumIdd = document.getElementById("orderNumId").value;
+
+      
+   
+        $.ajax({
+                url:"pos_show_order.php",
+                method:"POST",
+                data:{
+                  id: x,
+                  orderNumId: orderNumIdd
+                },
+                success: function(data){
+                  $("#ShowOrder").html(data);
+
+                }
+              })
+
+      }
+  
 
     
    
@@ -419,7 +450,7 @@ $delQuery2 =mysqli_query($con,$sql2);
   </script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   
-  <script>
+  <!-- <script>
 document.addEventListener("DOMContentLoaded", function() {
     const selectElement = document.getElementById("ebranchIdSelect");
     const showOrderDiv = document.getElementById("ShowOrder");
@@ -510,4 +541,4 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-</script>
+</script> -->

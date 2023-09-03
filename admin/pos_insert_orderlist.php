@@ -30,7 +30,7 @@ while( $row = mysqli_fetch_array($result) )
 	 $query21= mysqli_query($con,$sql21);
         
 
-	 $sql3 = "DELETE FROM `pos_order_list_tbl` WHERE  pos_order_list_id ='$idd'";
+	 $sql3 = "DELETE FROM `pos_order_list_tbl` WHERE  `pos_order_list_id` ='$idd'";
 
        
 	$query3= mysqli_query($con,$sql3);
@@ -69,13 +69,13 @@ while( $row = mysqli_fetch_array($result) )
                   	$sql1 = "SELECT * FROM `pos_purchase_tbl`";
 					$result1 = mysqli_query($con,$sql1);
 
-					$sql2 = "SELECT sum(pos_purchase_itemtotalAmt) as sumAmount FROM `pos_purchase_tbl`";
+					$sql2 = "SELECT sum(`pos_purchase_itemtotalAmt`) as `sumAmount` FROM `pos_purchase_tbl`";
 					$result2 = mysqli_query($con,$sql2);
 					$row2 = mysqli_fetch_array($result2);
-					$sql3 = "SELECT count(pos_purchase_id) as sumItems FROM `pos_purchase_tbl`";
+					$sql3 = "SELECT count(`pos_purchase_id`) as `sumItems` FROM `pos_purchase_tbl`";
 					$result3 = mysqli_query($con,$sql3);
 					$row3 = mysqli_fetch_array($result3);
-					$sql4 = "SELECT sum(pos_purchase_itemqty) as sumQty FROM `pos_purchase_tbl`";
+					$sql4 = "SELECT sum(`pos_purchase_itemqty`) as `sumQty` FROM `pos_purchase_tbl`";
 					$result4 = mysqli_query($con,$sql4);
 					$row4 = mysqli_fetch_array($result4);
 					while($row1 = mysqli_fetch_array($result1))

@@ -4,6 +4,10 @@
     <head>
         <title>Signup</title>
         
+        <div class="logo">
+    <img src="img/22.jpg" alt="" style="opacity: 0.6; height: 100vh; width: 100%; object-fit: cover;">
+    </div>
+        
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
 
@@ -15,15 +19,21 @@
 
     </head>
     <body >
+      
         
         <div id="logo"  class="col-md-12" >
+        
+               
+                
           <style>
             #logo{
               text-align: center;
               }
           </style>
-
+ 
+ 
         <div class="container col-md-12" >
+          
           <style>
             .container {
               margin : 0 ;
@@ -39,6 +49,7 @@
                 }
                   
               </style>
+              
         <form id="signUpForm" class="login col-md-12" method="post" enctype="multipart/form-data" >
             <div class="title">Signup</div>
 

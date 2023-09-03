@@ -26,6 +26,8 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+     <script src="https://kit.fontawesome.com/6b23de7647.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/swiper-bundle.min.css" />
     <link rel="icon" href="images/logo.png" type="image/icon type" />
     <link
@@ -155,6 +157,7 @@ session_start();
         });
 
     });
+
 
 </script>
                         

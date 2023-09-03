@@ -76,7 +76,7 @@ else
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#!">Settings</a></li>
+                        <li><a class="dropdown-item" href="./profile.php">Settings</a></li>
                         <li><a class="dropdown-item" href="#!">Activity Log</a></li>
                         <li><hr class="dropdown-divider" /></li>
                         <li><a class="dropdown-item" href="logout.php">Logout</a></li>
@@ -168,6 +168,8 @@ else
                                 <div class="sb-nav-link-icon"><i class="fa-solid fa-universal-access"></i></div>
                                 Sale's History
                             </a>
+
+                            
                             
                            
 
@@ -182,10 +184,11 @@ else
                                     <a class="nav-link" href="user.php">User</a>
                                     <a class="nav-link" href="services.php">Services</a>
                                     <a class="nav-link" href="schedule.php">Schedule</a>
+                                    <a class="nav-link" href="edit_profile.php">Edit Profile</a>
                                      
                                 </nav>
                             </div>
-                       
+                            
 
                              
                           <!--   <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">

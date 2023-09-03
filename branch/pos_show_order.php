@@ -89,39 +89,77 @@ while( $row = mysqli_fetch_array($result) )
           </div>
           <script type="text/javascript">
 
-          	function StockChange2(pid) {
-          	  var quantity = parseInt(document.getElementById("Quantity_" + pid).value);
-          	  var pricePro = parseInt(document.getElementById("Priced_" + pid).value);
-          	  var stockPro = parseInt(document.getElementById("Stock_" + pid).value);
+function StockChange2(pid) {
+  var quantity = parseInt(document.getElementById("Quantity_" + pid).value);
+  var pricePro = parseInt(document.getElementById("Priced_" + pid).value);
+  var stockPro = parseInt(document.getElementById("Stock_" + pid).value);
 
 
-			console.log(quantity);
-			console.log(stockPro);
+console.log(quantity);
+console.log(stockPro);
 
 
-			 
-
-			  if(quantity > stockPro)
-			  {
-			  	alert("out ouf stock");
-			   document.getElementById("Quantity_" + pid).value = '1';
 
 
-			  }
-			  else
-			  {
-			  	 var totalPrice = quantity * pricePro;
-			  	  console.log(totalPrice);
+if(quantity > stockPro)
+{
+	alert("out ouf stock");
+ document.getElementById("Quantity_" + pid).value = '1';
 
-				  	  document.getElementById("priceIDdd" + pid).value = totalPrice;
-				  totalPrice = totalPrice.toLocaleString(undefined, {
-				    minimumFractionDigits: 2,
-				    maximumFractionDigits: 2
-				  });
-				    // document.getElementById("priceIDd" + pid).value = "₱" + totalPrice;
-			  }
- 
-			}
+
+}
+else
+{
+	 var totalPrice = quantity * pricePro;
+	  console.log(totalPrice);
+
+		  document.getElementById("priceIDdd" + pid).value = totalPrice;
+	totalPrice = totalPrice.toLocaleString(undefined, {
+	  minimumFractionDigits: 2,
+	  maximumFractionDigits: 2
+	});
+	  // document.getElementById("priceIDd" + pid).value = "₱" + totalPrice;
+}
+
+}
+
+$('#MyForm').on('click', '.btnAdd', function(event) {
+var idd = $(this).data('id');
+var quantity = parseInt($('#Quantity_' + idd).val());
+var ordernumId = $('#ordernumIdd').val();
+
+
+
+$.ajax({
+url: "pos_insert_orderlist.php",
+method: "POST",
+data: {
+idd: idd,
+quantity: quantity,
+ordernumIdd: ordernumId
+},
+success: function(data) {
+// Remove the clicked row from the table
+$("#ShowPruchases").html(data);
+$(event.target).closest('tr').remove();
+}
+});
+});
+$('#MyForm').on('click', '.btnDel', function(event) {
+var idd = $(this).data('id');
+
+$.ajax({
+url: "pos_del_orderlist.php",
+method: "POST",
+data: {
+idd: idd
+},
+success: function(data) {
+// Remove the clicked row from the table
+$(event.target).closest('tr').remove();
+}
+});
+});
 
 	
 	

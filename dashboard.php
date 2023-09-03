@@ -41,15 +41,11 @@ session_start();
 
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
- 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
      <script src="https://kit.fontawesome.com/6b23de7647.js" crossorigin="anonymous"></script>
     <title>Barkspace</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://kit.fontawesome.com/6b23de7647.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/stylenotif.css">
   </head>
   <body>
     <header class="sticky">
@@ -73,7 +69,13 @@ session_start();
               header nav ul li a span i::before{
                 display: none !important ;
                 }
-                }   
+                }
+                
+                  
+                 
+                  
+                       
+                
         </style>
         <a href="" class="logo"
           ><span class="red" style="color: pink">Bark</span
@@ -99,33 +101,19 @@ session_start();
         <a href="record.php"> <?php echo $fname?> </a>
         <a href="record.php"> Record </a>
            <a href="logout.php"> LOGOUT </a>
-
-                    <ul class="nav justify-content-end" >
-                    <li class="dropdown">
-                            <div class="dropdown-toggle text-light" style="cursor: pointer;" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="counter">5</span><i class="fas fa-bell" style="font-size: 20px;"></i>
-                            </div>
-                            <div class="dropdown-menu overflow-h-menu dropdown-menu-right">
-                                <div class="notification" >
-
-                                    <hr class="mt-1 mb-1">
-                                </div>
-
-                            </div>
-                        </li>
-                        </li>
-                    </ul>
-           <!-- <li class="dropdown">
-                            <div  class="dropdown-toggle text-light" id="noti_count" style="cursor: pointer;" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="counter">0</span><i class="fas fa-bell" style="font-size: 20px;"></i>
+           <li class="dropdown">
+                            <div  class="dropdown-toggle text-light" id="noti_count" style="cursor: pointer;" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                                <span class="counter" >0</span><i class="fas fa-bell" style="font-size: 1.5rem;"></i>
                             </div>
                             
-                            <div class="dropdown-menu overflow-h-menu dropdown-menu-right">
-                                <div class="notification">
+                            <div class="dropdown-menu overflow-h-menu dropdown-menu-right" style="padding: 100px !important; background-color: whitesmoke;  width: 320px;
+                            border: 15px solid skyblue; padding: 50px; margin: 20%; ">
+                                <div class="notification" style="font-weight: bold; font-size: 2rem; height: auto;">
+                                 
 
                                 </div>
                             </div>
-                        </li> -->
+                        </li>
 
         <!-- <button href="login.php" class="read-btn">
           LOGIN <i class="uil uil-arrow-right"></i>
@@ -135,10 +123,70 @@ session_start();
     </header>
     <section class="home" style="background:#202834;">
 
- <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <script src="java/notification.js"></script>
+
+    <script type="text/javascript">
+
+    $(document).ready(function (){
+
+        $('.notification').load('Ajax/Notification.php');
+        $('.counter').text('0').hide();
+
+        var counter = 0;
+
+        $('#form-submit').on('submit', function(event){
+            event.preventDefault();
+            
+            var subject = $('#subject').val().trim();
+            var comment = $('#comment').val().trim();
+
+            $('#sub-error').text('');
+            $('#com-error').text('');
+
+            if(subject != '' && comment != ''){
+                
+                $.ajax({
+                    type: "POST",
+                    url: "Ajax/Ins_notification.php",
+                    data: { 'subject' : subject, 'comment' : comment },
+                    success: function (response) {
+                        var status = JSON.parse(response);
+                        if(status.status == 101){
+                            counter++;
+                            $('.counter').text(counter).show();
+                            $('.notification').load('Ajax/Notification.php');
+                            $("#form-submit").trigger("reset");
+                            console.log(status.msg);
+                        }
+                        else{
+                           console.log(status.msg);
+                        }
+                    }
+                });
+
+            }
+            else{
+            
+                if(subject == ''){
+                    $('#sub-error').text("Please Enter Subject");
+                }
+                if(comment == ''){
+                    $('#com-error').text("Please Enter Comment");
+                }
+            }
+
+        });
+
+        $('#noti_count').on('click',function (){
+            counter = 0;
+            $('.counter').text('0').hide();
+        });
+
+    });
+
+</script>
 
 
       <div class="swiper bg-slider">
@@ -157,7 +205,7 @@ session_start();
                     
                    
              
-                       <select class="form-control" style=" color: black; text-shadow: 0 0 3px #FF0000; justify-content: center; align-items:center; text-align:center; margin: 2%; " name="branchId" id="idBranch" onchange="selectBranch()" >
+                       <select class="form-control" style=" color: black; text-shadow: 0 0 3px #FF0000; justify-content: center; align-items:center; text-align:center;" name="branchId" id="idBranch" onchange="selectBranch()" >
                         <option hidden>Make an Appointment</option>
                         
                       <?php
@@ -409,6 +457,30 @@ session_start();
          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body modalresponseViewAppointment">
+        <!-- <style>
+          /* The Modal (background) */
+          .modal {
+                    display: none;
+                    position: fixed; 
+                    z-index: 987654321 !important;
+                    width: auto!important;
+                    height:auto!important;
+                    top: -1%;
+                    left:-1%;
+                    border: 0px solid #ccc;
+                    padding: 0px;
+                    margin: 0px;
+                    overflow-y : scroll;
+                    background:#f2efef;
+                    max-height: calc(var(--vh, 1vh)*100);
+                    min-width:calc((100vw / var(--columns)) *  1);
+                    min-width:max-content;
+                    box-shadow: inset 0 0 0 1em rgba(255, 255, 255,.5),inset 0 -.5rem 0 0 rgb(255 255 255 /.1),inset 0 .5rem 0 0 rgb(255 255 255 /.1);
+                    transform: translate(-5%, -5%);
+                    transition: all ease-out .2s;
+                    animation: slideInFromTop 1s cubic-bezier(.17,.67,.83,.67) forwards;
+            }
+        </style> -->
         
                        
       </div>
@@ -696,7 +768,7 @@ function selectDep(){
             if (status == 'true') {
             $('#eventModal').modal('hide');
           
-              swal("Success", "Appointment Submit", "success");
+              swal("Submitted", "We will send you an email for your Request." , "success",);
 
 
             }

@@ -95,15 +95,15 @@ $noApp = 'maybe';
 
         <style type="text/css">
           .flat-button {
-    background-color: transparent;
-    border: solid 1px black;
-    color: #000;
-    cursor: pointer;
-    padding: 0;
-    font-size: 14px;
-    margin-left: 5px;
-    padding: 2px;
-    /* Add any other styles you want */
+        background-color: transparent;
+        color: green;
+        cursor: pointer;
+        padding: 50px;
+        font-size: 14px;
+        margin-left: 100px;
+        position: relative;
+        padding: 2px;
+        /* Add any other styles you want */
 }
         </style>
 <!-- modal -->
@@ -181,7 +181,7 @@ function addSelectedValue(selectElement) {
 
         // Create a remove button for the item
         var removeButton = document.createElement("button");
-        removeButton.textContent = "x";
+        removeButton.textContent = "❌";
        removeButton.className = "flat-button"; // Add a class name for styling 
         removeButton.addEventListener("click", function() {
             this.parentNode.remove(); // Remove the item when the button is clicked

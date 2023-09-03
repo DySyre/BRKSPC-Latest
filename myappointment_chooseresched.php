@@ -67,7 +67,7 @@ else if($ActionName == 'Cancel')
   <input type="hidden" name="cancelName" value="cancel">
       <input type="hidden" name="appdd" value="<?php echo $appIDd ?>">
 
-  <label>Note: If You Cancel Your Appointment we will not refund your payment.</label>
+  <label style="font-size: 2rem; text-shadow: 0 0 10px #fff;" class="btn btn-danger">Reminder, If You Cancel Your Appointment we will not refund your payment.</label>
 <div class="modal-footer">
 
       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

@@ -39,8 +39,9 @@ $delQuery2 =mysqli_query($con,$sql2);
                                    <input type="text" class="form-control" id="searchInput" placeholder="Search for an item">
                                      
 
-                                      <select class="form-control" onclick="itemSelected()" name="ebranchIdSelectNmae" id="ebranchIdSelect" style=" padding: 10px; font-size: 1.2rem;" >
-                                        <option hidden >Choose</option>
+                                      <select class="form-control" name="ebranchIdSelectNmae" id="ebranchIdSelect" style="padding: 10px; font-size: 1.2rem;" onclick="itemSelected()" >
+                                      <option hidden>Choose</option> 
+
                                       <?php
                                       $queryBranch = "SELECT * FROM `item_tbl` join item_category_tbl ON item_tbl.item_categoryidfk = item_category_tbl.item_category_id JOIN branch_tbl ON item_category_tbl.item_category_branch = branch_tbl.branch_id where item_stock != '0'";
                                         $resqueryBranch = mysqli_query($con, $queryBranch);
@@ -59,10 +60,11 @@ $delQuery2 =mysqli_query($con,$sql2);
                                         </select>
                                        
                                   </div>
-              <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                                  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 <script>
-    // Function to filter the dropdown options based on user input
-    $(document).ready(function() {
+   // Function to filter the dropdown options based on user input
+   $(document).ready(function() {
         $("#searchInput").on("keyup", function() {
             var value = $(this).val().toLowerCase();
             $("#ebranchIdSelect option").filter(function() {
@@ -80,7 +82,7 @@ $delQuery2 =mysqli_query($con,$sql2);
                                       <!-- <canvas id="myAreaChart" width="100%" height="40"></canvas> -->
                                    
                                    <div class="form-group" id="">
-                                      <label style="font-size: 1.5rem; " for="fname"><i class="fa-solid fa-cart-shopping"></i> Cart</label>
+                                      <label style="font-size: 1.5rem; font-weight: bold; color: green; " for="fname"><i class="fa-solid fa-cart-shopping"></i> Cart</label>
                                       
                                       <div class="row" id="ShowOrder">
                                         
@@ -101,7 +103,7 @@ $delQuery2 =mysqli_query($con,$sql2);
                             </div>
 
                            <div class="col-xl-6" style="height: 90vh;">
-                              <div class="card mb-4" style="height: 50vh; background-color: skyblue; font-weight: bold; font-size: 1.5rem; justify-content: center; align-items: center; text-align: center; box-shadow:  5px 10px #888888;">
+                              <div class="card mb-4" style="height: 90vh; color: black; background-color: whitesmoke; font-weight: bold; font-size: 1rem; font-size:1.3rem; box-shadow:  5px 10px #888888;">
                                 <div class="card-header">
                                 <i class="fa-solid fa-sort"></i>
                                   ORDER SUMMARY
@@ -233,7 +235,8 @@ $delQuery2 =mysqli_query($con,$sql2);
                     </div>
                 </div>
         </div>
-<!-- modal -->
+
+        <!-- modal -->
   <!-- <script src="./js/bootstrap.bundle.min.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.2/dist/chart.min.js"></script>
     <script src="../js/jquery-3.5.1.js"></script>
@@ -242,6 +245,7 @@ $delQuery2 =mysqli_query($con,$sql2);
     <script src="../js/script.js"></script>
 
     <script type="text/javascript">
+
 
 
 
@@ -438,9 +442,11 @@ function itemSelected(){
     });
 
     
-    
-   
-    
 
   </script>
+  
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+  
+  
+  
