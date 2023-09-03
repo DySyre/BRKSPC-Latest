@@ -125,8 +125,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
         body {
   background-color: #454f6b;
   font-family: "Asap", sans-serif;
-  font-size: 1.5rem;
-  color: #fff;
+
   }
 .logo{
     width: 100%;
@@ -206,22 +205,24 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
   font-family: "Asap", sans-serif;
   cursor: pointer;
   color: #fff;
-  font-size: 16px;
+  font-size: 19px;
   text-transform: uppercase;
   align-items: center;
-  width: 80px;
+  width: 300px;
+  height: 45px;
   border: 0;
   padding: 10px 0;
   margin-top: 10px;
-  margin-left: -5px;
+  margin-left: 50px;
   border-radius: 5px;
   background-color: #586279;
   transition: background-color 300ms;
+  
 }
 .login > button:hover {
   background-color: #2a2f3b;
 }
-.login a{
+/* .login a{
     font-family: "Asap", sans-serif;
     text-decoration: none;
     color: #fff;
@@ -237,7 +238,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 }
 .login a:hover{
     background-color: #2a2f3b;
-}
+} */
 .dropbtn {
   background-color: #586279;
   color: white;
@@ -291,6 +292,9 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 .dropdown:hover .dropbtn {
   background-color: #2a2f3b;
 }
+h4{
+  text-align: center;
+}
 
 @keyframes wawes {
   from {
@@ -318,6 +322,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
       <input type="email" name="email" placeholder="Email" />
       <input id="password_validation" type="password" name="password" placeholder="Password" required />
       
+      <a href="forgot.php" style="text-decoration:none" >Forgot Password?</a><br>
     
             
      
@@ -342,7 +347,8 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
         }
       </style>
       <button type="submit">Login</button> -->
-     <button type="submit" class="btn active">Login</button>
+      
+     <button type="submit" class="btn active" id="log">Login</button><br>
      <style>
               .btn{
                 pointer-events: none;
@@ -350,9 +356,10 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
               .btn.active{
                 pointer-events: auto;
               }
+              
             </style>
-      <a href="signup.php">Click to Signup</a><br>
-      <style>
+      <h4>Don't have a account? <a href="signup.php" style="text-decoration:none">Click to Signup</a><br>
+      <!-- <style>
         a, button{
           text-decoration:none !important ;
           font-size : small!important;
@@ -360,24 +367,21 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
           text-transform: uppercase;
           font-family:'Poppins', sans-serif;
           font-weight:bold;
-          padding:.5em  4em;
-          border-radius:7%;
-          border:solid thin white;
-          box-shadow:-8px -9px 10px rgba(255,255,255,.1),
-          inset 8px 9px 10px rgba(0,0,0,.1) ,
+          /* padding:.5em  4em; */
+          
         }
         a{
           top: 100px;
         }
-      </style>
+      </style> -->
       
       <!-- <button class="dropbtn">Branch</button>
       <div class="dropdown-content" style="left:0;">
       <a href="#">Marilao</a>
       <a href="#">Balagtas</a>
       </div> -->
-      </div> <br/><br/><br/>
-      <a href="landing.html">Back</a>
+      </div> <br/><br/>
+      <a href="landing.html" style="text-decoration:none">Back</a>
       
     </form>
   </body>
