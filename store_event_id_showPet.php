@@ -173,7 +173,6 @@ else
                 <div class="form-group"> 
                  <label for="gender">Gender <label style="color: #435D7D;"></label> <label style="color:red; font-size: 1.2rem;">*</label></label>
                   <select name="nchild_kasarian1[]"  class="form-control" required="required">
-                 
                     <option value="female">Female</option>
                     <option value="male">Male</option>
                  </select> 
@@ -188,27 +187,21 @@ else
               <div class="col-md-2">
                 <div class="form-group"> 
                  <label for="gender">Pet Type <label style="color: #435D7D;"></label> <label style="color:red; font-size: 1.2rem;">*</label></label>
-                  <input list="petType1[]" name="petType1[]" pattern="[A-Za-z]{1,}" class="form-control" required="required">
-                  <datalist id="petType1[]">
-                                      <option value="Cat">
-                                      <option value="Dog">
-                                      <option value="Fish">
-                                      <option value="Rabbit">
-                                      <option value="Bird">
-                                      </datalist>
+                  <select name="petType1[]"  class="form-control" required="required">
+      
+                  <option value="cat">Cat</option>
+                    <option value="dog">Dog</option>
+                     <option value="fish">Fish</option>
+                     <option value="rabbit">rabbit</option>
+                      <option value="bird">bird</option>
+                      <option value="reptile">reptile</option>
+                 </select> 
               </div>       
             </div> 
               <div class="col-md-3">
                 <div class="form-group">
                 <label for="dob">Breed(optional)<label style="color: #435D7D;"></label><label style="color:red; font-size: 1.2rem;"></label></label>
-                <input list="petBreed1[]" name="petBreed1[]" class="form-control" pattern="[A-Za-z]{1,}" name="breed1[] ">
-                                      <datalist id="petBreed1[]">
-                                      <option value="Aspin">
-                                      <option value="Puspin">
-                                      <option value="Siamese">
-                                      <option value="Bulldog">
-                                      <option value="Persian">
-                                      </datalist>
+                <input type="text" class="form-control" name="breed1[] ">
               </div>       
             </div>
               <div class="form-group" id="">
