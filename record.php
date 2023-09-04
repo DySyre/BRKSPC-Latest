@@ -83,12 +83,14 @@ session_start();
         <a href=""> Record </a>
            <a href="logout.php"> LOGOUT </a>
            <li class="dropdown">
-                            <div  class="dropdown-toggle text-light" id="noti_count" style="cursor: pointer;" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="counter">0</span><i class="fas fa-bell" style="font-size: 20px;"></i>
+                            <div  class="dropdown-toggle text-light" id="noti_count" style="cursor: pointer;" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                                <span class="counter" >0</span><i class="fas fa-bell" style="font-size: 1.5rem;"></i>
                             </div>
                             
-                            <div class="dropdown-menu overflow-h-menu dropdown-menu-right">
-                                <div class="notification">
+                            <div class="dropdown-menu overflow-h-menu dropdown-menu-right" style="padding: 100px !important; background-color: whitesmoke;  width: 320px;
+                            border: 15px solid skyblue; padding: 50px; margin: 20%; ">
+                                <div class="notification" style="font-weight: bold; font-size: 2rem; height: auto;">
+                                 
 
                                 </div>
                             </div>

@@ -1,6 +1,7 @@
 <?php 
  include 'include/header.php';
  include '../connect.php';
+ 
 $CompletId = $_POST['id'];
 $userid = $_POST['idx'];
 $sameIdAppoint = $_POST['sameIdAppoint'];
@@ -13,8 +14,54 @@ if($CompletId == 'complete')
 {
    $sql = "SELECT * FROM `appointment_tbl` JOIN users_balagtas ON appointment_tbl.pet_ownerid = users_balagtas.id JOIN schedule_tbl ON appointment_tbl.appointment_date = schedule_tbl.schedule_id  WHERE appointment_payment_status = 'approved' and `appointment_payment_id` =".$userid;
 $result = mysqli_query($con,$sql);
-while( $row = mysqli_fetch_array($result) ){
-?>
+while( $row = mysqli_fetch_array($result)
+ ){
+
+  
+// // SQL query to copy data from appointment to notification id to
+// $sql = "INSERT INTO notification (user_petnotifid)
+//         SELECT user_id
+//         FROM users_balagtas";
+
+// if ($con->query($sql) === TRUE) {
+//     echo "Data copied successfully.";
+// } else {
+//     echo "Error copying data: " . $con->error;
+// }
+
+// // Close the connection
+// $con->close();
+
+
+// // SQL query to copy data from appointment to notification subject head to
+// $sql = "INSERT INTO notification (n_sub)
+//         SELECT appointment_payment_status
+//         FROM appointment_tbl";
+
+// if ($con->query($sql) === TRUE) {
+//     echo "Data copied successfully.";
+// } else {
+//     echo "Error copying data: " . $con->error;
+// }
+
+// // Close the connection
+// $con->close();
+
+
+// // SQL query to copy data from appointment to notification message to body
+// $sql = "INSERT INTO notification (n_msg)
+//         SELECT appointment_coment
+//         FROM appointment_tbl";
+
+// if ($con->query($sql) === TRUE) {
+//     echo "Data copied successfully.";
+// } else {
+//     echo "Error copying data: " . $con->error;
+// }
+
+// // Close the connection
+// $con->close();
+// ?>
 
 
     <div class="row">
@@ -251,7 +298,7 @@ function CashChange(){
 
              <div class="col-md-11 mt-4" style=" margin: 20px; color: green; font-weight: bold; padding: 10px; box-shadow: 10px 5px #888888; margin: 0; background-color: whitesmoke; ">
                 <label>PAYMENT:</label>
-              <input type="text" id="cashAmountId" name="cashAmount" onchange="CashChange()" style="width: 15%; margin-left: 80px;" required>
+              <input type="text" id="cashAmountId" name="cashAmount" onchange="CashChange()" style="width: 15%; margin-left: 80px;" iredrequ>
 
               
             </div>
