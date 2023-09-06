@@ -13,7 +13,7 @@
         <h2>Reset Password</h2>
         <p>It's quick and easy.</p>
         <div id="line"></div>
-        <form action="verifyCode.php" method="POST" autocomplete="off">
+        <form action="#" method="POST" autocomplete="off">
             <?php
             include("connect.php");
             include("functions.php");
@@ -50,54 +50,93 @@
     //         $errors['otp_error'] = "You enter invalid verification code!";
     //     }
     // }
+
+    session_start();
+    if(isset($_POST["verify"])){
+        $otp = $_SESSION['otp'];
+        $email = $_SESSION['mail'];
+        $otp_code = $_POST['otp_code'];
+
+        if($otp != $otp_code){
+            ?>
+           <script>
+               alert("Invalid OTP code");
+           </script>
+           <?php
+        }else{
+           echo '<script> window.location.href = "newPassword.php";</script>';
+            ?>
+             <script>
+                 alert("Verfiy account done, you may sign in now");
+                   window.location.replace("newPassword.php");
+             </script>
+             <?php
+        }
+
+    }
+
             ?>      
-            <input type="number" name="vericode" placeholder="Verification Code" required><br>
-            <input type="submit" name="submit" value="Verify">
+            <input type="number" id="otp" name="otp_code" placeholder="Verification Code" required><br>
+            <input type="submit" name="verify" value="Verify">
         </form>
     </div>
 </body>
 
-<script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.2/dist/chart.min.js"></script>
+    <script src="js/jquery-3.5.1.js"></script>
+    <script src="js/jquery.dataTables.min.js"></script>
+    <script src="js/dataTables.bootstrap5.min.js"></script>
+    <script src="java/validation.js"></script>
+    <script src="js/script.js"></script>
+    <script type="text/javascript">
+
+
     
-    $(document).on('submit', '#verifyCode', function(e) {
-    e.preventDefault();
-    var form = $('#verifyCode')[0];
-    var formdata = new FormData(form);
-    $.ajax({
-    type: 'POST',
-    url:'verifyCode.php',
-    data: formdata,
-    contentType: false,
-    processData: false,
-   success: function(data) {
-            var json = JSON.parse(data);
-            var status = json.status;
-            if (status == 'true') {
-            $('#verificationModal').modal('hide');
+//     $(document).on('submit', '#verifyCode2', function(e) {
+//     e.preventDefault();
+//     var form = $('#verifyCode2')[0];
+//     var formdata = new FormData(form);
+//     $.ajax({
+//     type: 'POST',
+//     url:'verifyCode2.php',
+//     data: formdata,
+//     contentType: false,
+//     processData: false,
+//    success: function(data) {
+//             var json = JSON.parse(data);
+//             var status = json.status;
+//             if (status == 'true') {
+//             $('#verificationModal').modal('hide');
             
-                  window.location.href = "dashboard.php";
+//                   window.location.href = "dashboard.php";
 
-            }
+//             }
             
             
-            else if (status == 'veriWrong') { 
+//             else if (status == 'veriWrong') { 
               
-             swal("Error", "Wrong Verification Code", "error");
+//              swal("Error", "Wrong Verification Code", "error");
 
 
-            }
+//             }
             
             
-            else if (status == 'false') {
+//             else if (status == 'false') {
               
-             swal("Error", "Register error", "error");
+//              swal("Error", "Register error", "error");
 
 
-            }
+//             }
             
-          }
+//           }
     
-  });
-  });
-    </script>
+//   });
+//   });
+//     </script>
+     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </html>
+
+<?php 
+  
+
+?>
