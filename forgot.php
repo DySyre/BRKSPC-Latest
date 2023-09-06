@@ -8,6 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forgot Your Password In Php</title>
     <link rel="stylesheet" href="css/forgot.css">
+    
+    
 </head>
 
 <body>
@@ -15,7 +17,7 @@
         <h2>Email Check</h2>
         <p>It's quick and easy.</p>
         <div id="line"></div>
-        <form action="#" method="POST" autocomplete="off">
+        <form method="POST" autocomplete="off" enctype="multipart/form-data">
         <?php
 include("connect.php");
 include("functions.php");
@@ -144,5 +146,7 @@ if (isset($_POST['email'])) {
         </form>
     </div>
 </body>
+
+
 
 </html>
