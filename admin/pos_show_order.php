@@ -44,7 +44,7 @@ while( $row = mysqli_fetch_array($result) )
                   <th>Stock</th>
                   <th>QTY</th>
                   <th>Price</th>
-                  <th>Amount</th>   
+                  <th>Amount</th>  
                   <th></th>                                    
                 </thead>
                   
@@ -159,7 +159,8 @@ while( $row = mysqli_fetch_array($result) )
                   <th>Stock</th>
                   <th>QTY</th>
                   <th>Price</th>
-                  <th>Amount</th>   
+                  <th>Amount</th> 
+				  <th>Discount % <br>(optional)</th>  
                   <th></th>                                    
                 </thead>
                   
@@ -178,8 +179,10 @@ while( $row = mysqli_fetch_array($result) )
 						 <td><input type="number" style="width: 60%;"  name="qty[]" class="qty" min="1" value="1" onchange="StockChange2('<?php echo $row1['pos_order_list_id']; ?>')" id="Quantity_<?php echo $row1['pos_order_list_id']; ?>"></td>
 
 						 <td><input type="number" style="width: 100%; border: none;" name="stockName[]" class="qty" min="1" max="99" onkeypress="if(this.value.length == 2) return false;" value="<?php echo $row1['pos_order_list_itemprice']?>"  id="Priced_<?php echo $row1['pos_order_list_id']; ?>" readonly></td>
-						 <td><input type="text" name="amount[]" class="price" style="background-color: transparent; width: 80%; border: none;" id="priceIDdd<?php echo $row1['pos_order_list_id']; ?>"  value="<?php echo $row1['pos_order_list_itemprice']; ?>" readonly></td>
+						 <td><input type="text" name="amount[]" class="price" style="background-color: transparent; width: 90%; border: none;" id="priceIDdd<?php echo $row1['pos_order_list_id']; ?>"  value="<?php echo $row1['pos_order_list_itemprice']; ?>" readonly></td>
 						
+						 <td><input type="number" style="width: 90%;" name="discount[]" min="0" max="100" value="0" onchange="calculateTotal('<?php echo $row1['pos_order_list_id']; ?>')" id="Discount_<?php echo $row1['pos_order_list_id']; ?>"></td>
+
 						 <td><a href="javascript:void();" data-id="<?php echo $row1['pos_order_list_id']; ?>"  class="btn btn-sm btnAdd text-white"  style="border: none; background-color: #3D1A5A;"> Add</a></td>
 						<td><a href="javascript:void();" data-id="<?php echo $row1['pos_order_list_id']; ?>"  class="btn btn-sm btnDel text-white"  style="border: none; background-color: red;"> Del</a></td>
 
@@ -275,7 +278,16 @@ $(event.target).closest('tr').remove();
 });
 });
 
+function calculateTotal(itemId) {
+    var quantity = parseFloat(document.getElementById("Quantity_" + itemId).value);
+    var price = parseFloat(document.getElementById("Priced_" + itemId).value);
+    var discount = parseFloat(document.getElementById("Discount_" + itemId).value);
 
+    var discountAmount = (discount / 100) * price;
+    var totalAmount = quantity * (price - discountAmount);
+
+    document.getElementById("priceIDdd" + itemId).value = totalAmount.toFixed(2);
+}
 
 
 

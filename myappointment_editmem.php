@@ -1,5 +1,13 @@
-<?php session_start();
+<?php 
+
+
+
+session_start();
+
+
+
 include "connect.php";
+
   $clientId =  $_SESSION['client_id'];
 
 $userid = $_POST['id'];

@@ -29,12 +29,14 @@ session_start();
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"> -->
     <link rel="stylesheet" href="css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/stylenotif.css">
     <link rel="icon" href="images/logo.png" type="image/icon type" />
     <link
       rel="stylesheet"
       href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
     />
-    <link rel="stylesheet" href="style1.css" />
+   <link rel="stylesheet" href="css/style1.css">
+   <link rel="stylesheet" href="./slide.css">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
@@ -102,13 +104,16 @@ session_start();
         <a href="record.php"> Record </a>
            <a href="logout.php"> LOGOUT </a>
            <li class="dropdown">
-                            <div  class="dropdown-toggle text-light" id="noti_count" style="cursor: pointer;" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
-                                <span class="counter" >0</span><i class="fas fa-bell" style="font-size: 1.5rem;"></i>
+                            <div  class="row text-light" id="noti_count" style="cursor: pointer;" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                            <i class="fas fa-bell" style="font-size: 1.5rem;"></i>
+                                
                             </div>
                             
-                            <div class="dropdown-menu overflow-h-menu dropdown-menu-right" style="padding: 100px !important; background-color: whitesmoke;  width: 320px;
-                            border: 15px solid skyblue; padding: 50px; margin: 20%; ">
-                                <div class="notification" style="font-weight: bold; font-size: 2rem; height: auto;">
+                            <div class="dropdown-menu overflow-h-menu dropdown-menu-right">
+                            <h1>Notification</h1>
+                            
+                                <div class="notification">
+                                
                                  
 
                                 </div>
@@ -360,87 +365,52 @@ session_start();
       <!--INFO SECTION-->
       <div class="infoSection">
         <div class="infoHeader" data-aos="fade-up" data-aous-duration="1000">
-          <h1>
+          <h1 style="color: #fff;">
             We analyse Your Pet Health States <br />
             <span style="color: #e0501b">In Order to Top Services</span>
           </h1>
         </div>
         
-        <div class="infoCards">
-          <div class="card one" data-aos="fade-up" data-aous-duration="1000">
-            <!-- <img
-              src="images/protect.png"
-              class="cardoneImg"
-              alt=""
-              data-aos="fade-up"
-              data-aous-duration="1100"
-            /> -->
-            <div class="cardbgone">
-              <div class="cardContent">
-                <h2>About Us</h2>
-                <p>
-                  An so vulgar to on points wanted rapture our resolving
-                  continued household.
-                </p>
-                <!-- <a href="services.html">
-                  <div class="cardBtn">
-                    <img src="images/right.png" alt="" class="cardIcon" />
-                  </div>
-                </a> -->
-              </div>
-            </div>
+       <div class="slider">
+        <div class="slide-track">
+          <div class="slide">
+            <img src="img/l.jpg">
           </div>
-          <div class="card two" data-aos="fade-up" data-aous-duration="1300">
-            <!-- <img
-              src="images/protect.png"
-              class="cardtwoImg"
-              alt=""
-              data-aos="fade-up"
-              data-aous-duration="1300"
-            /> -->
-            <div class="cardbgtwo">
-              <div class="cardContent">
-                <h2>Barkspace</h2>
-                
-                <!-- <a href="">
-                  <div class="cardBtn" style="justify-content: center; align-items: center; text-align: center;">
-                    <img src="images/right.png" alt="" class="cardIcon"  />
-                  </div>
-                </a> -->
-              </div>
-            </div>
+          <div class="slide">
+            <img src="img/as.jpg">
+          </div>
+          <div class="slide">
+            <img src="img/7.jpg">
+          </div>
+          <div class="slide">
+            <img src="img/8.jpg">
+          </div>
+          <div class="slide">
+            <img src="img/9.jpg">
           </div>
 
-          <div class="card three" data-aos="fade-up" data-aous-duration="1600">
-            <!-- <img
-              src="images/protect.png"
-              class="cardthreeImg"
-              alt=""
-              data-aos="fade-up"
-              data-aous-duration="1300"
-            /> -->
-            <div class="cardbgthree">
-              <style>
-                .cardbgthree{
-                  background-color: red;
-                
-                }
-              </style>
-              <div class="cardContent">
-                <h2>Developer</h2>
-                <ul>
-                <a href="https://www.facebook.com/profile.php?id=100088500110682"><i class="fa-brands fa-facebook-f"></i> Jerwin Tugas</a><br>
-                <a href="" style="text-decoration: none; color: gray; font-size: 1.2rem; position: flex-box;"><br><i class="fa-brands fa-facebook-f"></i> Alexander Inciong</a>
-                </ul>
-                <!-- <a href="dashboard.php">
-                  <div class="cardBtn">
-                    <img src="images/right.png" alt="" class="cardIcon" />
-                  </div>
-                </a> -->
-              </div>
-            </div>
+                  <!-- SAME 5 SLIDES -->
+
+                  <div class="slide">
+            <img src="img/l.jpg">
           </div>
+          <div class="slide">
+            <img src="img/as.jpg">
+          </div>
+          <div class="slide">
+            <img src="img/7.jpg">
+          </div>
+          <div class="slide">
+            <img src="img/8.jpg">
+          </div>
+          <div class="slide">
+            <img src="img/9.jpg">
+          </div>
+
+
+
         </div>
+       </div>
         
         <!-- <iframe width="560" height="315" src="" title="YouTube video player" frameborder="0" allow="accelorometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
       

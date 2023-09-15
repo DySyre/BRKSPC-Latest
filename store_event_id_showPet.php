@@ -336,34 +336,38 @@ while ($rowCategory = mysqli_fetch_assoc($resQueryCategory)) {
               </style>
               <center>
                 
-                <label for="">Please Pay the Appointment Fee ₱50.00 And Upload Proof of Payment</label>
+                <label for="">Please Pay the Appointment Fee ₱20.00 And Upload Proof of Payment</label>
                 <input type="file" name="qrpic" class="form-control col-2-custom">
                 <div class="modal-footer">
                 <div class="modal-body text-center"> <!-- Center align the content -->
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
-    Instruction and T&C
-</button>
-<div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">
+                  Terms and Conditions
+                </button>
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Terms and Conditions</h5>
+                <h5 class="modal-title" id="exampleModalLongTitle">Terms and Conditions</h5>
                 <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
                 
             </div>
-            <div class="modal-body">
+            <div class="modal-body" style="font-weight: bold;display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 0;
+  margin-right: 0;" align="left">
                 <!-- Content goes here -->
                 <p>⚫ Please note that you are expected to come 5 minutes earlier than scheduled.
                 Our policy is first-come, first-served and will prioritize emergencies.
                 </p>
                 <p>⚫ Appointment fee is rebateable upon successful transaction in clinic.</p>
                 <p>⚫ After sending appointment fee, please upload proof of payment.
-                You will receive an email and notification on system regarding to status of your appointment.
+                      You will receive an email and notification on system regarding to status of your appointment.
                 </p>
             </div>
-            <!-- <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            </div> -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" onclick="$('#exampleModalCenter').modal('hide');">Got it!</button>
+            </div>
         </div>
     </div>
 </div>

@@ -25,118 +25,35 @@
             require('assets/libs/email/PHPMailer/SMTP.php');
             require('assets/libs/email/PHPMailer/PHPMailer.php');
             // if Verify Button Clicked
-    // if (isset($_POST['verify'])) {
-    //     $_SESSION['message'] = "";
-    //     $otp = mysqli_real_escape_string($con, $_POST['otp']);
-    //     $otp_query = "SELECT * FROM users_balagtas WHERE code = $otp";
-    //     $otp_result = mysqli_query($con, $otp_query);
+    if (isset($_POST['verify'])) {
+        $_SESSION['message'] = "";
+        $otp = mysqli_real_escape_string($con, $_POST['otp']);
+        $otp_query = "SELECT * FROM users_balagtas WHERE email = $otp";
+        $otp_result = mysqli_query($con, $otp_query);
 
-    //     if (mysqli_num_rows($otp_result) > 0) {
-    //         $fetch_data = mysqli_fetch_assoc($otp_result);
-    //         $fetch_code = $fetch_data['code'];
+        if (mysqli_num_rows($otp_result) > 0) {
+            $fetch_data = mysqli_fetch_assoc($otp_result);
+            $fetch_code = $fetch_data['email'];
 
-    //         $update_status = "Active";
-    //         $update_code = 0;
+            $update_status = "Active";
+            $update_code = 0;
 
-    //         $update_query = "UPDATE users_balagtas SET status = '$update_status' , code = $update_code WHERE code = $fetch_code";
-    //         $update_result = mysqli_query($con, $update_query);
+            $update_query = "UPDATE users_balagtas SET status = '$update_status' , code = $update_code WHERE code = $fetch_code";
+            $update_result = mysqli_query($con, $update_query);
 
-    //         if ($update_result) {
-    //             header('location: login.php');
-    //         } else {
-    //             $errors['db_error'] = "Failed To Insering Data In Database!";
-    //         }
-    //     } else {
-    //         $errors['otp_error'] = "You enter invalid verification code!";
-    //     }
-    // }
-
-    session_start();
-    if(isset($_POST["verify"])){
-        $otp = $_SESSION['otp'];
-        $email = $_SESSION['mail'];
-        $otp_code = $_POST['otp_code'];
-
-        if($otp != $otp_code){
-            ?>
-           <script>
-               alert("Invalid OTP code");
-           </script>
-           <?php
-        }else{
-           echo '<script> window.location.href = "newPassword.php";</script>';
-            ?>
-             <script>
-                 alert("Verfiy account done, you may sign in now");
-                   window.location.replace("newPassword.php");
-             </script>
-             <?php
+            if ($update_result) {
+                header('location: login.php');
+            } else {
+                $errors['db_error'] = "Failed To Insering Data In Database!";
+            }
+        } else {
+            $errors['otp_error'] = "You enter invalid verification code!";
         }
-
     }
-
             ?>      
-            <input type="number" id="otp" name="otp_code" placeholder="Verification Code" required><br>
+            <input type="number" name="otp" placeholder="Verification Code" required><br>
             <input type="submit" name="verify" value="Verify">
         </form>
     </div>
 </body>
-
-<script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.2/dist/chart.min.js"></script>
-    <script src="js/jquery-3.5.1.js"></script>
-    <script src="js/jquery.dataTables.min.js"></script>
-    <script src="js/dataTables.bootstrap5.min.js"></script>
-    <script src="java/validation.js"></script>
-    <script src="js/script.js"></script>
-    <script type="text/javascript">
-
-
-    
-//     $(document).on('submit', '#verifyCode2', function(e) {
-//     e.preventDefault();
-//     var form = $('#verifyCode2')[0];
-//     var formdata = new FormData(form);
-//     $.ajax({
-//     type: 'POST',
-//     url:'verifyCode2.php',
-//     data: formdata,
-//     contentType: false,
-//     processData: false,
-//    success: function(data) {
-//             var json = JSON.parse(data);
-//             var status = json.status;
-//             if (status == 'true') {
-//             $('#verificationModal').modal('hide');
-            
-//                   window.location.href = "dashboard.php";
-
-//             }
-            
-            
-//             else if (status == 'veriWrong') { 
-              
-//              swal("Error", "Wrong Verification Code", "error");
-
-
-//             }
-            
-            
-//             else if (status == 'false') {
-              
-//              swal("Error", "Register error", "error");
-
-
-//             }
-            
-//           }
-    
-//   });
-//   });
-//     </script>
-     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </html>
-
-<?php 
-  
-
-?>

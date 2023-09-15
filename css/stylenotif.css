@@ -1,64 +1,46 @@
-*{
-    text-decoration: none;
+
+.dropdown-menu{
+    background: rgba(1,6,10,.9);
+    border-radius: unset;
+    border:none;
 }
-body{
-    background: url("../Background/backwall.jpg") no-repeat center fixed;
-    background-size: cover;
-}
-.counter{
-    width: 22px;
-    height: 22px;
-    line-height: 22px;
-    margin-right: 5px;
-    display:contents;
-    border-radius: 5px;
-    background-color: red;
-    text-align: center;
-    font-size: 13px;
-}
-.box-center{
-    width: 100%;
-    height: 100%;
-    display: flex;
+.dropdown-menu caption{
+    font-size: 2rem;
+    color: blue;
     justify-content: center;
+    text-align: center;
+    align-items: center;
 }
-.box-center-sub{
-    width: 500px;
-    height: auto;
+.notification{
+    overflow: hidden;
+    margin-right: 400px;
+}
+.dropdown-menu h1{
+    color: black;
+    font-size: 1.5rem;
+    text-transform: capitalize;
+
+}
+
+.notification .dropdown-item{
+    color:black;
+    margin: 10%;
     padding: 30px;
-    border-radius: 5px;
-    background-color: rgba(0,0,0,0.5);
-    box-shadow: 0px 0px 10px 1px black;
-    color: white !important;
+    width: 100%;
+    content: normal;
+    text-align: center;
 }
-.overflow-h-menu{
-    height: 300px !important;
-    overflow-y: scroll;
+.notification .dropdown-item h6{
+    color: blue;
+    text-align: left;
+    text-transform: capitalize;
+    font-size: 1.3rem;
 }
-.text-error{
-    color: seashell !important;
+.notification .dropdown-item span{
+    color: black;
+    text-align: right;
+    font-weight: bold;
+    font-size: 1.2rem;
+    width: 10%;
+    padding: 15px;
 }
-
-.dropdown {
-    position: relative;
-    display: inline-block;
-  }
-
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    min-width: 100px;
-    padding: 10px;
-    background-color: #f9f9f9;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-  }
-
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
-
-  .dropdown-content > a {
-    display: block;
-    margin-bottom: 10px; /* Add spacing between items */
-  }

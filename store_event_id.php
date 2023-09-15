@@ -284,12 +284,12 @@ while ($rowCategory = mysqli_fetch_assoc($resQueryCategory)) {
               </style>
               <center>
                 
-                <label for="">Please Pay the Appointment Fee ₱50.00 And Upload Proof of Payment</label>
+                <label for="">Please Pay the Appointment Fee ₱20.00 And Upload Proof of Payment</label>
                 <input type="file" name="qrpic" class="form-control col-2-custom">
                 <div class="modal-footer">
                 <div class="modal-body text-center"> <!-- Center align the content -->
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
-    Instruction and T&C
+                Terms and Conditions
 </button>
 <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -615,15 +615,15 @@ while ($rowCategory = mysqli_fetch_assoc($resQueryCategory)) {
               </style>
              <center>
                 
-                <label for="">Please Pay the Appointment Fee ₱50.00 And Upload Proof of Payment</label>
+                <label for="">Please Pay the Appointment Fee ₱20.00 And Upload Proof of Payment</label>
                 <input type="file" name="qrpic" class="form-control col-2-custom">
                 <div class="modal-footer">
                 <div class="modal-body text-center"> <!-- Center align the content -->
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
-    Instruction and T&C
+                Terms and Conditions
 </button>
 <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog" style="position: relative; box-shadow: 0 0 15px gray;">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Terms and Conditions</h5>

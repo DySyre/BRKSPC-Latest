@@ -35,8 +35,15 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
               }
               else
               {
-                $text = "Wrong username and password!";
-                echo $text;   
+                $text = "Wrong username or password!"; 
+                      echo "<p style='color: yellow;
+                      text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue; font-size: 1.2rem; text-transform: uppercase;
+                      text-align: center; justify-content: center; align-items: center;
+                      padding: 10px;
+                      left-margin: -100px;
+                      border: 5px solid white;
+                      
+                      margin: 0; '>" . $text . "</p>";
 
               }
             }
@@ -88,14 +95,29 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
                     }
                     else
                     {
-                      $text = "Wrong username and password!";
-                      echo $text;   
+                      $text = "Wrong username or password!"; 
+                      echo "<p style='color: yellow;
+                      text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue; font-size: 1.2rem; text-transform: uppercase;
+                      text-align: center; justify-content: center; align-items: center;
+                      padding: 10px;
+                      left-margin: -100px;
+                      border: 5px solid white;
+                      
+                      margin: 0; '>" . $text . "</p>";
 
                     }
 
                 }
                 else{
-                  echo "Please enter some valid information!";
+                  $text = "Please enter some valid Information!"; 
+                      echo "<p style='color: red;
+                      text-shadow: 1px 1px 2px red, 0 0 25px blue, 0 0 5px darkblue; font-size: 1.2rem; text-transform: uppercase;
+                      text-align: center; justify-content: center; align-items: center;
+                      padding: 10px;
+                      left-margin: -100px;
+                      border: 5px solid white;
+                      
+                      margin: 0; '>" . $text . "</p>";
 
                 }
 
@@ -150,17 +172,15 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 }
 
 .login {
-  
-
   overflow: hidden;
   background-color: white;
   padding: 40px 30px 30px 30px;
-  border-radius: 10px;
+  border-radius: 15px;
   position: absolute;
   top: 50%;
   left: 50%;
   width: 400px;
-  height: 450px;
+  height: 500px;
   transform: translate(-50%, -50%);
   transition: transform 300ms, box-shadow 300ms;
   box-shadow: 5px 5px 10px 10px rgba(2, 128, 144, 0.2); 
@@ -307,22 +327,26 @@ h4{
 
     </style>
     <div class="logo">
-    <img src="images/1.jpg" alt="" style="height: 100%; width: 100%; background: transparent;">
+    <img src="img/vet.jpg" alt="" style="opacity: 0.6; height: 100%; width: 100%; background: transparent;">
     </div>
-  
+    
     <form class="login" action="login.php" method="post">
      
     
-      <div class="title"><span style="color: pink;">Bark</span><span style="color: skyblue;">Space</span></div>
+      <div class="title"><span style="color: pink;">Bark</span><span style="color: skyblue;">Space</span>
+    </div>
+    <p style="font-size: 1rem;text-align: center; font-weight: normal; text-shadow: 2px 2px 4px #0000; color: skyblue;">Login with your email and password.</p>
       <style>
         .title{
           text-transform: uppercase;
         }
       </style>
+     
       <input type="email" name="email" placeholder="Email" />
       <input id="password_validation" type="password" name="password" placeholder="Password" required />
       
-      <a href="forgot.php" style="text-decoration:none" >Forgot Password?</a><br>
+      
+      <a href="forgot.php" style="text-decoration:none;" class="float-end" >Forgot Password?</a><br>
     
             
      
@@ -381,7 +405,7 @@ h4{
       <a href="#">Balagtas</a>
       </div> -->
       </div> <br/><br/>
-      <a href="landing.html" style="text-decoration:none">Back</a>
+      <a href="landing.html" style="text-decoration:none">BACK</a>
       
     </form>
   </body>
