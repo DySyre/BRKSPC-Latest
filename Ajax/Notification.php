@@ -1,8 +1,28 @@
 <?php
+  include("../Connect.php");
 require_once '../Config/UFunction.php';
-session_start();
+$query = "SELECT user_petnotifid FROM notification";
 
-$_SESSION['user_petnotifid'] = $user_petnotifid; // Store the user_petnotifid value in the session
+$result = mysqli_query($con, $query);
+
+if (!$result) {
+    die("Query failed: " . mysqli_error($con));
+}
+
+// Fetch the results as an associative array
+$userPetNotifIds = array();
+while ($row = mysqli_fetch_assoc($result)) {
+    $userPetNotifIds[] = $row;
+}
+
+// Close the database connection
+mysqli_close($con);
+// Check if $_SESSION['user_petnotifid'] exists and dump its value
+if (isset($_SESSION['user_petnotifid'])) {
+    var_dump($_SESSION['user_petnotifid']);
+} else {
+    echo "Session variable 'user_petnotifid' is not set.";
+}
 $UDF_call = new UFunction();
 
 // Assuming you have retrieved the user_petnotifid value from the database and assigned it to $user_petnotifid
