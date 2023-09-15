@@ -29,6 +29,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
               
               if($user_data['password'] === md5($password))
               {
+                $_SESSION['user_petnotifid'] = $user_petnotifid; // Store the user_petnotifid value in the session
                 $_SESSION['user_id'] = $user_data['user_id'];
                 $_SESSION['client_id'] = $user_data['user_id'];
                 header("Location: dashboard.php");
