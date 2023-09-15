@@ -33,7 +33,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
             
                 // Retrieve the user_petnotifid value from your database
                 // Replace 'your_column_name' with the correct column name
-                $queryForUserPetNotifId = "SELECT user_petnotifid FROM notification WHERE user_petnotifid = " . $user_data['user_id'];
+                $queryForUserPetNotifId = "SELECT user_petnotifid FROM notification WHERE user_petnotifid = " . $user_data['id'];
                 $resultForUserPetNotifId = mysqli_query($con, $queryForUserPetNotifId);
             
                 if ($resultForUserPetNotifId) {
