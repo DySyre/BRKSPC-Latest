@@ -33,6 +33,16 @@ $amountTotal = number_format($amount,2);
 	</div>
   </div>
 
+  <!-- <div class="col-md-12">
+   <input type="hidden" name="ordNumberId" value="<?php echo $ordernum ?>">
+ 
+    <label>Discount %: </label>
+     <div class="input-group mb-3">
+	  <span class="input-group-text" id="basic-addon1">%</span>
+	  <input type="text" class="form-control" onkeyup="payment()"  aria-label="Username" aria-describedby="basic-addon1" id="payments" required >
+	</div>
+  </div> -->
+
    <div class="col-md-12">
      <label>Change:</label>
      <div class="input-group mb-3">

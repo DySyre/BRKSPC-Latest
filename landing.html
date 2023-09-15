@@ -14,7 +14,8 @@
       rel="stylesheet"
       href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <title>Barkspace</title>
   </head>
   <body>
@@ -59,6 +60,24 @@
     </header>
     <section class="home">
       <div class="swiper bg-slider">
+        <style>
+          @media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar a {float: left;}
+  div.content {margin-left: 0;}
+}
+
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+}
+        </style>
         <div class="swiper-wrapper">
           <div class="swiper-slide dark-layer">
             <img src="images/1.jpg" />
@@ -75,13 +94,13 @@
                 </button>
               </a>
             </div>
-          </div>
-          <div class="media-icons">
-            <a href="https://www.facebook.com/profile.php?id=100078944025433"
-              ><i class="uil uil-facebook-f"></i
-            ></a>
-            <a href=""><i class="uil uil-instagram"></i></a>
-            <a href=""><i class="uil uil-twitter"></i></a>
+            <div class="media-icons">
+              <a href="https://www.facebook.com/profile.php?id=100078944025433"
+                ><i class="uil uil-facebook-f"></i
+              ></a>
+              <a href=""><i class="uil uil-instagram"></i></a>
+              <a href=""><i class="uil uil-twitter"></i></a>
+            </div>
           </div>
           <div class="swiper-slide dark-layer">
             <img src="images/cat.jpg" />
@@ -124,7 +143,7 @@
               >of everything We Do</span
             >
           </h1>
-          <img src="images/pic.jpg" width="300" height="450" alt="" />
+          <img src="images/he.jpg" width="300" height="450" alt="" />
         </div>
         <div class="aboutList" data-aos="fade-left" data-aous-duration="1000">
           <ol>
@@ -144,7 +163,7 @@
               <span><i class="uil uil-arrow-right"></i></span>
               <p>Veterinary Services</p>
             </li>
-            <a href=""><button>Read More</button></a>
+            <a href="services.html"><button>Read More</button></a>
           </ol>
         </div>
       </div>
@@ -156,80 +175,92 @@
             <span style="color: #e0501b">In Order to Top Services</span>
           </h1>
         </div>
+        
         <div class="infoCards">
           <div class="card one" data-aos="fade-up" data-aous-duration="1000">
-            <img
+            <!-- <img
               src="images/protect.png"
               class="cardoneImg"
               alt=""
               data-aos="fade-up"
               data-aous-duration="1100"
-            />
+            /> -->
             <div class="cardbgone">
-              <div class="cardContent">
-                <h2>Health Services</h2>
-                <p>
-                  An so vulgar to on points wanted rapture our resolving
-                  continued household.
-                </p>
-                <a href="services.html">
+              <div class="cardContent" style="max-width:min-content;">
+                <h2>Contact Us</h2>
+               <hr>
+                <h5 style="font-weight: bolder; text-shadow: 2px 2px 5px green;"align="left"><i class="fa-solid fa-address-book"></i> Contact Info</h5>
+                <p style="font-weight: bold; " align="left">0923 953 0933</p>
+                <h5 style="font-weight: bolder; text-shadow: 2px 2px 5px green;"align="left"><i class="fa-solid fa-envelope"></i> Email</h5>
+                <p style="font-weight: bold;" align="left">barkspace.vet@gmail.com</p>
+                <h5 align="left" style="font-weight: bolder; text-shadow: 2px 2px 5px green;"><i class="fa-brands fa-instagram"align="left"></i> Instagram</h5>
+                <p style="font-weight: bold;" align="left">Barkspace.Marilao</p>
+                <h5 align="left" style="font-weight: bolder; text-shadow: 2px 2px 5px green;" ><i class="fa-brands fa-facebook"align="left"></i> Facebook</h5>
+                <p style="font-weight: bold;" align="left">Barkspace Animal Clinic</p>
+                
+
+
+                <!-- <a href="services.html">
                   <div class="cardBtn">
                     <img src="images/right.png" alt="" class="cardIcon" />
                   </div>
-                </a>
+                </a> -->
               </div>
             </div>
           </div>
           <div class="card two" data-aos="fade-up" data-aous-duration="1300">
-            <img
+            <!-- <img
               src="images/protect.png"
               class="cardtwoImg"
               alt=""
               data-aos="fade-up"
               data-aous-duration="1300"
-            />
+            /> -->
             <div class="cardbgtwo">
               <div class="cardContent">
-                <h2>Appointment</h2>
-                <p>
-                  An so vulgar to on points wanted rapture our resolving
-                  continued household.
-                </p>
-                <a href="calendar.html">
-                  <div class="cardBtn">
-                    <img src="images/right.png" alt="" class="cardIcon" />
+                <h2>Developer</h2>
+                <hr>
+                <h5 align="left" style="font-weight: bolder; text-shadow: 2px 2px 5px green;" ><i class="fa-brands fa-facebook"align="left"></i> Facebook</h5>
+                <a  href="https://www.facebook.com/alexander.inciong" style="text-decoration: none; color: gray; font-weight: bold;">Inciong, Alexander</a>
+                <h5 align="left" style="font-weight: bolder; text-shadow: 2px 2px 5px green;" ><i class="fa-brands fa-facebook"align="left"></i> Facebook</h5>
+                <a href="https://www.facebook.com/jinnesa.lingamen" style="text-decoration: none; color: gray; font-weight: bold;">Lingamen, Jennisa Mae</a>
+                <h5 align="left" style="font-weight: bolder; text-shadow: 2px 2px 5px green;" ><i class="fa-brands fa-facebook"align="left"></i> Facebook</h5>
+                <a href="https://www.facebook.com/djtorres0130" style="text-decoration: none;color: gray; font-weight: bold;">Torres, David Jonathan</a>
+                <h5 align="left" style="font-weight: bolder; text-shadow: 2px 2px 5px green;" ><i class="fa-brands fa-facebook"align="left"></i> Facebook</h5>
+                <a href="https://www.facebook.com/profile.php?id=100088500110682" style="text-decoration: none; color: gray; font-weight: bold; text-align: left;"  align="left">Tugas, Jerwin</a>
+                <!-- <a href="">
+                  <div class="cardBtn" style="justify-content: center; align-items: center; text-align: center; ">
+                    <img src="images/right.png" alt="" class="cardIcon"  />
                   </div>
-                </a>
+                </a> -->
               </div>
             </div>
           </div>
-        
 
-        <div class="card three" data-aos="fade-up" data-aous-duration="1600">
-          <img
-            src="images/protect.png"
-            class="cardthreeImg"
-            alt=""
-            data-aos="fade-up"
-            data-aous-duration="1300"
-          />
-          <div class="cardbgthree">
-            <div class="cardContent">
-              <h2>Treatments</h2>
-              <p>
-                The purpose of pet therapy is to help someone recover from or
-                cope with a health problem or mental disorder.
-              </p>
-              <a href="treatment.html">
-                <div class="cardBtn">
-                  <img src="images/right.png" alt="" class="cardIcon" />
-                </div>
-              </a>
+          <div class="card three" data-aos="fade-up" data-aous-duration="1600">
+            <!-- <img
+              src="images/protect.png"
+              class="cardthreeImg"
+              alt=""
+              data-aos="fade-up"
+              data-aous-duration="1300"
+            /> -->
+            <div class="cardbgthree">
+              <div class="cardContent">
+                <h2>About Us</h2>
+                <hr>
+                <p align="left" style="font-weight: bolder; text-shadow: 2px 2px 5px whitesmoke; ">
+                  Barkspace is all about pampering your companion animal. Approachable Veterinarians are always there.
+                </p>
+                <!-- <a href="dashboard.php">
+                  <div class="cardBtn">
+                    <img src="images/right.png" alt="" class="cardIcon" />
+                  </div>
+                </a> -->
+              </div>
             </div>
           </div>
         </div>
-      </div>
-   
 
       <!-- <iframe width="560" height="315" src="" title="YouTube video player" frameborder="0" allow="accelorometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
     </section>

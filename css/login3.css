@@ -1,6 +1,5 @@
 
 body {
-  background-color: #454f6b;
   font-family: "Asap", sans-serif;
 }
 
@@ -11,6 +10,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin : 0 ;
+  padding:0
 }
 .btn{
   padding: 10px 60px;
@@ -21,6 +22,10 @@ body {
   font-size: 22px;
   font-weight: 500;
   border-radius: 30px;
+  pointer-events: none;
+}
+.btn.active{
+  pointer-events: auto;
 }
 
 .login .title{
@@ -48,6 +53,7 @@ body {
   transform: translate(-50%, -50%);
   transition: transform 300ms, box-shadow 300ms;
   box-shadow: 5px 5px 10px 10px rgba(255, 255, 255, 0.2);
+  font-size:2rem !important;
   
 }
 

@@ -54,7 +54,6 @@ if($selectPetd == 'newPet')
 
 
 
-
      <form  id='FormModal'  method="post" enctype="multipart/form-data">
 <input type="hidden" name="PetIdName" value="<?php echo $selectPetd ?>">
       <div class="row" id="ans2">
@@ -137,7 +136,10 @@ if($selectPetd == 'newPet')
                   <select name="petType1[]"  class="form-control" required="required">
                     <option value="cat">Cat</option>
                     <option value="dog">Dog</option>
-                     <option value="fosh">Fish</option>
+                     <option value="fish">Fish</option>
+                     <option value="rabbit">rabbit</option>
+                      <option value="bird">bird</option>
+                      <option value="reptile">reptile</option>
                  </select>
               </div>
             </div>
@@ -281,9 +283,39 @@ while ($rowCategory = mysqli_fetch_assoc($resQueryCategory)) {
 }
               </style>
               <center>
+                
                 <label for="">Please Pay the Appointment Fee ₱20.00 And Upload Proof of Payment</label>
-
                 <input type="file" name="qrpic" class="form-control col-2-custom">
+                <div class="modal-footer">
+                <div class="modal-body text-center"> <!-- Center align the content -->
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+                Terms and Conditions
+</button>
+<div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Terms and Conditions</h5>
+                <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+                
+            </div>
+            <div class="modal-body">
+                <!-- Content goes here -->
+                <p>⚫ Please note that you are expected to come 5 minutes earlier than scheduled.
+                Our policy is first-come, first-served and will prioritize emergencies.
+                </p>
+                <p>⚫ Appointment fee is rebateable upon successful transaction in clinic.</p>
+                <p>⚫ After sending appointment fee, please upload proof of payment.
+                You will receive an email and notification on system regarding to status of your appointment.
+                </p>
+            </div>
+            <!-- <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div> -->
+        </div>
+    </div>
+</div>
+
               </center>
             </div>
 
@@ -581,10 +613,40 @@ while ($rowCategory = mysqli_fetch_assoc($resQueryCategory)) {
   width: 40%;
 }
               </style>
-              <center>
+             <center>
+                
                 <label for="">Please Pay the Appointment Fee ₱20.00 And Upload Proof of Payment</label>
-
                 <input type="file" name="qrpic" class="form-control col-2-custom">
+                <div class="modal-footer">
+                <div class="modal-body text-center"> <!-- Center align the content -->
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+                Terms and Conditions
+</button>
+<div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" style="position: relative; box-shadow: 0 0 15px gray;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Terms and Conditions</h5>
+                <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+                
+            </div>
+            <div class="modal-body">
+                <!-- Content goes here -->
+                <p>⚫ Please note that you are expected to come 5 minutes earlier than scheduled.
+                Our policy is first-come, first-served and will prioritize emergencies.
+                </p>
+                <p>⚫ Appointment fee is rebateable upon successful transaction in clinic.</p>
+                <p>⚫ After sending appointment fee, please upload proof of payment.
+                You will receive an email and notification on system regarding to status of your appointment.
+                </p>
+            </div>
+            <!-- <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div> -->
+        </div>
+    </div>
+</div>
+
               </center>
             </div>
 

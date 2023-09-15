@@ -62,7 +62,7 @@ else
         $_SESSION['Firstname'] = $Firstname;
         $_SESSION['Lastname'] =$Lastname;
         $_SESSION['Email'] =$Email;
-        $_SESSION['Password'] =md5($Password);
+        $_SESSION['Password'] = md5($Password);
         $_SESSION['confirmPassword'] =$confirmPassword;
          $_SESSION['branch'] =$branch;
         $verification = (rand(000000,999999));

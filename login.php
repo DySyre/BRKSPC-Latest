@@ -4,12 +4,14 @@ session_start();
   include("connect.php");
   include("functions.php");
 
+
 if($_SERVER['REQUEST_METHOD'] == "POST")
 {
     // SOMETHING WAS POSTED
     $user_name = $_POST['email'];
     $password = $_POST['password'];
     // $destination = $_POST['destination'];
+    
 
     if(!empty($user_name) && !empty($password) && !is_numeric($user_name))
     {
@@ -25,19 +27,34 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
             {
 
               $user_data = mysqli_fetch_assoc($result2);
-              
-              if($user_data['password'] === md5($password))
-              {
+              if ($user_data['password'] === md5($password)) {
                 $_SESSION['user_id'] = $user_data['user_id'];
                 $_SESSION['client_id'] = $user_data['user_id'];
+            
+                // Retrieve the user_petnotifid value from your database
+                // Replace 'your_column_name' with the correct column name
+                $queryForUserPetNotifId = "SELECT user_petnotifid FROM notification WHERE user_petnotifid = " . $user_data['id'];
+                $resultForUserPetNotifId = mysqli_query($con, $queryForUserPetNotifId);
+            
+                if ($resultForUserPetNotifId) {
+                    $rowForUserPetNotifId = mysqli_fetch_assoc($resultForUserPetNotifId);
+                    $_SESSION['user_petnotifid'] = $rowForUserPetNotifId['user_petnotifid'];
+                }
+            
                 header("Location: dashboard.php");
-              }
-              else
-              {
-                $text = "Wrong username and password!";
-                echo $text;   
+            } else {
+              $text = "Wrong username or password!"; 
+              echo "<p style='color: yellow;
+              text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue; font-size: 1.2rem; text-transform: uppercase;
+              text-align: center; justify-content: center; align-items: center;
+              padding: 10px;
+              left-margin: -100px;
+              border: 5px solid white;
+              
+              margin: 0; '>" . $text . "</p>";
 
-              }
+      }
+               
             }
             else
             {
@@ -87,14 +104,29 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
                     }
                     else
                     {
-                      $text = "Wrong username and password!";
-                      echo $text;   
+                      $text = "Wrong username or password!"; 
+                      echo "<p style='color: yellow;
+                      text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue; font-size: 1.2rem; text-transform: uppercase;
+                      text-align: center; justify-content: center; align-items: center;
+                      padding: 10px;
+                      left-margin: -100px;
+                      border: 5px solid white;
+                      
+                      margin: 0; '>" . $text . "</p>";
 
                     }
 
                 }
                 else{
-                  echo "Please enter some valid information!";
+                  $text = "Please enter some valid Information!"; 
+                      echo "<p style='color: red;
+                      text-shadow: 1px 1px 2px red, 0 0 25px blue, 0 0 5px darkblue; font-size: 1.2rem; text-transform: uppercase;
+                      text-align: center; justify-content: center; align-items: center;
+                      padding: 10px;
+                      left-margin: -100px;
+                      border: 5px solid white;
+                      
+                      margin: 0; '>" . $text . "</p>";
 
                 }
 
@@ -107,6 +139,19 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
     {
         echo "Please enter some valid information!";
     }
+
+    $result = mysqli_query($con, $query);
+    if (!$result) {
+      die("Query failed: " . mysqli_error($con));
+  }
+  // Fetch the results as an associative array
+  $userPetNotifIds = array();
+  while ($row = mysqli_fetch_assoc($result)) {
+      $userPetNotifIds[] = $row;
+  }
+  
+  // Close the database connection
+  mysqli_close($con);
 }  
 ?>
 
@@ -117,13 +162,15 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
     <title>BarkspaceLogin Form</title>
     <!-- CSS -->
     <link rel="stylesheet" href="css/login.css">
+
   </head>
   <body>
     <style>
         body {
   background-color: #454f6b;
   font-family: "Asap", sans-serif;
-}
+
+  }
 .logo{
     width: 100%;
     height: 100%;
@@ -147,17 +194,15 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 }
 
 .login {
-  
-
   overflow: hidden;
   background-color: white;
   padding: 40px 30px 30px 30px;
-  border-radius: 10px;
+  border-radius: 15px;
   position: absolute;
   top: 50%;
   left: 50%;
   width: 400px;
-  height: 450px;
+  height: 500px;
   transform: translate(-50%, -50%);
   transition: transform 300ms, box-shadow 300ms;
   box-shadow: 5px 5px 10px 10px rgba(2, 128, 144, 0.2); 
@@ -202,22 +247,40 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
   font-family: "Asap", sans-serif;
   cursor: pointer;
   color: #fff;
-  font-size: 16px;
+  font-size: 19px;
   text-transform: uppercase;
   align-items: center;
-  width: 80px;
+  width: 300px;
+  height: 45px;
   border: 0;
   padding: 10px 0;
   margin-top: 10px;
-  margin-left: -5px;
+  margin-left: 50px;
   border-radius: 5px;
   background-color: #586279;
   transition: background-color 300ms;
+  
 }
 .login > button:hover {
   background-color: #2a2f3b;
 }
-
+/* .login a{
+    font-family: "Asap", sans-serif;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    padding: 10px 10px;
+    margin-top: 10px;
+    margin-left: 160px;
+    text-transform: uppercase;
+    width: 10px;
+    border-radius: 10px;
+    background-color: #586279;
+    transition: background-color 300ms;
+}
+.login a:hover{
+    background-color: #2a2f3b;
+} */
 .dropbtn {
   background-color: #586279;
   color: white;
@@ -271,6 +334,9 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 .dropdown:hover .dropbtn {
   background-color: #2a2f3b;
 }
+h4{
+  text-align: center;
+}
 
 @keyframes wawes {
   from {
@@ -282,52 +348,29 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 }
 
     </style>
-    <!-- <div class="logo">
-          <img src="images/dog.png" alt="logo" />
-    </div> -->
-    <form class="login" action="login.php" method="post">
+    <div class="logo">
+    <img src="img/vet.jpg" alt="" style="opacity: 0.6; height: 100%; width: 100%; background: transparent;">
+    </div>
     
-      <div class="title"><span style="color: pink;">Bark</span><span style="color: skyblue;">Space</span></div>
+    <form class="login" action="login.php" method="post">
+     
+    
+      <div class="title"><span style="color: pink;">Bark</span><span style="color: skyblue;">Space</span>
+    </div>
+    <p style="font-size: 1rem;text-align: center; font-weight: normal; text-shadow: 2px 2px 4px #0000; color: skyblue;">Login with your email and password.</p>
+      <style>
+        .title{
+          text-transform: uppercase;
+        }
+      </style>
+     
       <input type="email" name="email" placeholder="Email" />
       <input id="password_validation" type="password" name="password" placeholder="Password" required />
       
-      <div class="password_required">
-              <ul>
-                <li class="lowercase"><span></span>One lower case letter</li>
-                <li class="capital"><span></span>One Capital Letter</li>
-                <li class="number"><span></span>One number</li>
-                <li class="special"><span></span>One Special Character</li>
-                <li class="eight_characters"><span></span>At least 8 Characters</li>
-              </ul>
-              <style>
-                .password_required{
-                  display: none;
-                }
-                .password_required ul{
-                  padding: 0;
-                  margin: 0 0 15px;
-                  list-style: none;
-                }
-                .password_required ul li{
-                  margin-bottom: 8px;
-                  color: red;
-                  font-weight: 700;
-                  text-align: left;
-                }
-                .password_required ul li.active{
-                  color: #02af02;
-                }
-                .password_required ul li span:before{
-                  content: "X  "; 
-                }
-                .password_required ul li.active span:before{
-                  content: "✅"; 
-                }
-
-                
-              </style>
-            </div>
-             <a href="forgot.php">Forgot password?</a>
+      
+      <a href="forgot.php" style="text-decoration:none;" class="float-end" >Forgot Password?</a><br>
+    
+            
      
       <br/>
       <!-- <a href="signup.php">Click to Signup</a>
@@ -351,8 +394,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
       </style>
       <button type="submit">Login</button> -->
       
-     <button type="submit" class="btn active">Login</button><br>
-    
+     <button type="submit" class="btn active" id="log">Login</button><br>
      <style>
               .btn{
                 pointer-events: none;
@@ -360,36 +402,32 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
               .btn.active{
                 pointer-events: auto;
               }
-            </style><br>
-      Don't have a account? <a href="signup.php">Click to Signup</a><br>
-      <style>
+              
+            </style>
+      <h4>Don't have a account? <a href="signup.php" style="text-decoration:none">Click to Signup</a><br>
+      <!-- <style>
         a, button{
           text-decoration:none !important ;
-          font-size : medium!important;
+          font-size : small!important;
           font-weight: bold!important;
-          /* text-transform: uppercase; */
+          text-transform: uppercase;
           font-family:'Poppins', sans-serif;
           font-weight:bold;
           /* padding:.5em  4em; */
-          /* border-radius:7%;
-          border:solid thin white;
-          box-shadow:-8px -9px 10px rgba(255,255,255,.1), */
-          inset 8px 9px 10px rgba(0,0,0,.1) ,
+          
         }
         a{
           top: 100px;
         }
-      </style>
+      </style> -->
       
       <!-- <button class="dropbtn">Branch</button>
       <div class="dropdown-content" style="left:0;">
       <a href="#">Marilao</a>
       <a href="#">Balagtas</a>
       </div> -->
-      </div> <br/><br/><br/>
-      <a href="landing.html">Back</a>
-      
-      
+      </div> <br/><br/>
+      <a href="landing.html" style="text-decoration:none">BACK</a>
       
     </form>
   </body>

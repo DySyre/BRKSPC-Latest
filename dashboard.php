@@ -27,13 +27,16 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"> -->
     <link rel="stylesheet" href="css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/stylenotif.css">
     <link rel="icon" href="images/logo.png" type="image/icon type" />
     <link
       rel="stylesheet"
       href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
     />
-    <link rel="stylesheet" href="style1.css" />
+   <link rel="stylesheet" href="css/style1.css">
+   <link rel="stylesheet" href="./slide.css">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
@@ -43,8 +46,7 @@ session_start();
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://kit.fontawesome.com/6b23de7647.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="CSS/style.css">
+     <script src="https://kit.fontawesome.com/6b23de7647.js" crossorigin="anonymous"></script>
     <title>Barkspace</title>
   </head>
   <body>
@@ -101,17 +103,23 @@ session_start();
         <a href="record.php"> <?php echo $fname?> </a>
         <a href="record.php"> Record </a>
            <a href="logout.php"> LOGOUT </a>
-           <li class="dropdown">
-                            <div  class="dropdown-toggle text-light" id="noti_count" style="cursor: pointer;" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="counter">0</span><i class="fas fa-bell" style="font-size: 20px;"></i>
+           <ul class="nav justify-content-end" >
+                    <li class="dropdown">
+                            <div class="dropdown-toggle text-light" style="cursor: pointer;" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="counter">5</span><i class="fas fa-bell" style="font-size: 20px;"></i>
                             </div>
                             
                             <div class="dropdown-menu overflow-h-menu dropdown-menu-right">
+                            <h1>Notification</h1>
+                            
                                 <div class="notification">
+                                
+                                 
 
                                 </div>
                             </div>
                         </li>
+
         <!-- <button href="login.php" class="read-btn">
           LOGIN <i class="uil uil-arrow-right"></i>
         </button> -->
@@ -124,7 +132,7 @@ session_start();
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
-<script type="text/javascript">
+    <script type="text/javascript">
 
     $(document).ready(function (){
 
@@ -185,22 +193,25 @@ session_start();
 
 </script>
 
+
       <div class="swiper bg-slider">
         <div class="swiper-wrapper">
           <div class="swiper-slide dark-layer" >
             
-            <div class="row mt-2" style="background: #202834;">
+            <div class="row mt-2" style="background: #202834; ">
             
-                <div class="row mt-5" style="background: #202834;">
+                <div class="row mt-5" style="background: #202834; justify-content: center; align-items:center; text-align:center;">
+                <h1>Welcome to <span class="red" style="color: pink">Bark</span>
+            <span class="red" style="color: skyblue">space</span> Inc.</h1>
                 
-                  <div class="col-md-2 mt-5" style="background: ;">
+                  <div class="col-md-2 mt-5" style=" margin: 50px; padding: 30px; box-shadow: 10px 5px #fff; margin: 0; background-color: pink; ">
                     
-                   <div class="form-group">
+                   <div class="form-group" style="margin: 2px;">
                     
                    
              
-                       <select class="form-control" name="branchId" id="idBranch" onchange="selectBranch()" >
-                        <option hidden >Branches</option>
+                       <select class="form-control" style=" color: black; text-shadow: 0 0 3px #FF0000; justify-content: center; align-items:center; text-align:center;" name="branchId" id="idBranch" onchange="selectBranch()" >
+                        <option hidden>Make an Appointment</option>
                         
                       <?php
                       $queryBranch = "select * from branch_tbl where branch_isactive = '1' and branch_id !='3'";
@@ -227,8 +238,7 @@ session_start();
               </div>
             </div>
             </div>
-            <h1>Welcome to <span class="red" style="color: pink">Bark</span>
-            <span class="red" style="color: skyblue">space</span> Inc.</h1>
+            
             <style>
               h1{
                 padding: 30px;
@@ -241,26 +251,27 @@ session_start();
                 text-transform: uppercase;
               }
             </style>
-            <div class="imgDog" style="background: ;">
+            <div class="imgDog">
             
             
-               <img src="images/h1.jpg" />
+               <img src="images/11.jpg" />
                <style>
                 .imgDog{
-                  width : auto;
+                  padding: 50px;
+                  width : 100%;
                   /* left: 15%; */
-                  height : auto%;
+                  height : 100%;
                   position: relative;
-                  
-                  box-shadow:  0px 0px 20px white,
-            inset 0px 0px 5px rgba(0, 0, 0, 0.1);
+                  /* box-shadow:  0px 0px 20px white, inset 0px 0px 5px rgba(0, 0, 0, 0.1); */
                   }
                   .img{
                     position: absolute !important;;
                     top: -6px!important;
                     left:-79%!important;}
                     @media only screen and (max-width: 600px)
-                    {.img{position: relative}}
+                    {
+                    .img{position: relative}
+                  }
                     
                   
                </style>
@@ -291,6 +302,7 @@ session_start();
                
                 
                     <div id='calendar'>
+                      
                       
                     </div>
                    
@@ -326,7 +338,7 @@ session_start();
               >of everything We Do</span
             >
           </h1>
-          <img src="images/pic.jpg" width="300" height="450" alt="" />
+          <img src="images/22.jpg" width="300" height="450" alt="" />
         </div>
         <div class="aboutList" data-aos="fade-left" data-aous-duration="1000">
           <ol>
@@ -353,83 +365,52 @@ session_start();
       <!--INFO SECTION-->
       <div class="infoSection">
         <div class="infoHeader" data-aos="fade-up" data-aous-duration="1000">
-          <h1>
+          <h1 style="color: #fff;">
             We analyse Your Pet Health States <br />
             <span style="color: #e0501b">In Order to Top Services</span>
           </h1>
         </div>
-        <div class="infoCards">
-          <div class="card one" data-aos="fade-up" data-aous-duration="1000">
-            <img
-              src="images/protect.png"
-              class="cardoneImg"
-              alt=""
-              data-aos="fade-up"
-              data-aous-duration="1100"
-            />
-            <div class="cardbgone">
-              <div class="cardContent">
-                <h2>Health Services</h2>
-                <p>
-                  An so vulgar to on points wanted rapture our resolving
-                  continued household.
-                </p>
-                <a href="services.html">
-                  <div class="cardBtn">
-                    <img src="images/right.png" alt="" class="cardIcon" />
-                  </div>
-                </a>
-              </div>
-            </div>
+        
+       <div class="slider">
+        <div class="slide-track">
+          <div class="slide">
+            <img src="img/l.jpg">
           </div>
-          <div class="card two" data-aos="fade-up" data-aous-duration="1300">
-            <img
-              src="images/protect.png"
-              class="cardtwoImg"
-              alt=""
-              data-aos="fade-up"
-              data-aous-duration="1300"
-            />
-            <div class="cardbgtwo">
-              <div class="cardContent">
-                <h2>Appointment</h2>
-                <p>
-                  An so vulgar to on points wanted rapture our resolving
-                  continued household.
-                </p>
-                <a href="calendar.html">
-                  <div class="cardBtn">
-                    <img src="images/right.png" alt="" class="cardIcon" />
-                  </div>
-                </a>
-              </div>
-            </div>
+          <div class="slide">
+            <img src="img/as.jpg">
+          </div>
+          <div class="slide">
+            <img src="img/7.jpg">
+          </div>
+          <div class="slide">
+            <img src="img/8.jpg">
+          </div>
+          <div class="slide">
+            <img src="img/9.jpg">
           </div>
 
-          <div class="card three" data-aos="fade-up" data-aous-duration="1600">
-            <img
-              src="images/protect.png"
-              class="cardthreeImg"
-              alt=""
-              data-aos="fade-up"
-              data-aous-duration="1300"
-            />
-            <div class="cardbgthree">
-              <div class="cardContent">
-                <h2>Treatments</h2>
-                <p>
-                  An so vulgar to on points wanted rapture our resolving
-                  continued household.
-                </p>
-                <a href="treatment.html">
-                  <div class="cardBtn">
-                    <img src="images/right.png" alt="" class="cardIcon" />
-                  </div>
-                </a>
-              </div>
-            </div>
+                  <!-- SAME 5 SLIDES -->
+
+                  <div class="slide">
+            <img src="img/l.jpg">
           </div>
+          <div class="slide">
+            <img src="img/as.jpg">
+          </div>
+          <div class="slide">
+            <img src="img/7.jpg">
+          </div>
+          <div class="slide">
+            <img src="img/8.jpg">
+          </div>
+          <div class="slide">
+            <img src="img/9.jpg">
+          </div>
+
+
+
         </div>
+       </div>
         
         <!-- <iframe width="560" height="315" src="" title="YouTube video player" frameborder="0" allow="accelorometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
       
@@ -446,8 +427,33 @@ session_start();
          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body modalresponseViewAppointment">
+        <!-- <style>
+          /* The Modal (background) */
+          .modal {
+                    display: none;
+                    position: fixed; 
+                    z-index: 987654321 !important;
+                    width: auto!important;
+                    height:auto!important;
+                    top: -1%;
+                    left:-1%;
+                    border: 0px solid #ccc;
+                    padding: 0px;
+                    margin: 0px;
+                    overflow-y : scroll;
+                    background:#f2efef;
+                    max-height: calc(var(--vh, 1vh)*100);
+                    min-width:calc((100vw / var(--columns)) *  1);
+                    min-width:max-content;
+                    box-shadow: inset 0 0 0 1em rgba(255, 255, 255,.5),inset 0 -.5rem 0 0 rgb(255 255 255 /.1),inset 0 .5rem 0 0 rgb(255 255 255 /.1);
+                    transform: translate(-5%, -5%);
+                    transition: all ease-out .2s;
+                    animation: slideInFromTop 1s cubic-bezier(.17,.67,.83,.67) forwards;
+            }
+        </style> -->
+        
                        
-                        </div>
+      </div>
     </div>
   </div>
 
@@ -732,7 +738,7 @@ function selectDep(){
             if (status == 'true') {
             $('#eventModal').modal('hide');
           
-              swal("Success", "Appointment Submit", "success");
+              swal("Submitted", "We will send you an email for your Request." , "success",);
 
 
             }

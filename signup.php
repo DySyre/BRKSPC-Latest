@@ -4,6 +4,10 @@
     <head>
         <title>Signup</title>
         
+        <div class="logo">
+    <img src="img/7.jpg" alt="" style="opacity: 0.6; height: 100vh; width: 100%; object-fit: cover;">
+    </div>
+        
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
 
@@ -11,34 +15,27 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
     <link rel="stylesheet" href="css/login3.css">
-        <link rel="stylesheet" href="css/signup.css">
+    <link rel="stylesheet" href="css/signup.css">
 
     </head>
     <body >
+      
         
         <div id="logo"  class="col-md-12" >
+        
+               
+                
           <style>
             #logo{
               text-align: center;
               }
           </style>
-
+ 
+<!--  
         <div class="container col-md-12" >
-          <style>
-            .container {
-              margin : 0 ;
-              width: 0;
-              padding:0;}
-
-          </style>
-            <div class="row col-md-12">
-              <style>
-                #logintext{
-                  font-size:2rem !important;
-
-                }
-                  
-              </style>
+            <div class="row col-md-12"> -->
+              
+              
         <form id="signUpForm" class="login col-md-12" method="post" enctype="multipart/form-data" >
             <div class="title">Signup</div>
 
@@ -88,8 +85,8 @@
 
             <!-- <a href="">click here to login</a> -->
 
-            <div class="dropdown">
-                <!-- <div class="select">
+            <!-- <div class="dropdown">
+                <div class="select">
                     <span class="selected" name="selected">Branch</span>
                     
                     <div class="caret"></div>
@@ -98,23 +95,15 @@
                     <li value="Marilao">Marilao</li>
                     <li value="Balagtas">Balagtas</li>
                     
-                </ul><br/> -->
+                </ul><br/>
                 <input type="hidden" name="branch" value="0">
-            <!-- <select class="select" name="branch">
+            <select class="select" name="branch">
                         <option class="menu" value="">Branch</option>
                         <option value="Marilao">Marilao</option>
                         <option value="Balagtas">Balagtas</option>
-                    </select>  -->
-            </div>
+                    </select> 
+            </div> -->
             <button id="" type="submit" class="btn active">Submit</button>
-            <style>
-              .btn{
-                pointer-events: none;
-              }
-              .btn.active{
-                pointer-events: auto;
-              }
-            </style>
             <br>
             Have an Account?<a href="login.php" class="fs-6"> Click here to Login</a>
     
@@ -158,7 +147,7 @@
               </div>
           <div class="row mt-3">
                         <div class="col-sm-12 col-md-12" align="center">
-                          <button type="submit" name="btnSave" value="submit" id="submit" class="btn-primary">SUBMIT</button>
+                          <button type="submit" name="btnSave" value="submit" id="submit" class="btn btn-primary">SUBMIT</button>
                         </div>
           </div>
         

@@ -1,7 +1,8 @@
 <?php
 
+
 include '../connect.php';
- include 'include/header.php';
+include 'include/header.php';
 
 
 
@@ -51,7 +52,7 @@ else
                            }
                        </style>
                        
-                       <ol class="breadcrumb mb-4">
+                       <ol class="breadcrumb mb-4" href="./branch.php">
                            <li class="breadcrumb-item active">Dashboard</li>
                        </ol>
                        <div class="row">
@@ -119,6 +120,16 @@ else
                                    </div>
                                </div>
                            </div>
+                           <div class="col-xl-3 col-md-6">
+                                <div class="card text-light bg-dark text-black mb-4">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                    <div class="card-body">Change Password</div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small text-white stretched-link" href="change_password.php">View Details</a>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
                        </div>
                        
                       

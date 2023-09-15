@@ -58,14 +58,14 @@
               <div class="col-md-12">
                    <div class="form-group">
                       <label style="font-size: 1rem;" for="fname">Firstname</label>
-                      <input type="text" class="form-control" name="fname" id="classroom_name" required placeholder="">
+                      <input type="text" class="form-control" name="fname" pattern="[A-Za-z]{1,}" id="classroom_name" required placeholder="">
                        
                   </div>
               </div>
               <div class="col-md-12">
                    <div class="form-group">
                       <label style="font-size: 1rem;" for="fname">Lastname</label>
-                      <input type="text" class="form-control" name="lname" id="classroom_name" required placeholder="">
+                      <input type="text" class="form-control" name="lname" pattern="[A-Za-z]{1,}" id="classroom_name" required placeholder="">
                        
                   </div>
               </div>
@@ -103,7 +103,7 @@
               <div class="col-md-12">
                    <div class="form-group">
                       <label style="font-size: 1rem;" for="fname">Password</label>
-                     <input type="password" class="form-control" name="pass" id="classroom_name" required placeholder="">
+                     <input type="password" class="form-control" name="pass" min="8" id="classroom_name" required placeholder="">
                        
                   </div>
               </div>
@@ -184,7 +184,7 @@
            
                       </style>
                         <div class="modal-header">
-                            <h4 class="modal-title">Appointment Details</h4>
+                            <h4 class="modal-title" style=" color: white; text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;">Appointment Details</h4>
                             <style>
                               /* The Modal (background) */
                               .modal {

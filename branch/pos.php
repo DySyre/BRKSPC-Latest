@@ -26,44 +26,57 @@ $delQuery2 =mysqli_query($con,$sql2);
                 </div>
             <div class="container-fluid" >
               <div class="row">
-                            <div class="col-xl-6" style="background-color:; height: 20vh;">
+                            <div class="col-xl-6" style="background-color: #EAD2D2; height: 100%; box-shadow: 5px 10px #888888;">
                                 <div class="card">
-                                    <div class="card-header">
+                                    <div class="card-header" style="background-color: #EAD2D2; font-weight: bold; justify-content: center; align-items: center; text-align: center; font-size: 1.8rem;">
                                         <i class="fas fa-chart-area me-1"></i>
-                                        ITEM
+                                        POS
                                         <input type="hidden" id="orderNumId" value="<?php  echo $orderNumber;?>" name="ordernumberName">
                                     </div>
                                     <div class="card-body">
                                       <!-- <canvas id="myAreaChart" width="100%" height="40"></canvas> -->
                                    
                                    <div class="form-group">
-                                      <label style="font-size: 1.5rem;" for="fname">Select Item:</label>
-                                     
+                                      <label style="font-size: 1.5rem; font-weight: bold;" for="fname">Select Item:</label>        
                       <input type="text" class="form-control" id="searchInput" placeholder="Search for an item">
-                                      <select class="form-control" name="ebranchIdSelectNmae" id="ebranchIdSelect">
-                                        <option hidden >Choose</option>
-                                      <?php
-                                      $queryBranch = "SELECT * FROM `item_tbl` join item_category_tbl ON item_tbl.item_categoryidfk = item_category_tbl.item_category_id JOIN branch_tbl ON item_category_tbl.item_category_branch = branch_tbl.branch_id where item_stock != '0' AND branch_id = '$branchId' order by item_name asc";
-                                        $resqueryBranch = mysqli_query($con, $queryBranch);
+                      <label for="">Select Branch</label><br/>
+                      
+                      <select class="form-control" name="ebranchIdSelectNmae" id="ebranchIdSelect" onclick="itemSelected()">
+                       <option hidden>Choose</option>
+    <?php
+    $queryBranch = "SELECT * FROM `item_tbl` join item_category_tbl ON item_tbl.item_categoryidfk = item_category_tbl.item_category_id JOIN branch_tbl ON item_category_tbl.item_category_branch = branch_tbl.branch_id where item_stock != '0' AND branch_id = '$branchId' order by item_name asc";
+    $resqueryBranch = mysqli_query($con, $queryBranch);
 
-                                        while($rowBranch = mysqli_fetch_assoc($resqueryBranch))
-                                        {
-                                           
-                                            ?>
-                                           <option value="<?php echo $rowBranch['item_id'] ?>"><?php echo $rowBranch['item_name'].': '. $rowBranch['item_category_name'] ?></option>
-                                                
-                                          
-                                            <?php
+    while($rowBranch = mysqli_fetch_assoc($resqueryBranch)) {
+        ?>
+        <option value="<?php echo $rowBranch['item_id']; ?>" data-stock="<?php echo $rowBranch['item_stock']; ?>" style="text-transform: capitalize;">
+            <?php echo $rowBranch['item_name'] . ': ' . $rowBranch['item_category_name']; ?>
+        </option>
+        <?php
+    }
+    ?>
+</select>
 
-                                        }
-                                      ?>
-                                        </select>
                                        
                                   </div>
 
-                                  <!--  -->
+
+
+
+
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+   // Function to filter the dropdown options based on user input
+   $(document).ready(function() {
+        $("#searchInput").on("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            $("#ebranchIdSelect option").filter(function() {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+            });
+        });
+    });
+</script>
 
 
               
@@ -73,10 +86,11 @@ $delQuery2 =mysqli_query($con,$sql2);
                                 
                                 <div class="card mb-4 mt-4" style="height:68vh;">
                                     <div class="card-body">
-                                      <!-- <canvas id="myAreaChart" width="100%" height="40"></canvas> -->
+                                      <!-- <canvas id="myAreaChart" width="100%" height="40"></canvas>  -->
                                    
                                    <div class="form-group" id="">
-                                      <label style="font-size: 1.5rem;" for="fname">Order List</label>
+                                   <label style="font-size: 1.5rem; font-weight: bold; color: green; " for="fname"><i class="fa-solid fa-cart-shopping"></i> Cart</label>
+
                                       <div class="row" id="ShowOrder">
                                         
                                       </div>
@@ -91,10 +105,10 @@ $delQuery2 =mysqli_query($con,$sql2);
                                  
                             </div>
 
-                           <div class="col-xl-6" style="height: 90vh;">
-                              <div class="card mb-4" style="height: 100%;">
+                            <div class="col-xl-6" style="height: 90vh;">
+                              <div class="card mb-4" style="height: 90vh; color: black; background-color: whitesmoke; font-weight: bold; font-size: 1rem; font-size:1.3rem; box-shadow:  5px 10px #888888;">
                                 <div class="card-header">
-                                  <i class="fas fa-chart-bar me-1"></i>
+                                <i class="fa-solid fa-sort"></i>
                                   ORDER SUMMARY
                                 </div>
                                 <style>
@@ -295,6 +309,28 @@ $delQuery2 =mysqli_query($con,$sql2);
 });
 
 
+function itemSelected(){
+      
+      var x = document.getElementById("ebranchIdSelect").value;
+      var orderNumIdd = document.getElementById("orderNumId").value;
+
+      
+   
+        $.ajax({
+                url:"pos_show_order.php",
+                method:"POST",
+                data:{
+                  id: x,
+                  orderNumId: orderNumIdd
+                },
+                success: function(data){
+                  $("#ShowOrder").html(data);
+
+                }
+              })
+
+      }
+  
 
     
    
@@ -413,3 +449,96 @@ $delQuery2 =mysqli_query($con,$sql2);
 
   </script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  
+  <!-- <script>
+document.addEventListener("DOMContentLoaded", function() {
+    const selectElement = document.getElementById("ebranchIdSelect");
+    const showOrderDiv = document.getElementById("ShowOrder");
+    const orderSummaryButton = document.getElementById("orderSummaryButton");
+    const orderSummaryDiv = document.getElementById("orderSummaryBody");
+    const selectedItems = [];
+
+    // selectElement.addEventListener("change", function() {
+    //     const selectedValue = selectElement.value;
+    //     const selectedOption = selectElement.options[selectElement.selectedIndex];
+
+    //     if (selectedValue !== "") {
+    //         const selectedItemText = selectedOption.text;
+    //         selectedItems.push({ item: selectedItemText, quantity: 1 });
+
+    //         updateShowOrderDiv();
+    //     }
+    // });
+
+    function updateShowOrderDiv() {
+        showOrderDiv.innerHTML = '<p>Selected Items:</p><ul>';
+        selectedItems.forEach((itemObj, index) => {
+            showOrderDiv.innerHTML +=
+                '<li style="position: sticky; font-size: 1rem; text-transform: capitalize;">' + itemObj.item + ': ' +
+                + itemObj.stock + 'stock: ' +
+                '<input type="number" value= style=" margin: auto; padding: 20px; justify-content: center; align-items: center; text-align: center;"""' + itemObj.quantity + '" class="quantity-input" data-index="' + index + '">' +
+                ' <button class="delete-button" data-index="' + index + '">Delete</button></li>';
+        });
+        showOrderDiv.innerHTML += '</ul>';
+        showOrderDiv.innerHTML += '</ul><button id="orderSummaryButton" style=" margin: 3%; height; 10%; padding: 5px; width: auto; justify-content: center; align-items: center; text-align: center; color: #fff; background-color: blue;">Show Order Summary</button>';
+
+        const deleteButtons = document.querySelectorAll('.delete-button');
+        deleteButtons.forEach(button => {
+            button.addEventListener('click', function(event) {
+                const index = event.target.getAttribute('data-index');
+                selectedItems.splice(index, 1);
+                updateShowOrderDiv();
+            });
+        });
+        
+
+        
+
+        const orderSummaryButton = document.getElementById("orderSummaryButton");
+    orderSummaryButton.addEventListener('click', function() {
+        orderSummaryDiv.innerHTML = '<p style=" text-shadow: 2px 2px 5px gray;">Order Summary:</p><ul>';
+        selectedItems.forEach(itemObj => {
+            orderSummaryDiv.innerHTML +=
+                '<li>' + itemObj.item + ':<br><br> Quantity: ' + itemObj.quantity + '</li>';
+        });
+        orderSummaryDiv.innerHTML += '</ul>';
+    });
+        const quantityInputs = document.querySelectorAll('.quantity-input');
+        quantityInputs.forEach(input => {
+            input.addEventListener('change', function(event) {
+                const index = event.target.getAttribute('data-index');
+                const newQuantity = parseInt(event.target.value);
+                selectedItems[index].quantity = newQuantity;
+            });
+        });
+    }
+    selectElement.addEventListener("change", function() {
+    const selectedOption = selectElement.options[selectElement.selectedIndex];
+    const stock = parseInt(selectedOption.getAttribute('data-stock'));
+
+    if (selectedOption.value !== "") {
+        const selectedItemText = selectedOption.text;
+
+        // Check if stock allows selecting the item
+        if (stock > 0) {
+            selectedItems.push({ item: selectedItemText, quantity: 1, stock: stock });
+            updateShowOrderDiv();
+        } else {
+            alert("Item is out of stock.");
+        }
+    }
+});
+
+
+
+    orderSummaryButton.addEventListener('click', function() {
+        orderSummaryDiv.innerHTML = '<p>Order Summary:</p><ul>';
+        selectedItems.forEach(itemObj => {
+            orderSummaryDiv.innerHTML +=
+                '<li>' + itemObj.item + ': Quantity ' + itemObj.quantity + '</li>';
+        });
+        orderSummaryDiv.innerHTML += '</ul>';
+    });
+});
+
+</script> -->

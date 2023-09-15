@@ -713,6 +713,7 @@ li span i{
                     color: #fff;
                 }
                 .infoCards{
+
                     display: flex;
                     flex-direction: row;
                     justify-content: space-around;
@@ -732,6 +733,7 @@ li span i{
                     margin: 0 10px;
                     transition: .3s;
                 }
+           
                 .infoCards .one .cardoneImg{
                     width: 150px;
                     position: absolute;
@@ -751,12 +753,13 @@ li span i{
                     right: -30px;
                 }
                 .cardbgone{
+                    width: 500px;
                     height: 150px;
                     background-color: #fff;
                 }
                 .cardbgtwo{
                     height: 150px;
-                    background-color: #fff;
+                    background-color: red;
                 }
                 .cardContent{
                     padding: 0 20px;

@@ -1,0 +1,46 @@
+
+.dropdown-menu{
+    background: rgba(1,6,10,.9);
+    border-radius: unset;
+    border:none;
+}
+.dropdown-menu caption{
+    font-size: 2rem;
+    color: blue;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+.notification{
+    overflow: hidden;
+    margin-right: 400px;
+}
+.dropdown-menu h1{
+    color: black;
+    font-size: 1.5rem;
+    text-transform: capitalize;
+
+}
+
+.notification .dropdown-item{
+    color:black;
+    margin: 10%;
+    padding: 30px;
+    width: 100%;
+    content: normal;
+    text-align: center;
+}
+.notification .dropdown-item h6{
+    color: blue;
+    text-align: left;
+    text-transform: capitalize;
+    font-size: 1.3rem;
+}
+.notification .dropdown-item span{
+    color: black;
+    text-align: right;
+    font-weight: bold;
+    font-size: 1.2rem;
+    width: 10%;
+    padding: 15px;
+}

@@ -1,7 +1,9 @@
 <?php
-
-
 session_start();
+
+
+include '../connect.php';
+
 if(empty($_SESSION['Enduser_id']))
 {
 
@@ -10,7 +12,7 @@ else
 {
 
 
-    include '../connect.php';
+    
     $Enduser_id =  $_SESSION['Enduser_id'];
      $query3= "select * from staff_tbl where staff_id  = '$Enduser_id' limit 1";
      $result3 = mysqli_query($con, $query3);

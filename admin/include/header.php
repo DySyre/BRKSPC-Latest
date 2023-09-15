@@ -76,7 +76,7 @@ else
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#!">Settings</a></li>
+                        <li><a class="dropdown-item" href="./profile.php">Settings</a></li>
                         <li><a class="dropdown-item" href="#!">Activity Log</a></li>
                         <li><hr class="dropdown-divider" /></li>
                         <li><a class="dropdown-item" href="logout.php">Logout</a></li>
@@ -102,7 +102,7 @@ else
                             </a>
                             <div class="sb-sidenav-menu-heading"><hr></div>
                           
-                            <!-- <div class="sb-sidenav-menu-heading">Interface</div> -->
+                            <div class="sb-sidenav-menu-heading" align="center"style="color: white;text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;">Appointment</div>
                             
 
                              <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts1" aria-expanded="false" aria-controls="collapseLayouts1">
@@ -139,12 +139,15 @@ else
                                 Appointment History
                             </a>
 
+                            <div class="sb-sidenav-menu-heading" align="center"style="color: white;text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;">Walk-in</div>
+
                             <a class="nav-link" href="./walkin.php">
                                 <div class="sb-nav-link-icon"><i class="fa-solid fa-person-walking"></i></div>
                                 Walk In
                             </a>
 
-                            
+                            <div class="sb-sidenav-menu-heading" align="center" style="color: white;text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;">Product</div>
+
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts2" aria-expanded="false" aria-controls="collapseLayouts2">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                                 Inventory
@@ -168,7 +171,9 @@ else
                                 <div class="sb-nav-link-icon"><i class="fa-solid fa-universal-access"></i></div>
                                 Sale's History
                             </a>
+
                             
+                            <div class="sb-sidenav-menu-heading" align="center"style="color: white;text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;">Settings</div>
                            
 
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
@@ -182,10 +187,12 @@ else
                                     <a class="nav-link" href="user.php">User</a>
                                     <a class="nav-link" href="services.php">Services</a>
                                     <a class="nav-link" href="schedule.php">Schedule</a>
+                                    
+                                    <a class="nav-link" href="change_password.php">Change Password</a>
                                      
                                 </nav>
                             </div>
-                       
+                            
 
                              
                           <!--   <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">

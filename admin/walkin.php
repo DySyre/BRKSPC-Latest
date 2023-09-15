@@ -18,12 +18,12 @@ $noApp = 'maybe';
      <div class="row">
 
         <div class="container">
- <div class="input-group">
+        <div class="input-group">
     
                      <!-- <a href="#!" data-id="" data-bs-toggle="modal" data-bs-target="#addStaffModal" class="btn btn-primary btn-sm me-md-2">ADD STAFF</a> -->
                 
                 </div>
-                <div class="row col-md-4">
+                <div class="row col-md-4" style="justify-content: center; text-align: center; align-items: center;">
                   <select class="form-control" name="newStudSelectDepart" id="potek" onchange="selectDep()" required>
         <?php 
         include('connection.php');
@@ -95,15 +95,15 @@ $noApp = 'maybe';
 
         <style type="text/css">
           .flat-button {
-    background-color: transparent;
-    border: solid 1px black;
-    color: #000;
-    cursor: pointer;
-    padding: 0;
-    font-size: 14px;
-    margin-left: 5px;
-    padding: 2px;
-    /* Add any other styles you want */
+        background-color: transparent;
+        color: green;
+        cursor: pointer;
+        padding: 50px;
+        font-size: 14px;
+        margin-left: 100px;
+        position: relative;
+        padding: 2px;
+        /* Add any other styles you want */
 }
         </style>
 <!-- modal -->
@@ -181,7 +181,7 @@ function addSelectedValue(selectElement) {
 
         // Create a remove button for the item
         var removeButton = document.createElement("button");
-        removeButton.textContent = "x";
+        removeButton.textContent = "❌";
        removeButton.className = "flat-button"; // Add a class name for styling 
         removeButton.addEventListener("click", function() {
             this.parentNode.remove(); // Remove the item when the button is clicked

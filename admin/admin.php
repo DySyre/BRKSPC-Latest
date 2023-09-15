@@ -1,7 +1,9 @@
 <?php
 
+
 include '../connect.php';
- include 'include/header.php';
+include 'include/header.php';
+ 
 
 
 
@@ -52,7 +54,7 @@ else
                         </style>
                         
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">Dashboard</li>
+                        <li class="breadcrumb-item active"  style="color: #000;text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px white;">Dashboard</li>
                         </ol>
                         <div class="row">
                             <style>
@@ -64,6 +66,7 @@ else
                             
                             <div class="col-xl-3 col-md-6">
                                 <div class="card bg-warning text-white mb-4">
+                                    <i class="fa-solid fa-person-circle-check"></i>
                                     <div class="card-body">Pending Request</div>
                                     <style>
                                 .card {
@@ -92,6 +95,7 @@ else
 
                             <div class="col-xl-3 col-md-6">
                                 <div class="card bg-success text-white mb-4">
+                                  <i class="fa-solid fa-person-circle-check"></i>
                                     <div class="card-body">Approved Request</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
                                         <a class="small text-white stretched-link" href="appointment_approved.php">View Details</a>
@@ -100,21 +104,68 @@ else
                                 </div>
                             </div>
 
-                            <div class="col-xl-3 col-md-6">
+                            <div class="col-xl-3 col-md-5">
                                 <div class="card bg-primary text-white mb-4">
-                                    <div class="card-body">Appointment Complete </div>
+                                <i class="fa-solid fa-calendar-check"></i>
+                                    <div class="card-body">Appoinment Complete</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="appointment_completed.php">View Details</a>
+                                        <a class="small text-white stretched-link" href="appointment_cancel.php">View Details</a>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                            <div class="col-xl-3 col-md-6">
+                                <div class="card bg-danger text-white mb-4">
+                                     <i class="fa-solid fa-ban"></i>
+                                    <div class="card-body">Cancel Request</div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small text-white stretched-link" href="appointment_cancel.php">View Details</a>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <ol class="breadcrumb mb-4">
+                            <li class="breadcrumb-item active"  style="color: black;text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px white;">Maintenance</li>
+                            </ol>
+                            <div class="col-xl-3 col-md-6">
+                                <div class="card text-light bg-dark text-black mb-4">
+                                <i class="fa-solid fa-lock"></i>
+                                    <div class="card-body">Change Password</div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small text-white stretched-link" href="./change_password.php">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="col-xl-3 col-md-6">
-                                <div class="card bg-danger text-white mb-4">
-                                    <div class="card-body">Cancel Request</div>
+                                <div class="card text-light bg-warning text-black mb-4">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                    <div class="card-body">Edit Profile</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="appointment_cancel.php">View Details</a>
+                                        <a class="small text-white stretched-link" href="./profile.php">View Details</a>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-xl-3 col-md-6">
+                                <div class="card text-light bg-info text-black mb-4">
+                                <i class="fa-regular fa-calendar"></i>
+                                    <div class="card-body">Add Schedule</div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small text-white stretched-link" href="./schedule.php">View Details</a>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-6">
+                                <div class="card bg-danger text-white mb-4">
+                                <i class="fa-solid fa-download"></i>
+                                    <div class="card-body">Back up and Restore</div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small text-white stretched-link" href="./restore_mysql/mysqlrestore.php">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
