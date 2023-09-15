@@ -32,8 +32,8 @@
                       </tbody>
                     </table>
                 </div>
-               <hr>
-               <br>
+               
+
                 
             </div>
             
