@@ -322,7 +322,7 @@ function CashChange(){
     }
   </style>
                
-                <textarea name="noteName" id="noteName" placeholder="Enter 255 characters only" ></textarea>
+                <textarea name="noteName" id="noteName"></textarea>
                 
             </div>
             
@@ -387,7 +387,7 @@ else if($CompletId == 'Cancel')
      <label >Reason/Comment</label>
      <br>
      <!-- <input type="text-area" name=""> -->
-     <textarea rows="4" cols="50" name="ReasonNmae1" placeholder="Enter 255 characters only"></textarea>
+     <textarea rows="4" cols="50" name="ReasonNmae1"></textarea>
 
 
 

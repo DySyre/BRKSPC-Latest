@@ -6,6 +6,7 @@ $quantity = $_POST['quantity'];
 $ordernumIdd = $_POST['ordernumIdd'];
 $toalAmount = 0;
 
+
 $sql = "SELECT * FROM `pos_order_list_tbl` WHERE pos_order_list_id = '$idd'";
 $result = mysqli_query($con,$sql);
 while( $row = mysqli_fetch_array($result) )
@@ -62,12 +63,14 @@ while( $row = mysqli_fetch_array($result) )
                   <th>QTY</th>
                   <th>Price</th>
                   <th>Amount</th>
-                  <th>Discount %</th>    
                   <th></th>                                    
                 </thead>
                   
                   	<?php 
                   	$sql1 = "SELECT * FROM `pos_purchase_tbl`";
+                    $sql1 = "SELECT *, (pos_purchase_itemprice - (pos_purchase_itemprice * pos_purchase_discount / 100)) as discounted_price FROM `pos_purchase_tbl`";
+
+                    
 					$result1 = mysqli_query($con,$sql1);
 
 					$sql2 = "SELECT sum(`pos_purchase_itemtotalAmt`) as `sumAmount` FROM `pos_purchase_tbl`";
@@ -79,19 +82,25 @@ while( $row = mysqli_fetch_array($result) )
 					$sql4 = "SELECT sum(`pos_purchase_itemqty`) as `sumQty` FROM `pos_purchase_tbl`";
 					$result4 = mysqli_query($con,$sql4);
 					$row4 = mysqli_fetch_array($result4);
+          
+
+          
 					while($row1 = mysqli_fetch_array($result1))
 					{
-
+    //          $discountedPrice = $row1['pos_purchase_itemprice'] - ($row1['pos_purchase_itemprice'] * $row1['pos_purchase_discount'] / 100);
+    // $discountedAmount = $discountedPrice * $row1['pos_purchase_itemqty'];
 						?>
 						<tbody>
-						 <td><?php echo $row1['pos_purchase_itemname']?></td>
+						 <td style="color: black; font-weight: bold; text-transform:capitalize; margin: 2%;"><?php echo $row1['pos_purchase_itemname']?></td>
 					
-						 <td><input style="width: 50%; border: none;" type="text" name="" id="itemqty_<?php echo $row1['pos_purchase_id']?>" value="<?php echo $row1['pos_purchase_itemqty']?>"readonly></td>
+						 <td><input style="width: 50%; background-color: transparent; border: none;" type="text" name="" id="itemqty_<?php echo $row1['pos_purchase_id']?>" value="<?php echo $row1['pos_purchase_itemqty']?>"readonly></td>
 						
-						  <td><input style="width: 90%; border: none;" type="text" name="" id="PriceD_<?php echo $row1['pos_purchase_id']?>" value="<?php echo $row1['pos_purchase_itemprice']?>"readonly></td>
-						 <td><input style="width: 90%; border: none;" type="text" name="" id="itemAmont_<?php echo $row1['pos_purchase_id']?>" value="<?php echo $row1['pos_purchase_itemtotalAmt']?>"readonly></td>
+						  <td><input style="width: 90%; border: none;background-color: transparent;" type="text" name="" id="PriceD_<?php echo $row1['pos_purchase_id']?>" value="<?php echo $row1['pos_purchase_itemprice']?>"readonly></td>
+						 <td><input style="width: 90%; border: none;background-color: transparent;" type="text" name="" id="itemAmont_<?php echo $row1['pos_purchase_id']?>" value="<?php echo $row1['pos_purchase_itemtotalAmt']?>"readonly></td>
+             
             
-            
+          
+
 						
 					
 						 <td><a href="javascript:void();" data-id="<?php echo $row1['pos_purchase_id']; ?>"  class="btn btn-sm btnDel2 text-white"  style="border: none; background-color: red;"> Del</a></td>
@@ -104,31 +113,36 @@ while( $row = mysqli_fetch_array($result) )
 
 					}
                   	?>
-                  	 <div class="row" style="margin: 2%;">
-  <div class="col-md-10">
-    <label style="font-weight: bold;">Item's:</label>
-    <input style="width: 10%; border: none; background-color: transparent;" type="text" name="" id="itemId" value="<?php echo $row3['sumItems'] ?>pcs." readonly>
-    <label style="font-weight: bold;">Qty's:</label>
-    <input style="width: 5%; border: none; background-color: transparent;" type="text" name="" id="sumQtyId" value="<?php echo $row4['sumQty'] ?>x" readonly>
-    <label style="font-weight: bold;">Total Amount: </label>₱
-    <input style="width: 20%; border: none;" type="text" name="" id="sumAmountId" value="<?php echo $row2['sumAmount'] ?>" readonly>
-  </div>
-  <div class="col-md-2">
-    <div id="divv">
-    	<a href="javascript:void();" data-id="<?php echo $ordernumIdd; ?>"  class="btn btn-sm btnPayment text-white btn-success"  style="border: none; background-color:; border: 10px; font-size: 1.3rem;">Checkout</a>
-    
-    </div>
-  </div>
-</div>
+                  	
 
                  
 
                 
                 
-              </table>  
+              </table>
+     
+              <hr>
+              <div class="row" style="margin: 2%;">
+  <div class="col-md-10">
+    <label style="font-weight: bold;">Item's:</label>
+    <input style="width: 10%; border: none; background-color: transparent; margin: 3%;" type="text" name="" id="itemId" value="<?php echo $row3['sumItems'] ?>pcs." readonly>
+    <label style="font-weight: bold;">Qty's:</label>
+    <input style="width: 5%; border: none; background-color: transparent;  margin: 3%;" type="text" name="" id="sumQtyId" value="<?php echo $row4['sumQty'] ?>x" readonly>
+    <hr>
+    <label style="font-weight: bold;">Total Amount: </label>₱
+    <input style="margin: 10px; width: 20%; " type="text" name="" id="sumAmountId" value="<?php echo $row2['sumAmount'] ?>" readonly>
+  </div>
+</div>
+              <hr>
+              <div class="col-md-9">
+    <div id="divv">
+    	<a href="javascript:void();" data-id="<?php echo $ordernumIdd; ?>"  class="btn btn-sm btnPayment text-white btn-success"  style="width: 130%;border: none; background-color:; border: 10px; font-size: 1.3rem;">Checkout</a>
+    </div>
+  </div>
           </form>
             </div>
           </div>
+          
    <!-- modal-->
 
     <div class="modal fade" id="memViewAppointmentModal" role="dialog">
@@ -204,35 +218,11 @@ while( $row = mysqli_fetch_array($result) )
   });
 
 
-function calculateTotalAmount() {
-    var tableRows = document.querySelectorAll("#tabledataSale2 tbody tr");
-    var totalAmount = 0;
 
-    tableRows.forEach(function(row) {
-        var itemAmount = parseFloat(row.querySelector("td:nth-child(5) input").value);
-        totalAmount += itemAmount;
-    });
+ 
 
-    document.getElementById("sumAmountId").value = totalAmount.toFixed(2);
-}
 
-// Call the calculateTotalAmount function initially to calculate the total amount
-calculateTotalAmount();
-
-function calculateAmount(itemId) {
-    var quantity = parseFloat(document.getElementById("itemqty_" + itemId).value);
-    var price = parseFloat(document.getElementById("PriceD_" + itemId).value);
-    var discount = parseFloat(document.getElementById("Discount_" + itemId).value);
-
-    var discountAmount = (discount / 100) * price;
-    var totalAmount = quantity * (price - discountAmount);
-
-    document.getElementById("itemAmont_" + itemId).value = totalAmount.toFixed(2);
-
-    // Call the calculateTotalAmount function after updating the item amount
-    calculateTotalAmount();
-}
-
+ 
 </script>
 
 

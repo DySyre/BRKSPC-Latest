@@ -1,5 +1,6 @@
 <?php session_start();
 $ordernum = $_SESSION['ordernumSes'];
+
 include '../connect.php';
 
 $output= array();

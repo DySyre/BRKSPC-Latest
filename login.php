@@ -11,7 +11,6 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
     $user_name = $_POST['email'];
     $password = $_POST['password'];
     // $destination = $_POST['destination'];
-    
 
     if(!empty($user_name) && !empty($password) && !is_numeric($user_name))
     {
@@ -27,34 +26,26 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
             {
 
               $user_data = mysqli_fetch_assoc($result2);
-              if ($user_data['password'] === md5($password)) {
+              
+              if($user_data['password'] === md5($password))
+              {
                 $_SESSION['user_id'] = $user_data['user_id'];
                 $_SESSION['client_id'] = $user_data['user_id'];
-            
-                // Retrieve the user_petnotifid value from your database
-                // Replace 'your_column_name' with the correct column name
-                $queryForUserPetNotifId = "SELECT user_petnotifid FROM notification WHERE user_petnotifid = " . $user_data['user_id'];
-                $resultForUserPetNotifId = mysqli_query($con, $queryForUserPetNotifId);
-            
-                if ($resultForUserPetNotifId) {
-                    $rowForUserPetNotifId = mysqli_fetch_assoc($resultForUserPetNotifId);
-                    $_SESSION['user_petnotifid'] = $rowForUserPetNotifId['user_petnotifid'];
-                }
-            
                 header("Location: dashboard.php");
-            } else {
-              $text = "Wrong username or password!"; 
-              echo "<p style='color: yellow;
-              text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue; font-size: 1.2rem; text-transform: uppercase;
-              text-align: center; justify-content: center; align-items: center;
-              padding: 10px;
-              left-margin: -100px;
-              border: 5px solid white;
-              
-              margin: 0; '>" . $text . "</p>";
+              }
+              else
+              {
+                $text = "Wrong username or password!"; 
+                      echo "<p style='color: yellow;
+                      text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue; font-size: 1.2rem; text-transform: uppercase;
+                      text-align: center; justify-content: center; align-items: center;
+                      padding: 10px;
+                      left-margin: -100px;
+                      border: 5px solid white;
+                      
+                      margin: 0; '>" . $text . "</p>";
 
-      }
-               
+              }
             }
             else
             {
@@ -139,19 +130,6 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
     {
         echo "Please enter some valid information!";
     }
-
-    $result = mysqli_query($con, $query);
-    if (!$result) {
-      die("Query failed: " . mysqli_error($con));
-  }
-  // Fetch the results as an associative array
-  $userPetNotifIds = array();
-  while ($row = mysqli_fetch_assoc($result)) {
-      $userPetNotifIds[] = $row;
-  }
-  
-  // Close the database connection
-  mysqli_close($con);
 }  
 ?>
 

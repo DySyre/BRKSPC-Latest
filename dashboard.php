@@ -103,10 +103,10 @@ session_start();
         <a href="record.php"> <?php echo $fname?> </a>
         <a href="record.php"> Record </a>
            <a href="logout.php"> LOGOUT </a>
-           <ul class="nav justify-content-end" >
-                    <li class="dropdown">
-                            <div class="dropdown-toggle text-light" style="cursor: pointer;" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="counter">5</span><i class="fas fa-bell" style="font-size: 20px;"></i>
+           <li class="dropdown">
+                            <div  class="row text-light" id="noti_count" style="cursor: pointer;" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                            <i class="fas fa-bell" style="font-size: 1.5rem;"></i>
+                                
                             </div>
                             
                             <div class="dropdown-menu overflow-h-menu dropdown-menu-right">
