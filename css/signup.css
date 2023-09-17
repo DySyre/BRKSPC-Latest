@@ -1,13 +1,13 @@
-*{
+/* *{
   margin: 0;
   padding: 0;
   max-width: fit-content;
 }
 body {
   background-color: #454f6b;
-}
+} */
 
-.dropdown {
+/* .dropdown {
     min-width: 15em;
     position: relative;
     margin: 2em;
@@ -15,9 +15,9 @@ body {
   
   .dropdown * {
     box-sizing: border-box;
-  }
+  } */
   
-  .select {
+  /* .select {
     background: #2a2f3b;
     color: #fff;
     display: flex;
@@ -37,22 +37,22 @@ body {
   
   .select:hover {
     background: #323741;
-  }
+  } */
   
-  .caret {
+  /* .caret {
     width: 0;
     height: 0;
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
     border-top: 6px solid #fff;
     transition: 0.3s;
-  }
+  } */
   
-  .caret-rotate {
+  /* .caret-rotate {
     transform: rotate(180deg);
-  }
+  } */
   
-  .menu {
+  /* .menu {
     list-style: none;
     padding: 0.2em 0.5em;
     background: #323741;
@@ -69,9 +69,9 @@ body {
     display: none;
     transition: 0.2s;
     z-index: 1;
-  }
+  } */
   
-  .menu li {
+  /* .menu li {
     padding: 0.7em 0.5em;
     margin: 0.3em 0;
     border-radius: 0.5em;
@@ -84,21 +84,21 @@ body {
   
   .active {
     background: #23242a;
-  }
+  } */
   
-  .menu-open {
+  /* .menu-open {
     display: block;
     opacity: 1;
-  }
-  .container{
+  } */
+  /* .container{
     width: 100%;
     height: 100vh;
     background: #3c5077;
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-  .btn{
+  } */
+  /* .btn{
     padding: 10px 60px;
     background: #fff;
     border: 0;
@@ -107,4 +107,4 @@ body {
     font-size: 22px;
     font-weight: 500;
     border-radius: 30px;
-  }
+  } */

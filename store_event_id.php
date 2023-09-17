@@ -26,11 +26,14 @@ if($selectPetd == 'newPet')
        $user_id = $user_data['id'];
 // show staff
        ?>
- <div class="col-md-12 mt-4">
+
+
+
+<div class="col-md-12 mt-4">
         <div class="col-md-4">
     <label>Select Staff:</label>
+    
 <input type="hidden" id="schedId2" value="<?php echo $even_id ?>">
-<input type="hidden" id="petIDChose" value="<?php echo $selectPetd ?>">
     
      <select class="form-control" id="selectStaffId" onchange="selectStaff()" name="">
          <option hidden>Choose</option>
@@ -49,13 +52,8 @@ if($selectPetd == 'newPet')
         </div>
         
     </div>
-    
-    
-
-
-
-     <form  id='FormModal'  method="post" enctype="multipart/form-data">
-<input type="hidden" name="PetIdName" value="<?php echo $selectPetd ?>">
+ <form  id='FormModal'  method="post" enctype="multipart/form-data">
+  <input type="hidden" name="MypetNa" value="0">
       <div class="row" id="ans2">
        
     </div>
@@ -100,13 +98,13 @@ if($selectPetd == 'newPet')
              
               <div  class="row gy-1">
       
-        <div class="row">  
+        <div class="row row0-5">  
+
             <div class="col-md-3">
                <div class="form-group">
                   <label for="">Pet Name <label style="color:red; font-size: 1.2rem;">*</label></label>
                   <input type="hidden" class="form-control"  name="userid" value="<?php echo $user_id; ?>">
-                    <input type="hidden" name="MypetNa" value="1">
-                    <input type="hidden" class="form-control"  name="petid1[]" value = "0">
+                   <input type="hidden" class="form-control"  name="petid1[]" value="0">
                   <input type="text" class="form-control"  name="nchild_name1[]" required>
                   <input type="hidden" class="form-control"  name="pet1" value="pet1">   
                    
@@ -114,42 +112,41 @@ if($selectPetd == 'newPet')
                                     
               </div>  
             </div>
-            <div class="col-md-2">
-                <div class="form-group">
+             <div class="col-md-2">
+                <div class="form-group"> 
                  <label for="gender">Gender <label style="color: #435D7D;"></label> <label style="color:red; font-size: 1.2rem;">*</label></label>
                   <select name="nchild_kasarian1[]"  class="form-control" required="required">
                     <option value="female">Female</option>
                     <option value="male">Male</option>
-                 </select>
-              </div>
-            </div>
-            <div class="col-md-2">
+                 </select> 
+              </div>       
+            </div> 
+             <div class="col-md-2">
                 <div class="form-group">
                 <label for="dob">Date of Birth<label style="color: #435D7D;"></label><label style="color:red; font-size: 1.2rem;">*</label></label>
                 <input type="date" class="form-control" name="nchild_birthday1[] " required>
-              </div>
+              </div>       
             </div>
-
-            <div class="col-md-2">
-                <div class="form-group">
+              <div class="col-md-2">
+                <div class="form-group"> 
                  <label for="gender">Pet Type <label style="color: #435D7D;"></label> <label style="color:red; font-size: 1.2rem;">*</label></label>
                   <select name="petType1[]"  class="form-control" required="required">
-                    <option value="cat">Cat</option>
+      
+                  <option value="cat">Cat</option>
                     <option value="dog">Dog</option>
                      <option value="fish">Fish</option>
                      <option value="rabbit">rabbit</option>
                       <option value="bird">bird</option>
                       <option value="reptile">reptile</option>
-                 </select>
-              </div>
-            </div>
-             <div class="col-md-3">
+                 </select> 
+              </div>       
+            </div> 
+              <div class="col-md-3">
                 <div class="form-group">
                 <label for="dob">Breed(optional)<label style="color: #435D7D;"></label><label style="color:red; font-size: 1.2rem;"></label></label>
                 <input type="text" class="form-control" name="breed1[] ">
-              </div>
+              </div>       
             </div>
-            
               <div class="form-group" id="">
                                       <label style="font-size: 1.5rem;" for="fname">Services List</label>
                                       <div class="row" id="ShowOrder">
@@ -160,7 +157,7 @@ if($selectPetd == 'newPet')
                                   </div>
 
 
-            <?php
+                                  <?php
  $queryCategory = "SELECT * FROM services_tbl join category_tbl on services_tbl.category_idfk = category_tbl.category_id WHERE services_isactive = '1'";
 $resQueryCategory = mysqli_query($con, $queryCategory);
 
@@ -255,16 +252,14 @@ while ($rowCategory = mysqli_fetch_assoc($resQueryCategory)) {
 
              <div class="col-md-6 mt-2">
                 <div class="form-group">              
-                <a href="javascript:void(0)" class="add-more-form-0-5 float-left btn btn-primary" id="addpet">ADD PET</a>
+                <a href="javascript:void(0)" class="add-more-form-0-51 float-left btn btn-primary" id="addpet1">ADD PET</a>
 
                <!--<button type="button" class="remove-btn-mybtnn btn btn-danger">Remove</button>-->
-                 </div>       
+                 </div>    
             </div>         
       </div>
      
-      <div class="row0-5" id="ans44">
-        
-      </div>
+      <div class="paste-new-forms_0-5"></div>
  
         </div>
            
@@ -288,30 +283,34 @@ while ($rowCategory = mysqli_fetch_assoc($resQueryCategory)) {
                 <input type="file" name="qrpic" class="form-control col-2-custom">
                 <div class="modal-footer">
                 <div class="modal-body text-center"> <!-- Center align the content -->
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
-                Terms and Conditions
-</button>
-<div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">
+                  Terms and Conditions
+                </button>
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Terms and Conditions</h5>
+                <h5 class="modal-title" id="exampleModalLongTitle">Terms and Conditions</h5>
                 <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
                 
             </div>
-            <div class="modal-body">
+            <div class="modal-body" style="font-weight: bold;display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 0;
+  margin-right: 0;" align="left">
                 <!-- Content goes here -->
                 <p>⚫ Please note that you are expected to come 5 minutes earlier than scheduled.
                 Our policy is first-come, first-served and will prioritize emergencies.
                 </p>
                 <p>⚫ Appointment fee is rebateable upon successful transaction in clinic.</p>
                 <p>⚫ After sending appointment fee, please upload proof of payment.
-                You will receive an email and notification on system regarding to status of your appointment.
+                      You will receive an email and notification on system regarding to status of your appointment.
                 </p>
             </div>
-            <!-- <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            </div> -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" onclick="$('#exampleModalCenter').modal('hide');">Got it!</button>
+            </div>
         </div>
     </div>
 </div>
@@ -329,8 +328,35 @@ while ($rowCategory = mysqli_fetch_assoc($resQueryCategory)) {
             </form>
 
             <script type="text/javascript">
-              
+              function selectStaff(){
+      
+      var x = document.getElementById("selectStaffId").value;
+      // document.getElementById("potek").disabled = true;
+     
+ var y = document.getElementById("schedId2").value;
+      
+     // alert(x);
+        $.ajax({
+                url:"store_event_id_showStaff.php",
+                method:"POST",
+                data:{
+                  id: x,
+                  schedIdd: y
+               
+                },
+                success: function(data){
+                  $("#ans2").html(data);
+
+                }
+              })
+
+      }
+
+      //
+
+
             </script>
+            
 <?php
 
 
@@ -684,6 +710,7 @@ while ($rowCategory = mysqli_fetch_assoc($resQueryCategory)) {
 
       }
             </script>
+
 <?php
 // ennd first if
 

@@ -24,6 +24,7 @@
             require('assets/libs/email/PHPMailer/Exception.php');
             require('assets/libs/email/PHPMailer/SMTP.php');
             require('assets/libs/email/PHPMailer/PHPMailer.php');
+            require('assets/libs/email/PHPMailer/PHPMailerAutoload.php');
             // if Verify Button Clicked
     if (isset($_POST['verify'])) {
         $_SESSION['message'] = "";
@@ -38,17 +39,42 @@
             $update_status = "Active";
             $update_code = 0;
 
-            $update_query = "UPDATE users_balagtas SET status = '$update_status' , code = $update_code WHERE code = $fetch_code";
-            $update_result = mysqli_query($con, $update_query);
+           
 
-            if ($update_result) {
-                header('location: login.php');
-            } else {
-                $errors['db_error'] = "Failed To Insering Data In Database!";
-            }
-        } else {
-            $errors['otp_error'] = "You enter invalid verification code!";
+    //         if ($update_result) {
+    //             header('location: login.php');
+    //         } else {
+    //             $errors['db_error'] = "Failed To Insering Data In Database!";
+    //         }
+    //     } else {
+    //         $errors['otp_error'] = "You enter invalid verification code!";
+    //     }
+    // }
+
+    session_start();
+    if(isset($_POST["verify"])){
+        $otp = $_SESSION['otp'];
+        $email = $_SESSION['mail'];
+        
+        $otp_code = $_POST['otp_code'];
+
+        if($otp != $otp_code){
+            ?>
+           <script>
+               alert("Invalid OTP code");
+           </script>
+           <?php
+        }else{
+           echo '<script> window.location.href = "newPassword.php";</script>';
+            ?>
+             <script>
+                 alert("Verifiy account done, you may reset your password");
+                   window.location.replace("newPassword.php");
+             </script>
+             <?php
         }
+    }
+}
     }
             ?>      
             <input type="number" name="otp" placeholder="Verification Code" required><br>

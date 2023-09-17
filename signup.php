@@ -1,3 +1,50 @@
+<!-- 
+include("connect.php");
+
+// Function to check if email already exists
+function isEmailExists($email, $db) {
+    $query = "SELECT COUNT(*) as count FROM users WHERE email = ?";
+    $stmt = $db->prepare($query);
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $row = $result->fetch_assoc();
+    return $row['count'] > 0;
+}
+
+// Function to check if first name and last name combination already exists
+function isNameExists($first_name, $last_name, $db) {
+    $query = "SELECT COUNT(*) as count FROM users WHERE first_name = ? AND last_name = ?";
+    $stmt = $db->prepare($query);
+    $stmt->bind_param("ss", $first_name, $last_name);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $row = $result->fetch_assoc();
+    return $row['count'] > 0;
+}
+
+// Handle form submission
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $email = $_POST["email"];
+    $first_name = $_POST["user_name"];
+    $last_name = $_POST["last_name"];
+
+    // Check if email already exists
+    if (isEmailExists($email, $db)) {
+        echo "Email already exists. Please choose a different one.";
+    } elseif (isNameExists($first_name, $last_name, $db)) {
+        echo "First name and last name combination already exists.";
+    } else {
+        // You can proceed with inserting the new user into the database here
+        // Make sure to hash the password before storing it securely in the database
+        // ... (Your code to insert the user into the database goes here)
+        echo "User registered successfully!";
+    }
+}
+
+// Close the database connection
+$db->close(); -->
+
 
 <!DOCTYPE html>
 <html>
@@ -53,8 +100,8 @@
         <form id="signUpForm" class="login col-md-12" method="post" enctype="multipart/form-data" >
             <div class="title">Signup</div>
 
-            <input id="last_name" type="text" name="last_name" placeholder="e.g. Dela Cruz"  pattern="[A-Za-z]{1,}" required="required">
-            <input id="user_name" type="text" name="user_name" placeholder="e.g. Pedro"  pattern="[A-Za-z]{1,}" required="required">
+            <input id="last_name" type="text" name="last_name" placeholder="e.g. Dela Cruz"  pattern="[A-Za-z ]{1,}" required="required">
+            <input id="user_name" type="text" name="user_name" placeholder="e.g. Pedro"  pattern="[A-Za-z ]{1,}" required="required">
             
             <input id="email" type="email" name="email" placeholder="e.g. pedrodelacruz@gmail.com"required="required" >
             <input id="password_validation" type="password" name="password" placeholder="Password" min="8" required="required">

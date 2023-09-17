@@ -160,18 +160,16 @@ else
                                     </div>
                                 </div>
                             </div>
-                           <!-- Restore Button -->
-                           <h2>Restore Database</h2>
-                        <form method="post" action="restore.php" enctype="multipart/form-data" align-items="right">
-                            <input type="file" name="restore_file" accept=".sql">
-                            <input type="submit" name="restore" value="Restore Database">  
-                        </form>
-                            <h2>Back Up</h2>
-                            <!-- Backup Button -->
-                        <form method="post" action="backup.php">
-        <label for="">Click here</label>
-        <input type="submit" name="backup" value="Backup Database">
-                        </form>
+                            <div class="col-xl-3 col-md-6">
+                                <div class="card bg-danger text-white mb-4">
+                                <i class="fa-solid fa-download"></i>
+                                    <div class="card-body">Back up and Restore</div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small text-white stretched-link" href="./restore_mysql/mysqlrestore.php">View Details</a>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         
                        

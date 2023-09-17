@@ -16,7 +16,17 @@
         <p>It's quick and easy.</p>
         <div id="line"></div>
         <form action="#" method="POST" autocomplete="off">
-        <?php
+        
+
+            <input type="email" name="email" placeholder="Email"><br>
+            <input type="submit" name="forgot_password" value="Check">
+        </form>
+    </div>
+</body>
+
+</html>
+
+<?php
 include("connect.php");
 include("functions.php");
 include("assets/libs/enc-dec/enc-dec.php");
@@ -28,6 +38,9 @@ require('assets/libs/email/PHPMailer/SMTP.php');
 require('assets/libs/email/PHPMailer/PHPMailer.php');
 
 $mail = new PHPMailer(true);
+$token = bin2hex(random_bytes(16));
+
+$token_hash = hash("sha256", $token);
 
 if (isset($_POST['email'])) {
     $email = $_POST['email'];
@@ -101,7 +114,8 @@ if (isset($_POST['email'])) {
         <body>';
         $message .= '<div class="row pymntRow">';
         $message .= '<label class="pymntLabel">Verification code: </label>';
-        $message .= '<label class="pymntVal">'.$verification.'</label><br/>';
+        $message .= '<label class="pymntVal">Click <a href="localhost/barkspace2/newPassword.php?token=$token">here</a> 
+        to reset your password.</label><br/>';
      
         $message .= '<label class="pymntLabel">EMAIL: </label>';
         $message .= '<label class="pymntVal">'.$email.'</label><br/>';
@@ -114,15 +128,20 @@ if (isset($_POST['email'])) {
                   
         $mail->Body = $message;
 
+      try{
+
       
 
         $mail->send();
-        
+      }catch (Exception $e){
+        echo "Message could not be sent. Mailer error: {$mail->ErrorInfo}";
+      }
+      echo "Message sent, please check your inbox.";
             $data = array(
         'status'=>'true',    
     );
     // echo json_encode($data);
-    header("location: otp.php");
+    // header("location: otp.php");
     //  catch (Exception $e) {
     //   $enc2 = encrypt($random,"");
     // //   header("location: index.php?error=$enc2");
@@ -138,11 +157,3 @@ if (isset($_POST['email'])) {
 
 
 ?>
-
-            <input type="email" name="email" placeholder="Email"><br>
-            <input type="submit" name="forgot_password" value="Check">
-        </form>
-    </div>
-</body>
-
-</html>
