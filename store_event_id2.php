@@ -1,6 +1,7 @@
 <?php 
 session_start();
  include("connect.php");
+ require_once 'Config/UFunction.php';
 $Pet2Id = $_POST['selectPetd'];
 
 

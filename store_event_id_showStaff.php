@@ -1,5 +1,6 @@
 <?php 
  include("connect.php");
+ include("functions.php");
 
 $StaffId = $_POST['id'];
 $schedIdd = $_POST['schedIdd'];

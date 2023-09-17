@@ -419,7 +419,68 @@ while ($rowCategory = mysqli_fetch_assoc($resQueryCategory)) {
 
 }
 
-   ?>    
+   ?>   
+   <?php
+include("connect.php");
+include("Config/AppointDup.php");
+
+// Create an instance of the AppointDup class
+$appointmentManager = new AppointDup();
+
+// Assuming you have already established a database connection and created the $yourDatabaseObject instance
+$pet_name_id = $_POST['pet_name_id'];
+$schedule_date = $_POST['schedule_date'];
+
+$existing_appointments = $appointmentManager->selectAppointmentsByPetAndDate($petname_id, $sched_date);
+if (!empty($existing_appointments)) {
+    // An appointment for the same pet on the same day already exists
+    echo "Error: You cannot schedule another appointment for the same pet on the same day.";
+} else {
+    // Perform the insert query
+    $insert_query = "INSERT INTO schedule_tbl (pet_name_id, schedule_date) VALUES (?, ?)";
+    $stmt = mysqli_prepare($appointmentManager->conn, $insert_query);
+
+    if ($stmt) {
+        mysqli_stmt_bind_param($stmt, "is", $pet_name_id, $schedule_date);
+        if (mysqli_stmt_execute($stmt)) {
+            // Appointment successfully inserted
+            echo "Appointment successfully scheduled.";
+        } else {
+            // Handle other database errors
+            echo "Error: " . mysqli_error($appointmentManager->conn);
+        }
+        mysqli_stmt_close($stmt);
+    } else {
+        // Handle prepare error
+        echo "Error: " . mysqli_error($appointmentManager->conn);
+    }
+}
+
+// Close the database connection
+mysqli_close($appointmentManager->conn);
+
+// Function to select appointments by pet and date
+function selectAppointmentsByPetAndDate($pet_name_id, $schedule_date) {
+    global $appointmentManager; // Access the global database connection
+
+    $select_query = "SELECT * FROM schedule_tbl WHERE pet_name_id = ? AND schedule_date = ?";
+    $stmt = mysqli_prepare($appointmentManager->conn, $select_query);
+
+    mysqli_stmt_bind_param($stmt, "is", $pet_name_id, $schedule_date);
+
+    mysqli_stmt_execute($stmt);
+
+    $result = mysqli_stmt_get_result($stmt);
+
+    if ($result && mysqli_num_rows($result) > 0) {
+        $appointments = mysqli_fetch_all($result, MYSQLI_ASSOC);
+        return $appointments;
+    } else {
+        return [];
+    }
+}
+?>
+ 
            
 <?php
 

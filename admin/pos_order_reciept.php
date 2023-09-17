@@ -52,6 +52,7 @@ include "../connect.php";
                 </thead>
                  
                   	<?php 
+
                   	$sql1 = "SELECT * FROM `pos_purchase_his_tbl` WHERE pos_purchase_hisordrnum = '$ordernum' AND isProceed = '1'";
 					$result1 = mysqli_query($con,$sql1);
 
@@ -70,6 +71,8 @@ include "../connect.php";
           $row5 = mysqli_fetch_array($result5);
 
           $idUser =  $row5['pos_purchase_his_enduser'];
+
+
 
 					while($row1 = mysqli_fetch_array($result1))
 					{
@@ -98,8 +101,12 @@ include "../connect.php";
     <label style="font-weight: bold;">Qty's:</label>
     <input style="width: 15%; border: none;" type="text" name="" id="sumQtyId" value="<?php echo $row4['sumQty'] ?>" readonly>
     <br>
-    <label style="font-weight: bold;">Total Amount: </label>₱
+    <label style="font-weight: bold;">Total Amount: </label> ₱
     <input style="width: 20%; border: none;" type="text" name="" id="sumAmountId" value="<?php echo $row2['sumAmount'] ?>" readonly>
+    
+    
+          
+
 
     <br>
     <?php 
@@ -135,6 +142,8 @@ include "../connect.php";
 
 
        <script type="text/javascript">
+
+
   const fontSizeSelect = document.getElementById('font-size-select');
   const table = document.getElementById('tabledataStaff');
 

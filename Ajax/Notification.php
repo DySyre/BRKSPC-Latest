@@ -1,18 +1,32 @@
 <?php
-include("../Connect.php");
+  include("../Connect.php");
 require_once '../Config/UFunction.php';
-$usernotifid = $_SESSION['user_petnotifid'];
+$query = "SELECT user_petnotifid FROM notification";
 
+$result = mysqli_query($con, $query);
+
+if (!$result) {
+    die("Query failed: " . mysqli_error($con));
+}
+
+// Fetch the results as an associative array
+$userPetNotifIds = array();
+while ($row = mysqli_fetch_assoc($result)) {
+    $userPetNotifIds[] = $row;
+}
+
+// Close the database connection
+mysqli_close($con);
+// Check if $_SESSION['user_petnotifid'] exists and dump its value
 if (isset($_SESSION['user_petnotifid'])) {
-    //this vardump is to check if the session variable is set
-    // var_dump($_SESSION['user_petnotifid']);
+    var_dump($_SESSION['user_petnotifid']);
 } else {
     echo "Session variable 'user_petnotifid' is not set.";
 }
 $UDF_call = new UFunction();
 
 // Assuming you have retrieved the user_petnotifid value from the database and assigned it to $user_petnotifid
-$selectedUserId = $usernotifid; // Retrieve the user_petnotifid value from the session
+$selectedUserId = $_SESSION['user_petnotifid']; // Retrieve the user_petnotifid value from the session
 $select_status = $UDF_call->select_order_limit('notification', 'n_id', 10, $selectedUserId);
 ?>
 

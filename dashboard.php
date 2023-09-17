@@ -3,7 +3,7 @@ session_start();
 
   include("connect.php");
   include("functions.php");
-
+  
   if(empty($_SESSION['client_id']))
   {
     header("Location: empty.php");
@@ -19,6 +19,7 @@ session_start();
 
        $fname = $user_data['user_name'];
        $user_id = $user_data['id'];
+       
     ?>
     <!DOCTYPE html>
 <html lang="en">

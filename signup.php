@@ -1,3 +1,50 @@
+<!-- 
+include("connect.php");
+
+// Function to check if email already exists
+function isEmailExists($email, $db) {
+    $query = "SELECT COUNT(*) as count FROM users WHERE email = ?";
+    $stmt = $db->prepare($query);
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $row = $result->fetch_assoc();
+    return $row['count'] > 0;
+}
+
+// Function to check if first name and last name combination already exists
+function isNameExists($first_name, $last_name, $db) {
+    $query = "SELECT COUNT(*) as count FROM users WHERE first_name = ? AND last_name = ?";
+    $stmt = $db->prepare($query);
+    $stmt->bind_param("ss", $first_name, $last_name);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $row = $result->fetch_assoc();
+    return $row['count'] > 0;
+}
+
+// Handle form submission
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $email = $_POST["email"];
+    $first_name = $_POST["user_name"];
+    $last_name = $_POST["last_name"];
+
+    // Check if email already exists
+    if (isEmailExists($email, $db)) {
+        echo "Email already exists. Please choose a different one.";
+    } elseif (isNameExists($first_name, $last_name, $db)) {
+        echo "First name and last name combination already exists.";
+    } else {
+        // You can proceed with inserting the new user into the database here
+        // Make sure to hash the password before storing it securely in the database
+        // ... (Your code to insert the user into the database goes here)
+        echo "User registered successfully!";
+    }
+}
+
+// Close the database connection
+$db->close(); -->
+
 
 <!DOCTYPE html>
 <html>
@@ -5,7 +52,7 @@
         <title>Signup</title>
         
         <div class="logo">
-    <img src="img/7.jpg" alt="" style="opacity: 0.6; height: 100vh; width: 100%; object-fit: cover;">
+    <img src="img/22.jpg" alt="" style="opacity: 0.6; height: 100vh; width: 100%; object-fit: cover;">
     </div>
         
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -15,7 +62,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
     <link rel="stylesheet" href="css/login3.css">
-    <link rel="stylesheet" href="css/signup.css">
+        <link rel="stylesheet" href="css/signup.css">
 
     </head>
     <body >
@@ -31,16 +78,30 @@
               }
           </style>
  
-<!--  
+ 
         <div class="container col-md-12" >
-            <div class="row col-md-12"> -->
-              
+          
+          <style>
+            .container {
+              margin : 0 ;
+              width: 0;
+              padding:0;}
+
+          </style>
+            <div class="row col-md-12">
+              <style>
+                #logintext{
+                  font-size:2rem !important;
+
+                }
+                  
+              </style>
               
         <form id="signUpForm" class="login col-md-12" method="post" enctype="multipart/form-data" >
             <div class="title">Signup</div>
 
-            <input id="last_name" type="text" name="last_name" placeholder="e.g. Dela Cruz"  pattern="[A-Za-z]{1,}" required="required">
-            <input id="user_name" type="text" name="user_name" placeholder="e.g. Pedro"  pattern="[A-Za-z]{1,}" required="required">
+            <input id="last_name" type="text" name="last_name" placeholder="e.g. Dela Cruz"  pattern="[A-Za-z ]{1,}" required="required">
+            <input id="user_name" type="text" name="user_name" placeholder="e.g. Pedro"  pattern="[A-Za-z ]{1,}" required="required">
             
             <input id="email" type="email" name="email" placeholder="e.g. pedrodelacruz@gmail.com"required="required" >
             <input id="password_validation" type="password" name="password" placeholder="Password" min="8" required="required">
@@ -85,8 +146,8 @@
 
             <!-- <a href="">click here to login</a> -->
 
-            <!-- <div class="dropdown">
-                <div class="select">
+            <div class="dropdown">
+                <!-- <div class="select">
                     <span class="selected" name="selected">Branch</span>
                     
                     <div class="caret"></div>
@@ -95,15 +156,25 @@
                     <li value="Marilao">Marilao</li>
                     <li value="Balagtas">Balagtas</li>
                     
-                </ul><br/>
+                </ul><br/> -->
                 <input type="hidden" name="branch" value="0">
-            <select class="select" name="branch">
+            <!-- <select class="select" name="branch">
                         <option class="menu" value="">Branch</option>
                         <option value="Marilao">Marilao</option>
                         <option value="Balagtas">Balagtas</option>
-                    </select> 
-            </div> -->
+                    </select>  -->
+            </div>
             <button id="" type="submit" class="btn active">Submit</button>
+
+
+            <style>
+              .btn{
+                pointer-events: none;
+              }
+              .btn.active{
+                pointer-events: auto;
+              }
+            </style>
             <br>
             Have an Account?<a href="login.php" class="fs-6"> Click here to Login</a>
     

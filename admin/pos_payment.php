@@ -1,6 +1,7 @@
 <?php session_start();
 include "../connect.php";
 
+
 $ordernum = $_POST['idd'];
 $amount = $_POST['amount'];
 
@@ -9,62 +10,68 @@ $amountTotal = number_format($amount,2);
 ?>
 
 <div class="row">
-	<form id="paymentForm">
-		
-	
+<form id="paymentForm">
   <div class="col-md-12">
-
-    	<label>Total Amount:</label>
-
+    <label>Total Amount:</label>
     <div class="input-group mb-3">
-  <span class="input-group-text" id="basic-addon1">PHP</span>
-  <input type="text" class="form-control" value="<?php echo $amountTotal; ?>" aria-label="Username" aria-describedby="basic-addon1" id="TotalAmount" readonly>
-</div>
- 
-    
+      <span class="input-group-text" id="basic-addon1">PHP</span>
+      <input type="text" class="form-control" value="<?php echo $amountTotal; ?>" aria-label="Total Amount" aria-describedby="basic-addon1" id="TotalAmount" readonly>
+    </div>
   </div>
-   <div class="col-md-12">
-   <input type="hidden" name="ordNumberId" value="<?php echo $ordernum ?>">
- 
+  <div class="col-md-12">
+    <input type="hidden" name="ordNumberId" value="<?php echo $ordernum ?>">
+    <label>Discount:</label>
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="basic-addon1">PHP</span>
+      <input type="text" class="form-control" onkeyup="updateTotalAmount()" aria-label="Discount" aria-describedby="basic-addon1" id="discount" required>
+    </div>
+  </div>
+  <div class="col-md-12">
+    <input type="hidden" name="ordNumberId" value="<?php echo $ordernum ?>">
     <label>Payment:</label>
-     <div class="input-group mb-3">
-	  <span class="input-group-text" id="basic-addon1">PHP</span>
-	  <input type="text" class="form-control" onkeyup="payment()"  aria-label="Username" aria-describedby="basic-addon1" id="payments" required >
-	</div>
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="basic-addon1">PHP</span>
+      <input type="text" class="form-control" onkeyup="payment()" aria-label="Payment" aria-describedby="basic-addon1" id="payments" required>
+    </div>
   </div>
-
-  <!-- <div class="col-md-12">
-   <input type="hidden" name="ordNumberId" value="<?php echo $ordernum ?>">
- 
-    <label>Discount %: </label>
-     <div class="input-group mb-3">
-	  <span class="input-group-text" id="basic-addon1">%</span>
-	  <input type="text" class="form-control" onkeyup="payment()"  aria-label="Username" aria-describedby="basic-addon1" id="payments" required >
-	</div>
-  </div> -->
-
-   <div class="col-md-12">
-     <label>Change:</label>
-     <div class="input-group mb-3">
-	  <span class="input-group-text" id="basic-addon1">PHP</span>
-	  <input type="text" class="form-control"  aria-label="Username" aria-describedby="basic-addon1" id="changeBal" readonly>
-	</div>
- 
-   
+  <div class="col-md-12">
+    <label>Change:</label>
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="basic-addon1">PHP</span>
+      <input type="text" class="form-control" aria-label="Change" aria-describedby="basic-addon1" id="changeBal" readonly>
+    </div>
   </div>
-
-  	<div class="d-flex justify-content-end">
-  <div>
-  	 <a href="javascript:void();" class="btn btn-sm  text-white"data-bs-dismiss="modal" style="border: none; background-color: grey;">CLOSE</a>
-
-    <a href="javascript:void();" data-id="<?php echo $ordernum ?>"  class="btn btn-sm btnProceed text-white"  style="border: none; background-color: blue;"id="btnPro"> PROCEED</a>
+  <div class="d-flex justify-content-end">
+    <div>
+      <a href="javascript:void();" class="btn btn-sm text-white" data-bs-dismiss="modal" style="border: none; background-color: grey;">CLOSE</a>
+      <a href="javascript:void();" data-id="<?php echo $ordernum ?>" class="btn btn-sm btnProceed text-white" style="border: none; background-color: blue;" id="btnPro">PROCEED</a>
+    </div>
   </div>
-</div>
+</form>
 
-  </form>
+
+
 </div>
 
 <script type="text/javascript">
+function updateTotalAmount() {
+    // Get the discount value from the discount input field
+    var discountValue = parseFloat(document.getElementById("discount").value) || 0;
+    
+    // Calculate the new total amount after applying the discount
+    var newTotalAmount = <?php echo $amountTotal; ?> - discountValue;
+    
+    // Update the Total Amount field with the new value
+    document.getElementById("TotalAmount").value = newTotalAmount.toFixed(2);
+  }
+
+  // Function for payment calculations (assuming you already have this)
+  function payment() {
+    // Your payment calculation logic here
+  }
+
+
+
 	document.getElementById("btnPro").disabled = true;
   function payment() {
   var tAmount = parseFloat(document.getElementById("TotalAmount").value.replace(/,/g, ''));
@@ -154,6 +161,9 @@ $('#paymentForm').on('click', '.btnProceed', function(event) {
           }
   });
 });
+
+
+
 </script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
