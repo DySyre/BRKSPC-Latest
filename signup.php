@@ -1,75 +1,19 @@
-<!-- 
-include("connect.php");
-
-// Function to check if email already exists
-function isEmailExists($email, $db) {
-    $query = "SELECT COUNT(*) as count FROM users WHERE email = ?";
-    $stmt = $db->prepare($query);
-    $stmt->bind_param("s", $email);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    $row = $result->fetch_assoc();
-    return $row['count'] > 0;
-}
-
-// Function to check if first name and last name combination already exists
-function isNameExists($first_name, $last_name, $db) {
-    $query = "SELECT COUNT(*) as count FROM users WHERE first_name = ? AND last_name = ?";
-    $stmt = $db->prepare($query);
-    $stmt->bind_param("ss", $first_name, $last_name);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    $row = $result->fetch_assoc();
-    return $row['count'] > 0;
-}
-
-// Handle form submission
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $email = $_POST["email"];
-    $first_name = $_POST["user_name"];
-    $last_name = $_POST["last_name"];
-
-    // Check if email already exists
-    if (isEmailExists($email, $db)) {
-        echo "Email already exists. Please choose a different one.";
-    } elseif (isNameExists($first_name, $last_name, $db)) {
-        echo "First name and last name combination already exists.";
-    } else {
-        // You can proceed with inserting the new user into the database here
-        // Make sure to hash the password before storing it securely in the database
-        // ... (Your code to insert the user into the database goes here)
-        echo "User registered successfully!";
-    }
-}
-
-// Close the database connection
-$db->close(); -->
-
 
 <!DOCTYPE html>
 <html>
     <head>
         <title>Signup</title>
-        
-        <div class="logo">
-    <img src="img/22.jpg" alt="" style="opacity: 0.6; height: 100vh; width: 100%; object-fit: cover;">
-    </div>
-        
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-
- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
     <link rel="stylesheet" href="css/login3.css">
-        <link rel="stylesheet" href="css/signup.css">
-
+    <!-- <link rel="stylesheet" href="css/signup.css"> -->
     </head>
     <body >
       
         
-        <div id="logo"  class="col-md-12" >
-        
+        <div id="logo"  style="background-color: #454f6b;" >
+       
                
                 
           <style>
@@ -79,8 +23,10 @@ $db->close(); -->
           </style>
  
  
-        <div class="container col-md-12" >
-          
+        <div class="container">
+        <!-- <div class="logo" style="overflow-y: hidden;">
+    <img src="img/vet.jpg" alt="" style="opacity: 0.6; height: auto; width: 100%;  background-color: #454f6b;">
+    </div> -->
           <style>
             .container {
               margin : 0 ;
@@ -88,7 +34,7 @@ $db->close(); -->
               padding:0;}
 
           </style>
-            <div class="row col-md-12">
+            <div class="row">
               <style>
                 #logintext{
                   font-size:2rem !important;
@@ -96,22 +42,24 @@ $db->close(); -->
                 }
                   
               </style>
-              
-        <form id="signUpForm" class="login col-md-12" method="post" enctype="multipart/form-data" >
+            
+        <form id="signUpForm" class="login" method="post" enctype="multipart/form-data" style="background-color: whitesmoke;">
+          
             <div class="title">Signup</div>
 
-            <input id="last_name" type="text" name="last_name" placeholder="e.g. Dela Cruz"  pattern="[A-Za-z ]{1,}" required="required">
-            <input id="user_name" type="text" name="user_name" placeholder="e.g. Pedro"  pattern="[A-Za-z ]{1,}" required="required">
+            <input id="last_name" type="text" name="last_name" placeholder="Last Name" pattern="[A-Za-z ]{1,}" required="required">
+
+            <input id="user_name" type="text" name="user_name" placeholder="First Name" pattern="[A-Za-z ]{1,}" required="required">
             
-            <input id="email" type="email" name="email" placeholder="e.g. pedrodelacruz@gmail.com"required="required" >
+            <input id="email" type="email" name="email" placeholder="Email (e.g. pedrodelacruz@gmail.com)"required="required" >
             <input id="password_validation" type="password" name="password" placeholder="Password" min="8" required="required">
             <div class="password_required">
               <ul>
-                <li class="lowercase"><span></span>One lower case letter</li>
-                <li class="capital"><span></span>One Capital Letter</li>
-                <li class="number"><span></span>One number</li>
-                <li class="special"><span></span>One Special Character</li>
-                <li class="eight_characters"><span></span>At least 8 Characters</li>
+                <li class="lowercase" style="font-size: 1rem;"><span></span>One lower case letter</li>
+                <li class="capital"style="font-size: 1rem;"><span></span>One Capital Letter</li>
+                <li class="number"style="font-size: 1rem;"><span></span>One number</li>
+                <li class="special"style="font-size: 1rem;"><span></span>One Special Character</li>
+                <li class="eight_characters"style="font-size: 1rem;"><span></span>At least 8 Characters</li>
               </ul>
               <style>
                 .password_required{
@@ -175,8 +123,7 @@ $db->close(); -->
                 pointer-events: auto;
               }
             </style>
-            <br>
-            Have an Account?<a href="login.php" class="fs-6"> Click here to Login</a>
+            <p class="fs-5">Already have an account? <a href="login.php" class="fs-5"> Click here to Login</a></p>
     
           
            
