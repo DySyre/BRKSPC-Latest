@@ -281,7 +281,7 @@ else
      <label >Reason/Comment</label>
      <br>
      <!-- <input type="text-area" name=""> -->
-     <textarea rows="4" cols="50" name="ReasonNmae" placeholder="Enter 255 characters only"></textarea>
+     <textarea rows="4" cols="50" name="ReasonNmae" placeholder="Enter 255 characters only" required></textarea>
 
  </div>
     <?php

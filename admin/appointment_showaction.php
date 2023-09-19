@@ -25,7 +25,7 @@ if($ActionName == 'approve')
 
     <input type="hidden" class="form-control" name="startTimeSched" required><br>
     <label>Reminder/Comment:</label>
-     <textarea rows="4" cols="50" name="ReasonNmae" placeholder="Enter 255 characters only"></textarea>
+     <textarea rows="4" cols="50" name="ReasonNmae" placeholder="Enter 255 characters only" required></textarea>
 
 </div>
           <div class="modal-footer">
@@ -47,7 +47,7 @@ else
      <label >Reason/Comment</label>
      <br>
      <!-- <input type="text-area" name=""> -->
-     <textarea rows="4" cols="50" name="ReasonNmaeCancel" placeholder="Enter 255 characters only"></textarea>
+     <textarea rows="4" cols="50" name="ReasonNmaeCancel" placeholder="Enter 255 characters only" required></textarea>
 
  </div>
  <div class="modal-footer">

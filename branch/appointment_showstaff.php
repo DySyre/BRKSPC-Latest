@@ -59,7 +59,7 @@ $availableTimeSlots = array_diff($notAvailableTimeSlots, array(''));
     <label>Set Time For This Appointment:</label><br>
     <input type="time" class="form-control" name="startTimeSched" required><br>
     <label>Reminder/Comment:</label>
-     <textarea rows="4" cols="50" name="ReasonNmae"></textarea>
+     <textarea rows="4" cols="50" name="ReasonNmae" required></textarea>
 
 </div>
           <div class="modal-footer">
