@@ -267,7 +267,7 @@ while ($rowCategory = mysqli_fetch_assoc($resQueryCategory)) {
               </div>
                 <div class="mb-3 col-md-12" style="text-align: center;">    
                 
-                  <img src="img/sampleqr.png" style="max-width: 60%; height: auto;">  
+                <img src="img/sampleqr.png" style="max-width: 60%; height: auto;">  
                
 
               </div>
@@ -629,7 +629,7 @@ while ($rowCategory = mysqli_fetch_assoc($resQueryCategory)) {
               </div>
                 <div class="mb-3 col-md-12" style="text-align: center;">    
                 
-                  <img src="img/sampleqr.png" style="max-width: 60%; height: auto;">  
+                <img src="img/sampleqr.png" style="max-width: 60%; height: auto;">   
                
 
               </div>

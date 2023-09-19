@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 04, 2023 at 07:33 AM
+-- Generation Time: Jul 30, 2023 at 11:37 AM
 -- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- PHP Version: 8.0.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -104,18 +104,7 @@ CREATE TABLE `appointment_tbl` (
 INSERT INTO `appointment_tbl` (`appointment_payment_id`, `appointment_payment_same`, `appointment_payment_proof`, `appointment_date`, `appointment_payment_status`, `pet_ownerid`, `appointment_branch`, `appointment_coment`, `appointment_payment_dor`) VALUES
 (179, 239794, 'gcashProofOfPayment-64c607295795e.jpg', 45, 'completed', 54, 8, 'none', '2023-07-30'),
 (180, 278648, 'gcashProofOfPayment-64c60de46ee8a.jpg', 45, 'completed', 54, 8, 'none', '2023-07-30'),
-(181, 433632, 'gcashProofOfPayment-64c62a82044e1.jpg', 45, 'completed', 54, 8, 'assddddsssddd', '2023-07-30'),
-(182, 436896, '265971219_1254946065025920_2732222141938030163_n-64f55b214fa8f.png', 47, 'cancel', 60, 2, 'none', '2023-09-04'),
-(183, 199565, '331071578_1905981169737742_6950448939031653227_n-64f55b4639215.jpg', 47, 'approved', 60, 2, '', '2023-09-04'),
-(184, 127538, '331071578_1905981169737742_6950448939031653227_n-64f55b4d7935e.jpg', 47, 'cancel', 60, 2, 'none', '2023-09-04'),
-(185, 492239, '346118392_508997227979629_3158509736187805000_n-64f55bb023d5e.jpg', 47, 'approved', 60, 2, '', '2023-09-04'),
-(186, 601211, '367825498_279791558018935_6101178687688711885_n-64f56027dfebe.jpg', 47, 'cancel', 61, 2, 'none', '2023-09-04'),
-(187, 392200, '367825498_279791558018935_6101178687688711885_n-64f5602da348e.jpg', 47, 'approved', 61, 2, 'tangina gumana rin', '2023-09-04'),
-(188, 694817, '367825498_279791558018935_6101178687688711885_n (1)-64f560b988ccf.jpg', 47, 'pending', 61, 2, 'none', '2023-09-04'),
-(189, 704814, '367825498_279791558018935_6101178687688711885_n (1)-64f5610d833b1.jpg', 47, 'cancel', 61, 2, 'none', '2023-09-04'),
-(190, 906845, '367825498_279791558018935_6101178687688711885_n (1)-64f5611659511.jpg', 47, 'approved', 61, 2, '', '2023-09-04'),
-(191, 344566, '318594138_2277251895792436_9140798039711393827_n-64f5629092fb7.png', 47, 'cancel', 61, 2, 'none', '2023-09-04'),
-(192, 254869, '318594138_2277251895792436_9140798039711393827_n-64f563f028bf3.png', 49, 'pending', 62, 2, 'none', '2023-09-04');
+(181, 433632, 'gcashProofOfPayment-64c62a82044e1.jpg', 45, 'completed', 54, 8, 'assddddsssddd', '2023-07-30');
 
 -- --------------------------------------------------------
 
@@ -266,19 +255,6 @@ INSERT INTO `item_tbl` (`item_id`, `item_code`, `item_name`, `item_categoryidfk`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `notification`
---
-
-CREATE TABLE `notification` (
-  `n_id` int(11) NOT NULL,
-  `user_petnotifid` int(11) NOT NULL,
-  `n_sub` varchar(15) NOT NULL,
-  `n_msg` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `ordernum_tbl`
 --
 
@@ -322,18 +298,7 @@ INSERT INTO `pets` (`id`, `pet_user_id`, `pet_name`, `pet_gender`, `pet_dob`, `p
 (255, 54, 'naruto', 'male', '2023-01-30', 6, '', 'dog', 'Chiwawa', 0, '2023-07-30'),
 (256, 54, 'sasuke', 'female', '2023-03-30', 4, '', 'cat', 'Pusakal', 0, '2023-07-30'),
 (257, 54, 'aaaaa', 'female', '2023-01-30', 6, '', 'cat', 'Chiwawa', 0, '2023-07-30'),
-(258, 54, 'bbbb', 'male', '2023-07-16', 0, '', 'cat', 'Pusakal', 0, '2023-07-30'),
-(259, 60, 'Azumo', 'male', '2023-08-27', 1, '', 'fish', 'koi', 0, '2023-09-04'),
-(260, 60, 'Sukuna', 'male', '2023-08-27', 1, '', 'bird', 'love bird', 0, '2023-09-04'),
-(261, 60, 'Sukuna', 'male', '2023-08-27', 1, '', 'bird', 'love bird', 0, '2023-09-04'),
-(262, 60, 'bulinggit', 'male', '2023-08-06', 1, '', 'reptile', 'crocodile', 0, '2023-09-04'),
-(263, 61, 'alter', 'male', '2023-08-06', 1, '', 'bird', 'love bird', 0, '2023-09-04'),
-(264, 61, 'alter', 'male', '2023-08-06', 1, '', 'bird', 'love bird', 0, '2023-09-04'),
-(265, 61, 'bulinggit', 'female', '2023-07-23', 2, '', 'cat', 'persian', 0, '2023-09-04'),
-(266, 61, 'Sneak', 'male', '2023-08-13', 1, '', 'dog', 'siberian husky', 0, '2023-09-04'),
-(267, 61, 'Sneak', 'male', '2023-08-13', 1, '', 'dog', 'siberian husky', 0, '2023-09-04'),
-(268, 61, 'Azumo', 'male', '2023-08-20', 1, '', 'bird', 'hungarian', 0, '2023-09-04'),
-(269, 62, 'sabado', 'male', '2023-07-31', 2, '', 'bird', 'love bird', 0, '2023-09-04');
+(258, 54, 'bbbb', 'male', '2023-07-16', 0, '', 'cat', 'Pusakal', 0, '2023-07-30');
 
 -- --------------------------------------------------------
 
@@ -366,18 +331,7 @@ INSERT INTO `pet_services_his_tbl` (`pet_services_his_id`, `pet_services_his_ser
 (573, 257, 1, 'pending', 0.00, 433632, 54, 'none', '2023-07-30'),
 (574, 257, 15, 'pending', 0.00, 433632, 54, 'none', '2023-07-30'),
 (575, 258, 13, 'pending', 0.00, 433632, 54, 'none', '2023-07-30'),
-(576, 258, 18, 'pending', 0.00, 433632, 54, 'none', '2023-07-30'),
-(577, 259, 1, 'pending', 0.00, 436896, 60, 'none', '2023-09-04'),
-(578, 260, 2, 'pending', 0.00, 199565, 60, 'none', '2023-09-04'),
-(579, 261, 2, 'pending', 0.00, 127538, 60, 'none', '2023-09-04'),
-(580, 262, 1, 'pending', 0.00, 492239, 60, 'none', '2023-09-04'),
-(581, 263, 1, 'pending', 0.00, 601211, 61, 'none', '2023-09-04'),
-(582, 264, 1, 'pending', 0.00, 392200, 61, 'none', '2023-09-04'),
-(583, 265, 1, 'pending', 0.00, 694817, 61, 'none', '2023-09-04'),
-(584, 266, 1, 'pending', 0.00, 704814, 61, 'none', '2023-09-04'),
-(585, 267, 1, 'pending', 0.00, 906845, 61, 'none', '2023-09-04'),
-(586, 268, 1, 'pending', 0.00, 344566, 61, 'none', '2023-09-04'),
-(587, 269, 1, 'pending', 0.00, 254869, 62, 'none', '2023-09-04');
+(576, 258, 18, 'pending', 0.00, 433632, 54, 'none', '2023-07-30');
 
 -- --------------------------------------------------------
 
@@ -405,18 +359,7 @@ INSERT INTO `pet_services_tbl` (`pet_services_id`, `pet_name_id`, `pet_service_c
 (255, 256, 239794, 'anal sac drain,Full body', 'pending', 8, 54, '2023-07-30'),
 (256, 255, 278648, '1eye', 'pending', 8, 54, '2023-07-30'),
 (257, 257, 433632, 'Check up,Vcheck', 'pending', 8, 54, '2023-07-30'),
-(258, 258, 433632, 'anal sac drain,Full body', 'pending', 8, 54, '2023-07-30'),
-(259, 259, 436896, 'Check up', 'pending', 2, 60, '2023-09-04'),
-(260, 260, 199565, 'upto 2kg', 'pending', 2, 60, '2023-09-04'),
-(261, 261, 127538, 'upto 2kg', 'pending', 2, 60, '2023-09-04'),
-(262, 262, 492239, 'Check up', 'pending', 2, 60, '2023-09-04'),
-(263, 263, 601211, 'Check up', 'pending', 2, 61, '2023-09-04'),
-(264, 264, 392200, 'Check up', 'pending', 2, 61, '2023-09-04'),
-(265, 265, 694817, 'Check up', 'pending', 2, 61, '2023-09-04'),
-(266, 266, 704814, 'Check up', 'pending', 2, 61, '2023-09-04'),
-(267, 267, 906845, 'Check up', 'pending', 2, 61, '2023-09-04'),
-(268, 268, 344566, 'Check up', 'pending', 2, 61, '2023-09-04'),
-(269, 269, 254869, 'Check up', 'pending', 2, 62, '2023-09-04');
+(258, 258, 433632, 'anal sac drain,Full body', 'pending', 8, 54, '2023-07-30');
 
 -- --------------------------------------------------------
 
@@ -705,11 +648,7 @@ INSERT INTO `schedule_tbl` (`schedule_id`, `schedule_date`, `schedule_startTime`
 (42, '2023-07-31', '08:00:00', '17:00:00', 1, 8, 4, 0, '2023-07-25'),
 (43, '2023-07-25', '08:00:00', '17:00:00', 1, 8, 0, 0, '2023-07-25'),
 (44, '2023-07-28', '08:00:00', '17:00:00', 1, 1, 0, 0, '2023-07-26'),
-(45, '2023-08-01', '08:00:00', '17:00:00', 1, 8, 0, 0, '2023-07-30'),
-(46, '2023-09-04', '08:00:00', '17:00:00', 1, 2, 0, 0, '2023-09-04'),
-(47, '2023-09-11', '08:00:00', '17:00:00', 1, 2, -5, 0, '2023-09-04'),
-(48, '2023-09-18', '08:00:00', '17:00:00', 1, 1, 0, 0, '2023-09-04'),
-(49, '2023-09-22', '08:00:00', '17:00:00', 1, 2, 0, 0, '2023-09-04');
+(45, '2023-08-01', '08:00:00', '17:00:00', 1, 8, 0, 0, '2023-07-30');
 
 -- --------------------------------------------------------
 
@@ -776,13 +715,7 @@ CREATE TABLE `staff_schedule_tbl` (
 INSERT INTO `staff_schedule_tbl` (`staff_schedule_id`, `staff_idfk`, `appointment_idfk`, `schedule_date_idfk`, `staff_schedule_status`, `staff_schedule_isactive`, `staff_schedule_time`, `staff_schedule_dura`, `staff_schedule_endtime`, `staff_schedule_dor`) VALUES
 (132, 23, 179, 45, 'completed', 1, '08:15:00', '150', '10:45:00', '2023-07-30'),
 (133, 23, 180, 45, 'completed', 1, '11:00:00', '80', '12:20:00', '2023-07-30'),
-(134, 23, 181, 45, 'completed', 1, '08:15:00', '150', '10:45:00', '2023-07-30'),
-(135, 20, 182, 47, 'cancel', 1, '08:00:00', '45', '08:45:00', '2023-09-04'),
-(137, 20, 184, 47, 'cancel', 1, '09:00:00', '45', '09:45:00', '2023-09-04'),
-(138, 20, 185, 47, 'assigned', 1, '10:00:00', '45', '10:45:00', '2023-09-04'),
-(140, 20, 187, 47, 'assigned', 1, '11:00:00', '45', '11:45:00', '2023-09-04'),
-(143, 20, 190, 47, 'assigned', 1, '12:00:00', '45', '12:45:00', '2023-09-04'),
-(145, 20, 192, 49, 'assign', 1, '08:00:00', '45', '08:45:00', '2023-09-04');
+(134, 23, 181, 45, 'completed', 1, '08:15:00', '150', '10:45:00', '2023-07-30');
 
 -- --------------------------------------------------------
 
@@ -918,10 +851,7 @@ INSERT INTO `users_balagtas` (`id`, `user_id`, `email`, `user_name`, `last_name`
 (51, '2604445268', 'tugasjerwin7@gmail.com', 'wen', 'tugas', '123', 0, 1, 'active', '2023-07-21'),
 (52, '6483668400', 'aceunitro55@gmail.com', 'Alex', 'Inciong', '12345', 0, 1, 'active', '2023-07-24'),
 (53, '4544161114', 'kaidojer@gmail.com', 'Jerwin', 'Tugas', '5313900106', 0, 1, 'active', '2023-07-24'),
-(54, '8966646961', 'guillermojerome.pdm@gmail.com', 'Jerwin', 'Tugas', '123', 0, 1, 'active', '2023-07-25'),
-(60, '1909957804', 'mantra.kayon@feerock.com', 'Mazel', 'kenming', '48654d07074efab8d33c138781af58cd', 0, 1, 'active', '2023-09-04'),
-(61, '6738230714', 'celso.harlyn@feerock.com', 'cheese', 'piattos', '48654d07074efab8d33c138781af58cd', 0, 1, 'active', '2023-09-04'),
-(62, '7466575905', 'fintan.paton@feerock.com', 'tete', 'tata', '48654d07074efab8d33c138781af58cd', 0, 1, 'active', '2023-09-04');
+(54, '8966646961', 'guillermojerome.pdm@gmail.com', 'Jerwin', 'Tugas', '123', 0, 1, 'active', '2023-07-25');
 
 -- --------------------------------------------------------
 
@@ -944,16 +874,14 @@ CREATE TABLE `your_table_name` (
 --
 ALTER TABLE `appointment_bill_tbl`
   ADD PRIMARY KEY (`appointment_bill_id`),
-  ADD KEY `appointment_idfk` (`appointment_idfk`),
-  ADD KEY `appon_bill_comment` (`appon_bill_comment`);
+  ADD KEY `appointment_idfk` (`appointment_idfk`);
 
 --
 -- Indexes for table `appointment_completed_tbl`
 --
 ALTER TABLE `appointment_completed_tbl`
   ADD PRIMARY KEY (`appointment_completed_id`),
-  ADD KEY `appointment_completed_idfk` (`appointment_completed_idfk`),
-  ADD KEY `app_complete_comment` (`app_complete_comment`);
+  ADD KEY `appointment_completed_idfk` (`appointment_completed_idfk`);
 
 --
 -- Indexes for table `appointment_tbl`
@@ -963,9 +891,7 @@ ALTER TABLE `appointment_tbl`
   ADD KEY `pet_ownerid` (`pet_ownerid`),
   ADD KEY `appointment_date` (`appointment_date`),
   ADD KEY `appointment_branch` (`appointment_branch`),
-  ADD KEY `appointment_payment_same` (`appointment_payment_same`),
-  ADD KEY `appointment_payment_status` (`appointment_payment_status`),
-  ADD KEY `appointment_coment` (`appointment_coment`);
+  ADD KEY `appointment_payment_same` (`appointment_payment_same`);
 
 --
 -- Indexes for table `branch_tbl`
@@ -997,15 +923,6 @@ ALTER TABLE `item_category_tbl`
 --
 ALTER TABLE `item_tbl`
   ADD PRIMARY KEY (`item_id`);
-
---
--- Indexes for table `notification`
---
-ALTER TABLE `notification`
-  ADD PRIMARY KEY (`n_id`),
-  ADD UNIQUE KEY `user_petnotifid` (`user_petnotifid`),
-  ADD KEY `n_sub` (`n_sub`),
-  ADD KEY `n_msg` (`n_msg`);
 
 --
 -- Indexes for table `ordernum_tbl`
@@ -1143,7 +1060,7 @@ ALTER TABLE `appointment_completed_tbl`
 -- AUTO_INCREMENT for table `appointment_tbl`
 --
 ALTER TABLE `appointment_tbl`
-  MODIFY `appointment_payment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=193;
+  MODIFY `appointment_payment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=182;
 
 --
 -- AUTO_INCREMENT for table `branch_tbl`
@@ -1185,19 +1102,19 @@ ALTER TABLE `ordernum_tbl`
 -- AUTO_INCREMENT for table `pets`
 --
 ALTER TABLE `pets`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=270;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=259;
 
 --
 -- AUTO_INCREMENT for table `pet_services_his_tbl`
 --
 ALTER TABLE `pet_services_his_tbl`
-  MODIFY `pet_services_his_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=588;
+  MODIFY `pet_services_his_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=577;
 
 --
 -- AUTO_INCREMENT for table `pet_services_tbl`
 --
 ALTER TABLE `pet_services_tbl`
-  MODIFY `pet_services_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=270;
+  MODIFY `pet_services_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=259;
 
 --
 -- AUTO_INCREMENT for table `pos_ordered_tbl`
@@ -1239,7 +1156,7 @@ ALTER TABLE `sample_tbl`
 -- AUTO_INCREMENT for table `schedule_tbl`
 --
 ALTER TABLE `schedule_tbl`
-  MODIFY `schedule_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `schedule_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT for table `services_tbl`
@@ -1251,7 +1168,7 @@ ALTER TABLE `services_tbl`
 -- AUTO_INCREMENT for table `staff_schedule_tbl`
 --
 ALTER TABLE `staff_schedule_tbl`
-  MODIFY `staff_schedule_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=146;
+  MODIFY `staff_schedule_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=135;
 
 --
 -- AUTO_INCREMENT for table `staff_tbl`
@@ -1269,7 +1186,7 @@ ALTER TABLE `time_sched_tbl`
 -- AUTO_INCREMENT for table `users_balagtas`
 --
 ALTER TABLE `users_balagtas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 
 --
 -- AUTO_INCREMENT for table `your_table_name`
@@ -1307,14 +1224,6 @@ ALTER TABLE `appointment_tbl`
 --
 ALTER TABLE `end_user_tbl`
   ADD CONSTRAINT `end_user_tbl_ibfk_1` FOREIGN KEY (`end_user_branch`) REFERENCES `branch_tbl` (`branch_id`);
-
---
--- Constraints for table `notification`
---
-ALTER TABLE `notification`
-  ADD CONSTRAINT `n_msg` FOREIGN KEY (`n_msg`) REFERENCES `appointment_tbl` (`appointment_coment`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `n_sub` FOREIGN KEY (`n_sub`) REFERENCES `appointment_tbl` (`appointment_payment_status`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `user_petnotifid` FOREIGN KEY (`user_petnotifid`) REFERENCES `users_balagtas` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `pets`

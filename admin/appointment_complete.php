@@ -8,7 +8,7 @@ $sameIdAppoint = $_POST['sameIdAppoint'];
 $StaffIdD = $_POST['StaffIdD'];
 
 
-$price2Sum = 0;
+$price2Sum = 0.00;
 
 if($CompletId == 'complete')
 {
@@ -149,6 +149,8 @@ while( $row = mysqli_fetch_array($result)
                                          <label class="" style="font-size: 1rem; font-weight:bold; font-style: italic; margin-left: 50px;" for="fname">Qty</label>
                                           <label class="" style="font-size: 1rem; font-weight:bold; font-style: italic; margin-left: 80px;" for="fname">Price</label>
                                           <label class="" style="font-size: 1rem; font-weight:bold; font-style: italic; margin-left: 80px;" for="fname">Amount</label><br>
+
+                                          
                                         <?php
 
                                      }
@@ -166,7 +168,7 @@ while( $row = mysqli_fetch_array($result)
                                  <label class="ms-2" style="width: 20%; font-size: 1rem;" for="fname"><?php echo $rowreCheckServId['services_name']; ?></label>
                           
 
-                                    <input type="number" style="width: 7%; margin-left: 50px;" name="qty[]" class="qty" min="1" max="99" onkeypress="if(this.value.length == 2) return false;" value="1" onchange="StockChange('<?php echo $rowreCheckServId['pet_services_his_id']; ?>')" id="Quanti_<?php echo $rowreCheckServId['pet_services_his_id']; ?>">
+                                    <input type="number" style="width: 7%; margin-left: 50px;" name="qty[]" class="qty" min="0" max="99" onkeypress="if(this.value.length == 2) return false;" value="1" onchange="StockChange('<?php echo $rowreCheckServId['pet_services_his_id']; ?>')" id="Quanti_<?php echo $rowreCheckServId['pet_services_his_id']; ?>">
 
                               <input type="hidden" name="services_id[]" style="width: 7%;" id="" value="<?php echo $rowreCheckServId['services_id']; ?>">
 
@@ -208,6 +210,119 @@ calculateTotal();
    
   
 }
+ 
+$(document).ready(function(){
+    // Event handler for clicking the "Remove" button
+    $(document).on('click', '.remove-btn-mybtnn', function(){
+        // Find the closest parent row element
+        var $row = $(this).closest('.row0-5');
+        
+        // Get the item's ID from some attribute (e.g., data-id)
+        var itemID = $row.data('item-id'); // Replace 'data-id' with your actual attribute name
+        
+        // Set the quantity input for this item to 0
+        $("#Quanti_" + itemID).val(0);
+        
+        // Optionally, you can trigger the quantity change event
+        $("#Quanti_" + itemID).trigger('change');
+        
+        // Remove the row from the DOM
+        $row.remove();
+        
+        // Re-calculate the total
+        calculateTotal();
+        
+        // Update the change balance
+        updateChangeBalance();
+        
+        // Enable the "addServ" button if needed
+        document.getElementById("addServ").disabled = false;
+    });
+    
+    // Rest of your existing code...
+    
+    // Function to update the change balance
+    function updateChangeBalance() {
+        var cashAmount = parseFloat($("#cashAmountId").val());
+        var totalAmount = parseFloat($("#totalAmountInput2").val());
+        var changeBal = cashAmount - totalAmount;
+        
+        // Update the change balance input field
+        $("#changeBalAmountId").val(changeBal.toFixed(2));
+    }
+});
+// 
+// this one is much better it can also erase the inital price but the inital price can't add again it just stay 0
+// $(document).ready(function () {
+//     // Event handler for clicking the "Remove" button
+//     $(document).on('click', '.remove-btn-mybtnn', function () {
+//         // Find the closest parent row element
+//         var $row = $(this).closest('.row0-5');
+
+//         // Get the item's ID from some attribute (e.g., data-id)
+//         var itemID = $row.data('item-id'); // Replace 'data-id' with your actual attribute name
+
+//         // Set the quantity input for this item to 0
+//         $("#Quanti_" + itemID).val(0);
+
+//         // Optionally, you can trigger the quantity change event
+//         $("#Quanti_" + itemID).trigger('change');
+
+//         // Remove the row from the DOM
+//         $row.remove();
+
+//         // Re-calculate the total
+//         calculateTotal();
+
+//         // Update the change balance
+//         updateChangeBalance();
+
+//         // Enable the "addServ" button if needed
+//         document.getElementById("addServ").disabled = false;
+//     });
+
+//     // Rest of your existing code...
+
+//     // Function to update the change balance
+//     function updateChangeBalance() {
+//         var cashAmount = parseFloat($("#cashAmountId").val());
+//         var totalAmount = parseFloat($("#totalAmountInput2").val());
+//         var changeBal = cashAmount - totalAmount;
+
+//         // Update the change balance input field
+//         $("#changeBalAmountId").val(changeBal.toFixed(2));
+//     }
+
+//     // Function to calculate the total
+//     function calculateTotal() {
+//         var total = 0;
+//         $('.row0-5').each(function () {
+//             var quantity = parseInt($(this).find('.qty').val());
+//             var price = parseFloat($(this).find('.price').val());
+
+//             // Calculate the subtotal for this item
+//             var subtotal = quantity * price;
+//             total += subtotal;
+//         });
+
+//         // Update the total input field
+//         $("#totalAmountInput").val("₱" + total.toFixed(2));
+
+//         // Update the hidden input for the total amount
+//         $("#totalAmountInput2").val(total.toFixed(2));
+
+//         // Update the change balance
+//         updateChangeBalance();
+//     }
+
+//     // Event handler for quantity change
+//     $(document).on('change', '.qty', function () {
+//         // Recalculate the total when quantity changes
+//         calculateTotal();
+//     });
+// });
+
+
 
 function calculateTotal() {
   var priceElements = document.getElementsByClassName("price");
@@ -231,21 +346,69 @@ function calculateTotal() {
 console.log(totalAmount);
 }
 
-function CashChange(){
+//chatgpt cashchange
+function CashChange() {
+    // Get the cash amount entered by the user
+    var cashAmount = parseFloat(document.getElementById("cashAmountId").value);
+    
+    // Calculate the total amount based on the values of the item amounts
+    var itemAmounts = document.getElementsByClassName("price");
+    var totalAmount = 0;
+    
+    for (var i = 0; i < itemAmounts.length; i++) {
+        totalAmount += parseFloat(itemAmounts[i].value);
+    }
 
-    var cash = document.getElementById("cashAmountId").value;
-    var totalAmount = document.getElementById("totalAmountInput2").value;
+    // Get the discount amount entered by the user
+    var discountAmount = parseFloat(document.getElementById("discountAmount").value) || 0;
 
+    // Apply the discount to the total amount
+    totalAmount -= discountAmount;
 
-    var bal =  cash-totalAmount;
+    // Update the total amount input field
+    document.getElementById("totalAmountInput").value = "₱" + totalAmount.toFixed(2);
 
-  document.getElementById("changeBalAmountId").value = bal;
-
-
-
-
-
+    // Calculate and update the change/balance
+    var changeBalance = cashAmount - totalAmount;
+    document.getElementById("changeBalAmountId").value = "₱" + changeBalance.toFixed(2);
 }
+
+function applyDiscount() {
+    // Call CashChange function to recalculate when a discount is applied
+    CashChange();
+}
+
+
+
+// old cashchange
+// function CashChange() {
+//     // Get the cash amount entered by the user
+//     var cashAmount = parseFloat(document.getElementById("cashAmountId").value);
+    
+//     // Calculate the total amount based on the values of the item amounts
+//     var itemAmounts = document.getElementsByClassName("price");
+//     var totalAmount = 0;
+    
+//     for (var i = 0; i < itemAmounts.length; i++) {
+//         totalAmount += parseFloat(itemAmounts[i].value);
+//     }
+
+//     // Update the total amount input field
+//     document.getElementById("totalAmountInput").value = "₱" + totalAmount.toFixed(2);
+
+//     // Calculate and update the change/balance
+//     var changeBalance = cashAmount - totalAmount;
+//     document.getElementById("changeBalAmountId").value = "₱" + changeBalance.toFixed(2);
+
+//         function updateChangeBalance() {
+//         var cashAmount = parseFloat($("#cashAmountId").val());
+//         var totalAmount = parseFloat($("#totalAmountInput2").val());
+//         var changeBal = cashAmount - totalAmount;
+        
+//         // Update the change balance input field
+//         $("#changeBalAmountId").val(changeBal.toFixed(2));
+//     }
+// }
 
 
 
@@ -298,10 +461,16 @@ function CashChange(){
 
              <div class="col-md-11 mt-4" style=" margin: 20px; color: green; font-weight: bold; padding: 10px; box-shadow: 10px 5px #888888; margin: 0; background-color: whitesmoke; ">
                 <label>PAYMENT:</label>
-              <input type="text" id="cashAmountId" name="cashAmount" onchange="CashChange()" style="width: 15%; margin-left: 80px;" iredrequ>
+              <input type="text" id="cashAmountId" name="cashAmount" placeholder="Enter cash"required pattern="[0-9]+"oninput="CashChange()"  style="width: 15%; margin-left: 80px;" iredrequ>
 
               
             </div>
+
+            <div class="col-md-11 mt-4" style="margin: 20px; font-weight: bold; padding: 10px; box-shadow: 10px 5px #888888; margin: 0; background-color: whitesmoke;">
+    <label>DISCOUNT:</label>
+    <input type="text" id="discountAmount" name="discountAmount" style="width: 15%; margin-left: 45px;" placeholder="Optional" onchange="applyDiscount()">
+</div>
+
 
             <div class="col-md-11 mt-4" style=" margin: 20px; font-weight: bold; padding: 10px; box-shadow: 10px 5px #888888; margin: 0; background-color: whitesmoke; ">
                 <label>CHANGE/BAL:</label>
@@ -322,7 +491,7 @@ function CashChange(){
     }
   </style>
                
-                <textarea name="noteName" id="noteName" placeholder="Enter 255 characters only" ></textarea>
+                <textarea name="noteName" id="noteName" placeholder="Enter 255 characters only" required></textarea>
                 
             </div>
             
@@ -387,7 +556,7 @@ else if($CompletId == 'Cancel')
      <label >Reason/Comment</label>
      <br>
      <!-- <input type="text-area" name=""> -->
-     <textarea rows="4" cols="50" name="ReasonNmae1" placeholder="Enter 255 characters only"></textarea>
+     <textarea rows="4" cols="50" name="ReasonNmae1" placeholder="Enter 255 characters only" required></textarea>
 
 
 
@@ -463,18 +632,20 @@ $(document).on('submit', '#billForm', function(e) {
          
     });
 
-$(document).ready(function(){
-     $(document).on('click','.remove-btn-mybtnn', function(){
+    $(document).ready(function () {
+    $(document).on('click', '.remove-btn-mybtnn', function () {
+        // Get the closest quantity input element and set its value to 0
+        $(this).closest('.row0-5').find('.quantity-input').val(0);
 
-                $(this).closest('.row0-5').remove();
-             document.getElementById("addServ").disabled= false;
+        // Rest of your removal logic
+        $(this).closest('.row0-5').remove();
+        document.getElementById("addServ").disabled = false;
+    });
 
-          });
-     $(document).on('click', '.add-more-services', function() {
+    $(document).on('click', '.add-more-services', function () {
+        document.getElementById("addServ").disabled = true;
 
-        document.getElementById("addServ").disabled= true;
-
-   $('.paste-new-services').append('<div class="row row0-5">\
+        $('.paste-new-services').append('<div class="row row0-5">\
                       <div class="col-md-7">\
                        <select class="form-control" name="ecatId" id="servChange" onchange="selectDep()" required>\
                         <option hidden>Choose</option>\
@@ -500,8 +671,9 @@ $(document).ready(function(){
             </div>\
             </div>\
       </div>');
-      });
-      });
+    });
+});
+
 
 
 

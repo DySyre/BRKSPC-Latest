@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 05, 2023 at 06:11 AM
+-- Generation Time: Sep 19, 2023 at 04:33 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -45,7 +45,25 @@ INSERT INTO `appointment_bill_tbl` (`appointment_bill_id`, `appointment_idfk`, `
 (37, 179, 1500.00, 2000.00, 500.00, 'may utang pa', '2023-07-30'),
 (38, 180, 2000.00, 2000.00, 0.00, 'may utang ka pa', '2023-07-30'),
 (39, 181, 1500.00, 1000.00, -500.00, 'assddddsssddd', '2023-07-30'),
-(40, 190, 100.00, 300.00, 200.00, 'tangina moren', '2023-09-05');
+(40, 190, 100.00, 300.00, 200.00, 'tangina moren', '2023-09-05'),
+(41, 233, 100.00, 500.00, 400.00, 'Thank you', '2023-09-18'),
+(42, 234, 100.00, 200.00, 100.00, 'ayun gumana', '2023-09-18'),
+(43, 235, 200.00, 100.00, -100.00, 'ok', '2023-09-18'),
+(44, 187, 200.00, 100.00, -100.00, 'dewa', '2023-09-19'),
+(45, 236, 100.00, 500.00, 400.00, 'gege', '2023-09-19'),
+(46, 232, 100.00, 500.00, 300.00, 'jbj', '2023-09-19'),
+(47, 229, 100.00, 600.00, 500.00, 'dededwadawda', '2023-09-19'),
+(48, 203, 3200.00, 7999.00, 7999.00, 'hello', '2023-09-19'),
+(49, 230, 100.00, 5000.00, 5000.00, 'mali\r\n', '2023-09-19'),
+(50, 227, 3100.00, 5000.00, 4900.00, 'mali compute try', '2023-09-19'),
+(51, 193, 0.00, 200.00, 100.00, '\r\n', '2023-09-19'),
+(52, 192, 2100.00, 3000.00, 2900.00, 'tama nato', '2023-09-19'),
+(53, 195, 600.00, 1000.00, 750.00, '400 dapat to', '2023-09-19'),
+(54, 238, 650.00, 1000.00, 0.00, 'Qwerty tama 2 sila', '2023-09-19'),
+(55, 239, 1400.00, 2000.00, 0.00, '600 dapat double sila', '2023-09-19'),
+(56, 237, 2200.00, 3000.00, 0.00, 'gege', '2023-09-19'),
+(57, 197, 350.00, 5000.00, 0.00, 'tama', '2023-09-19'),
+(58, 240, 900.00, 4000.00, 0.00, 'ito na', '2023-09-19');
 
 -- --------------------------------------------------------
 
@@ -79,7 +97,37 @@ INSERT INTO `appointment_completed_tbl` (`appointment_completed_id`, `appointmen
 (267, 181, 15, 800.00, 1, 800.00, 433632, '', '2023-07-30 17:28:48'),
 (268, 181, 13, 250.00, 1, 250.00, 433632, '', '2023-07-30 17:28:48'),
 (269, 181, 18, 350.00, 1, 350.00, 433632, '', '2023-07-30 17:28:48'),
-(270, 190, 1, 100.00, 1, 100.00, 906845, '', '2023-09-05 00:23:48');
+(270, 190, 1, 100.00, 1, 100.00, 906845, '', '2023-09-05 00:23:48'),
+(271, 233, 1, 100.00, 1, 100.00, 723355, '', '2023-09-18 21:08:24'),
+(272, 234, 1, 100.00, 1, 100.00, 761380, '', '2023-09-18 21:53:02'),
+(273, 235, 1, 100.00, 1, 100.00, 388495, '', '2023-09-18 21:57:15'),
+(274, 187, 1, 100.00, 1, 100.00, 392200, '', '2023-09-19 00:05:07'),
+(275, 236, 1, 100.00, 1, 100.00, 521496, '', '2023-09-19 00:42:22'),
+(276, 232, 1, 100.00, 1, 100.00, 596344, '', '2023-09-19 00:43:12'),
+(277, 229, 1, 100.00, 1, 100.00, 478025, '', '2023-09-19 00:58:10'),
+(278, 203, 1, 100.00, 2, 200.00, 861744, '', '2023-09-19 01:15:03'),
+(279, 203, 14, 3000.00, 1, 3000.00, 861744, '', '2023-09-19 01:15:03'),
+(280, 230, 1, 100.00, 1, 100.00, 800459, '', '2023-09-19 01:16:54'),
+(281, 227, 1, 100.00, 1, 100.00, 93221, '', '2023-09-19 01:19:35'),
+(282, 227, 14, 3000.00, 1, 3000.00, 93221, '', '2023-09-19 01:19:35'),
+(283, 193, 1, 100.00, 0, 0.00, 475347, '', '2023-09-19 01:25:17'),
+(284, 192, 1, 100.00, 1, 100.00, 254869, '', '2023-09-19 01:37:13'),
+(285, 192, 4, 2000.00, 1, 2000.00, 254869, '', '2023-09-19 01:37:13'),
+(286, 195, 2, 150.00, 1, 150.00, 274, '', '2023-09-19 01:39:11'),
+(287, 195, 1, 100.00, 1, 100.00, 274, '', '2023-09-19 01:39:11'),
+(288, 195, 18, 350.00, 1, 350.00, 274, '', '2023-09-19 01:39:11'),
+(289, 238, 1, 100.00, 1, 100.00, 255962, '', '2023-09-19 01:50:37'),
+(290, 238, 1, 100.00, 1, 100.00, 255962, '', '2023-09-19 01:50:37'),
+(291, 238, 7, 450.00, 1, 450.00, 255962, '', '2023-09-19 01:50:37'),
+(292, 239, 1, 100.00, 1, 100.00, 236378, '', '2023-09-19 01:54:57'),
+(293, 239, 1, 100.00, 1, 100.00, 236378, '', '2023-09-19 01:54:57'),
+(294, 239, 5, 1200.00, 1, 1200.00, 236378, '', '2023-09-19 01:54:57'),
+(295, 237, 1, 100.00, 2, 200.00, 958037, '', '2023-09-19 10:07:09'),
+(296, 237, 4, 2000.00, 1, 2000.00, 958037, '', '2023-09-19 10:07:09'),
+(297, 197, 1, 100.00, 2, 200.00, 728019, '', '2023-09-19 10:21:52'),
+(298, 197, 2, 150.00, 1, 150.00, 728019, '', '2023-09-19 10:21:52'),
+(299, 240, 1, 100.00, 1, 100.00, 631959, '', '2023-09-19 10:24:27'),
+(300, 240, 15, 800.00, 1, 800.00, 631959, '', '2023-09-19 10:24:27');
 
 -- --------------------------------------------------------
 
@@ -112,25 +160,33 @@ INSERT INTO `appointment_tbl` (`appointment_payment_id`, `appointment_payment_sa
 (184, 127538, '331071578_1905981169737742_6950448939031653227_n-64f55b4d7935e.jpg', 47, 'cancel', 60, 2, 'none', '2023-09-04'),
 (185, 492239, '346118392_508997227979629_3158509736187805000_n-64f55bb023d5e.jpg', 47, 'approved', 60, 2, '', '2023-09-04'),
 (186, 601211, '367825498_279791558018935_6101178687688711885_n-64f56027dfebe.jpg', 47, 'cancel', 61, 2, 'none', '2023-09-04'),
-(187, 392200, '367825498_279791558018935_6101178687688711885_n-64f5602da348e.jpg', 47, 'approved', 61, 2, 'tangina gumana rin', '2023-09-04'),
+(187, 392200, '367825498_279791558018935_6101178687688711885_n-64f5602da348e.jpg', 47, 'completed', 61, 2, 'dewa', '2023-09-04'),
 (188, 694817, '367825498_279791558018935_6101178687688711885_n (1)-64f560b988ccf.jpg', 47, 'approved', 61, 2, 'approve test notif', '2023-09-04'),
 (189, 704814, '367825498_279791558018935_6101178687688711885_n (1)-64f5610d833b1.jpg', 47, 'cancel', 61, 2, 'none', '2023-09-04'),
 (190, 906845, '367825498_279791558018935_6101178687688711885_n (1)-64f5611659511.jpg', 47, 'completed', 61, 2, 'tangina moren', '2023-09-04'),
 (191, 344566, '318594138_2277251895792436_9140798039711393827_n-64f5629092fb7.png', 47, 'cancel', 61, 2, 'none', '2023-09-04'),
-(192, 254869, '318594138_2277251895792436_9140798039711393827_n-64f563f028bf3.png', 49, 'approved', 62, 2, 'notif', '2023-09-04'),
-(193, 475347, '367825498_279791558018935_6101178687688711885_n (1)-64f57630298b8.jpg', 48, 'approved', 62, 1, 'tangina mo', '2023-09-04'),
+(192, 254869, '318594138_2277251895792436_9140798039711393827_n-64f563f028bf3.png', 49, 'completed', 62, 2, 'tama nato', '2023-09-04'),
+(193, 475347, '367825498_279791558018935_6101178687688711885_n (1)-64f57630298b8.jpg', 48, 'completed', 62, 1, '\r\n', '2023-09-04'),
 (194, 824345, '367825498_279791558018935_6101178687688711885_n (1)-64f576dfef55f.jpg', 48, 'pending', 62, 1, 'none', '2023-09-04'),
-(195, 274, 'Walkin', 46, 'approved', 64, 2, 'none', '2023-09-04'),
+(195, 274, 'Walkin', 46, 'completed', 64, 2, '400 dapat to', '2023-09-04'),
 (196, 904435, 'image_2023-09-04_225436607-64f5efafbdc4e.png', 47, 'approved', 65, 2, 'tangina', '2023-09-04'),
-(197, 728019, '367825498_279791558018935_6101178687688711885_n (1)-64f5efe13fce2.jpg', 47, 'approved', 65, 2, 'tae', '2023-09-04'),
+(197, 728019, '367825498_279791558018935_6101178687688711885_n (1)-64f5efe13fce2.jpg', 47, 'completed', 65, 2, 'tama', '2023-09-04'),
 (198, 23366, '367825498_279791558018935_6101178687688711885_n (1)-64f5f74a9acaa.jpg', 47, 'approved', 65, 2, 'tangina', '2023-09-04'),
 (199, 439479, '367825498_279791558018935_6101178687688711885_n (1)-64f5fb6e365c2.jpg', 47, 'approved', 65, 2, '', '2023-09-04'),
 (200, 352312, '367825498_279791558018935_6101178687688711885_n (1)-64f5fc88b7024.jpg', 47, 'approved', 65, 2, '', '2023-09-04'),
-(203, 861744, '367825498_279791558018935_6101178687688711885_n (1)-64f6110a735d6.jpg', 49, 'approved', 65, 2, 'tangina mo', '2023-09-05'),
-(227, 93221, '367825498_279791558018935_6101178687688711885_n (1)-64f6173e3d0c4.jpg', 48, 'pending', 66, 1, 'none', '2023-09-05'),
-(229, 478025, '367825498_279791558018935_6101178687688711885_n (1)-64f61808a060e.jpg', 51, 'pending', 66, 2, 'none', '2023-09-05'),
-(230, 800459, '367825498_279791558018935_6101178687688711885_n (1)-64f61867efa94.jpg', 51, 'pending', 66, 2, 'none', '2023-09-05'),
-(232, 596344, '367825498_279791558018935_6101178687688711885_n (1)-64f618cae9640.jpg', 51, 'approved', 66, 2, 'hayop alas dos na pala', '2023-09-05');
+(203, 861744, '367825498_279791558018935_6101178687688711885_n (1)-64f6110a735d6.jpg', 49, 'completed', 65, 2, 'hello', '2023-09-05'),
+(227, 93221, '367825498_279791558018935_6101178687688711885_n (1)-64f6173e3d0c4.jpg', 48, 'completed', 66, 1, 'mali compute try', '2023-09-05'),
+(229, 478025, '367825498_279791558018935_6101178687688711885_n (1)-64f61808a060e.jpg', 51, 'completed', 66, 2, 'dededwadawda', '2023-09-05'),
+(230, 800459, '367825498_279791558018935_6101178687688711885_n (1)-64f61867efa94.jpg', 51, 'completed', 66, 2, 'mali\r\n', '2023-09-05'),
+(232, 596344, '367825498_279791558018935_6101178687688711885_n (1)-64f618cae9640.jpg', 51, 'completed', 66, 2, 'jbj', '2023-09-05'),
+(233, 723355, 'RobloxScreenShot20220708_162349225-650849ed0ed16.png', 49, 'completed', 67, 2, 'Thank you', '2023-09-18'),
+(234, 761380, 'screen_shot_2014-01-26_at_10-650855e156c2e.png', 49, 'completed', 65, 2, 'ayun gumana', '2023-09-18'),
+(235, 388495, 'sara-650856a228a9e.jpg', 49, 'completed', 65, 2, 'ok', '2023-09-18'),
+(236, 521496, 'screen_shot_2014-01-26_at_10-65085a3dac4c1.png', 49, 'completed', 65, 2, 'gege', '2023-09-18'),
+(237, 958037, '378194647_324658563436145_2375228937769805204_n-65088ba3c638a.jpg', 49, 'completed', 66, 2, 'gege', '2023-09-19'),
+(238, 255962, '378194647_324658563436145_2375228937769805204_n-65088c714c9e6.jpg', 49, 'completed', 66, 2, 'Qwerty tama 2 sila', '2023-09-19'),
+(239, 236378, 'image_2023-09-19_015344135-65088eab1434c.png', 49, 'completed', 66, 2, '600 dapat double sila', '2023-09-19'),
+(240, 631959, 'screen_shot_2014-01-26_at_10-65090427de22e.png', 49, 'completed', 69, 2, 'ito na', '2023-09-19');
 
 --
 -- Triggers `appointment_tbl`
@@ -281,7 +337,7 @@ CREATE TABLE `item_tbl` (
 
 INSERT INTO `item_tbl` (`item_id`, `item_code`, `item_name`, `item_categoryidfk`, `item_buying_price`, `item_selling_price`, `item_stock`, `item_status`, `item_expiration`, `item_dor`) VALUES
 (1, 'ITM-00001', 'Mucotan', 1, 198.50, 350.00, 7, 'Critical Level', '0000-00-00', '2023-06-25'),
-(5, 'ITM-00002', 'Animal Science Immune Health Tablet', 3, 5.60, 10.00, 4, 'Critical Level', '0000-00-00', '2023-06-25'),
+(5, 'ITM-00002', 'Animal Science Immune Health Tablet', 3, 5.60, 10.00, 2, 'Critical Level', '0000-00-00', '2023-06-25'),
 (6, 'ITM-00003', 'Animal Science Calcium Tablet', 6, 5.50, 8.00, 0, 'Out of Stock', '0000-00-00', '2023-06-25'),
 (8, 'ITM-00005', 'Mucotan', 4, 198.50, 350.00, 983, 'High Stock', '0000-00-00', '2023-06-25'),
 (12, 'ITM-00006', 'special dog', 7, 100.00, 110.00, 90, 'High Stock', '0000-00-00', '2023-07-21'),
@@ -307,8 +363,16 @@ CREATE TABLE `notification` (
 --
 
 INSERT INTO `notification` (`n_id`, `user_petnotifid`, `n_sub`, `n_msg`) VALUES
-(1, 66, 'approved', 'hayop alas dos na pala'),
-(3, 66, 'approved', 'hayop alas dos na pala');
+(1, 66, 'completed', 'jbj'),
+(3, 66, 'completed', 'jbj'),
+(4, 67, 'completed', 'Thank you'),
+(5, 65, 'completed', 'ayun gumana'),
+(6, 65, 'completed', 'ok'),
+(7, 65, 'completed', 'dededwadawda'),
+(8, 66, 'completed', 'gege'),
+(9, 66, 'completed', 'Qwerty tama 2 sila'),
+(10, 66, 'completed', '600 dapat double sila'),
+(11, 69, 'completed', 'ito na');
 
 -- --------------------------------------------------------
 
@@ -388,7 +452,10 @@ INSERT INTO `pets` (`id`, `pet_user_id`, `pet_name`, `pet_gender`, `pet_dob`, `p
 (287, 66, 'bulinggit', 'female', '2023-09-03', 0, '', 'cat', 'persian', 0, '2023-09-05'),
 (288, 66, 'bulinggit', 'male', '2023-08-27', 1, '', 'cat', 'persian', 0, '2023-09-05'),
 (289, 66, 'bulinggit', 'male', '2023-08-27', 1, '', 'cat', 'persian', 0, '2023-09-05'),
-(290, 66, 'bulinggit', 'male', '2023-08-27', 1, '', 'cat', 'persian', 0, '2023-09-05');
+(290, 66, 'bulinggit', 'male', '2023-08-27', 1, '', 'cat', 'persian', 0, '2023-09-05'),
+(291, 67, 'Alex', 'male', '2023-07-05', 2, '', 'dog', 'Buldog', 0, '2023-09-18'),
+(292, 66, 'nitro', 'female', '2023-09-03', 0, '', 'cat', 'persian', 0, '2023-09-19'),
+(293, 69, 'Azumo', 'female', '2023-08-27', 1, '', 'cat', 'persian', 0, '2023-09-19');
 
 -- --------------------------------------------------------
 
@@ -485,7 +552,17 @@ INSERT INTO `pet_services_his_tbl` (`pet_services_his_id`, `pet_services_his_ser
 (639, 309, 1, 'pending', 0.00, 478025, 66, 'none', '2023-09-05'),
 (640, 310, 1, 'pending', 0.00, 800459, 66, 'none', '2023-09-05'),
 (641, 311, 1, 'pending', 0.00, 358327, 66, 'none', '2023-09-05'),
-(642, 312, 1, 'pending', 0.00, 596344, 66, 'none', '2023-09-05');
+(642, 312, 1, 'pending', 0.00, 596344, 66, 'none', '2023-09-05'),
+(643, 313, 1, 'pending', 0.00, 723355, 67, 'none', '2023-09-18'),
+(644, 314, 1, 'pending', 0.00, 761380, 65, 'none', '2023-09-18'),
+(645, 315, 1, 'pending', 0.00, 388495, 65, 'none', '2023-09-18'),
+(646, 316, 1, 'pending', 0.00, 521496, 65, 'none', '2023-09-18'),
+(647, 317, 1, 'pending', 0.00, 958037, 66, 'none', '2023-09-19'),
+(648, 318, 1, 'pending', 0.00, 255962, 66, 'none', '2023-09-19'),
+(649, 319, 1, 'pending', 0.00, 255962, 66, 'none', '2023-09-19'),
+(650, 320, 1, 'pending', 0.00, 236378, 66, 'none', '2023-09-19'),
+(651, 321, 1, 'pending', 0.00, 236378, 66, 'none', '2023-09-19'),
+(652, 322, 1, 'pending', 0.00, 631959, 69, 'none', '2023-09-19');
 
 -- --------------------------------------------------------
 
@@ -566,7 +643,17 @@ INSERT INTO `pet_services_tbl` (`pet_services_id`, `pet_name_id`, `pet_service_c
 (309, 288, 478025, 'Check up', 'pending', 2, 66, '2023-09-05'),
 (310, 289, 800459, 'Check up', 'pending', 2, 66, '2023-09-05'),
 (311, 290, 358327, 'Check up', 'pending', 2, 66, '2023-09-05'),
-(312, 289, 596344, 'Check up', 'pending', 2, 66, '2023-09-05');
+(312, 289, 596344, 'Check up', 'pending', 2, 66, '2023-09-05'),
+(313, 291, 723355, 'Check up', 'pending', 2, 67, '2023-09-18'),
+(314, 283, 761380, 'Check up', 'pending', 2, 65, '2023-09-18'),
+(315, 285, 388495, 'Check up', 'pending', 2, 65, '2023-09-18'),
+(316, 274, 521496, 'Check up', 'pending', 2, 65, '2023-09-18'),
+(317, 292, 958037, 'Check up', 'pending', 2, 66, '2023-09-19'),
+(318, 292, 255962, 'Check up', 'pending', 2, 66, '2023-09-19'),
+(319, 288, 255962, 'Check up', 'pending', 2, 66, '2023-09-19'),
+(320, 292, 236378, 'Check up', 'pending', 2, 66, '2023-09-19'),
+(321, 287, 236378, 'Check up', 'pending', 2, 66, '2023-09-19'),
+(322, 293, 631959, 'Check up', 'pending', 2, 69, '2023-09-19');
 
 -- --------------------------------------------------------
 
@@ -605,7 +692,8 @@ INSERT INTO `pos_ordered_tbl` (`pos_ordered_id`, `pos_ordered_numidfk`, `pos_ord
 (37, '3585692084', 400.00, 500.00, 100.00, '2023-07-25'),
 (38, '9636998875', 10.00, 20.00, 10.00, '2023-07-26'),
 (39, '29', 50.00, 40.00, -10.00, '2023-07-26'),
-(40, '29', 50.00, 40.00, -10.00, '2023-07-26');
+(40, '29', 50.00, 40.00, -10.00, '2023-07-26'),
+(41, '4670190174', 10.00, 50.00, 30.00, '2023-09-19');
 
 -- --------------------------------------------------------
 
@@ -682,7 +770,29 @@ INSERT INTO `pos_purchase_his_tbl` (`pos_purchase_his_id`, `pos_purchase_hisitem
 (107, 5, 'Animal Science Immune Health Tablet', 10.00, 1, 10.00, '5954159202', 468, 305, 0, 21, '2023-07-28'),
 (108, 1, 'Mucotan', 350.00, 1, 350.00, '5954159202', 469, 306, 0, 21, '2023-07-28'),
 (109, 14, 'Red collar', 80.00, 1, 80.00, '5954159202', 470, 307, 0, 21, '2023-07-28'),
-(110, 1, 'Mucotan', 350.00, 1, 350.00, '6118717674', 482, 308, 0, 21, '2023-09-04');
+(110, 1, 'Mucotan', 350.00, 1, 350.00, '6118717674', 482, 308, 0, 21, '2023-09-04'),
+(111, 1, 'Mucotan', 350.00, 1, 350.00, '3306747233', 484, 309, 0, 2, '2023-09-18'),
+(112, 14, 'Red collar', 80.00, 2, 160.00, '9106033519', 487, 310, 0, 2, '2023-09-18'),
+(113, 13, 'bench', 200.00, 1, 200.00, '2094051085', 488, 311, 0, 2, '2023-09-18'),
+(114, 5, 'Animal Science Immune Health Tablet', 10.00, 1, 10.00, '4448549673', 489, 312, 0, 2, '2023-09-18'),
+(115, 14, 'Red collar', 80.00, 1, 80.00, '7640787545', 496, 313, 0, 2, '2023-09-18'),
+(116, 13, 'bench', 200.00, 1, 200.00, '675646777', 499, 314, 0, 2, '2023-09-18'),
+(117, 5, 'Animal Science Immune Health Tablet', 10.00, 1, 10.00, '8303768590', 500, 315, 0, 2, '2023-09-18'),
+(118, 14, 'Red collar', 80.00, 1, 80.00, '8243745626', 502, 316, 0, 2, '2023-09-18'),
+(119, 14, 'Red collar', 80.00, 1, 80.00, '4663885738', 504, 317, 0, 2, '2023-09-18'),
+(120, 13, 'bench', 200.00, 1, 200.00, '1219116832', 505, 318, 0, 2, '2023-09-19'),
+(121, 13, 'bench', 200.00, 1, 200.00, '8204756830', 506, 319, 0, 2, '2023-09-19'),
+(122, 13, 'bench', 200.00, 1, 200.00, '8204756830', 507, 320, 0, 2, '2023-09-19'),
+(123, 8, 'Mucotan', 350.00, 1, 350.00, '8204756830', 508, 321, 0, 2, '2023-09-19'),
+(124, 14, 'Red collar', 80.00, 1, 80.00, '8569295175', 509, 322, 0, 2, '2023-09-19'),
+(125, 13, 'bench', 200.00, 1, 200.00, '8569295175', 511, 323, 0, 2, '2023-09-19'),
+(126, 14, 'Red collar', 80.00, 1, 80.00, '8569295175', 510, 324, 0, 2, '2023-09-19'),
+(127, 14, 'Red collar', 80.00, 1, 80.00, '2356193410', 512, 325, 0, 2, '2023-09-19'),
+(128, 5, 'Animal Science Immune Health Tablet', 10.00, 1, 10.00, '4670190174', 513, 326, 1, 2, '2023-09-19'),
+(129, 5, 'Animal Science Immune Health Tablet', 10.00, 1, 10.00, '4670190174', 514, 327, 1, 2, '2023-09-19'),
+(130, 13, 'bench', 200.00, 1, 200.00, '5472249036', 516, 328, 0, 2, '2023-09-19'),
+(131, 5, 'Animal Science Immune Health Tablet', 10.00, 1, 10.00, '6133030133', 517, 329, 0, 2, '2023-09-19'),
+(132, 13, 'bench', 200.00, 1, 200.00, '4470143058', 518, 602, 0, 2, '2023-09-19');
 
 -- --------------------------------------------------------
 
@@ -695,6 +805,7 @@ CREATE TABLE `pos_purchase_tbl` (
   `pos_purchase_itemidfk` int(11) NOT NULL,
   `pos_purchase_itemname` varchar(50) NOT NULL,
   `pos_purchase_itemprice` double(11,2) NOT NULL,
+  `pos_purchase_discount` decimal(5,2) DEFAULT NULL,
   `pos_purchase_itemqty` int(11) NOT NULL,
   `pos_purchase_itemtotalAmt` double(11,2) NOT NULL,
   `pos_purchase_ordrnum` int(11) NOT NULL,
@@ -706,8 +817,8 @@ CREATE TABLE `pos_purchase_tbl` (
 -- Dumping data for table `pos_purchase_tbl`
 --
 
-INSERT INTO `pos_purchase_tbl` (`pos_purchase_id`, `pos_purchase_itemidfk`, `pos_purchase_itemname`, `pos_purchase_itemprice`, `pos_purchase_itemqty`, `pos_purchase_itemtotalAmt`, `pos_purchase_ordrnum`, `pos_order_list_idfk`, `pos_purchase_dor`) VALUES
-(308, 1, 'Mucotan', 350.00, 1, 350.00, 2147483647, 482, '2023-09-04');
+INSERT INTO `pos_purchase_tbl` (`pos_purchase_id`, `pos_purchase_itemidfk`, `pos_purchase_itemname`, `pos_purchase_itemprice`, `pos_purchase_discount`, `pos_purchase_itemqty`, `pos_purchase_itemtotalAmt`, `pos_purchase_ordrnum`, `pos_order_list_idfk`, `pos_purchase_dor`) VALUES
+(602, 13, 'bench', 200.00, NULL, 1, 200.00, 2147483647, 518, '2023-09-19');
 
 -- --------------------------------------------------------
 
@@ -836,7 +947,10 @@ INSERT INTO `sample_tbl` (`sample_id`, `sample_services`, `fname`, `lname`, `ema
 (179, '2', 'Alex', 'inciong', 'xname@gmail.com', 'luffy', 'Aspin', 'Dog', 'female', '2023-08-20', '46', '20', '14:25', '90', '15:55:00'),
 (180, '1', 'Alex', 'inciong', 'xname@gmail.com', 'luffy', 'Aspin', 'Dog', 'female', '2023-08-20', '46', '20', '14:25', '90', '15:55:00'),
 (181, '2', 'Alex', 'inciong', 'jamiel.kaylor@feerock.com', 'luffy', 'Aspin', 'Dog', 'female', '2023-08-20', '46', '20', '14:25', '90', '15:55:00'),
-(182, '1', 'Alex', 'inciong', 'jamiel.kaylor@feerock.com', 'luffy', 'Aspin', 'Dog', 'female', '2023-08-20', '46', '20', '14:25', '90', '15:55:00');
+(182, '1', 'Alex', 'inciong', 'jamiel.kaylor@feerock.com', 'luffy', 'Aspin', 'Dog', 'female', '2023-08-20', '46', '20', '14:25', '90', '15:55:00'),
+(183, '1', 'Alex', 'inciong', 'xname@gmail.com', 'luffy', 'Aspin', 'Bird', 'unisex', '2023-09-03', '48', '21', '03:49', '45', '04:34:00'),
+(184, '1', 'Alex', 'inciong', 'xname@gmail.com', 'luffy', 'Aspin', 'Bird', 'unisex', '2023-09-03', '48', '21', '03:49', '45', '04:34:00'),
+(185, '1', 'Alex', 'inciong', 'xname@gmail.com', 'luffy', 'Aspin', 'Bird', 'unisex', '2023-09-03', '48', '21', '03:49', '45', '04:34:00');
 
 -- --------------------------------------------------------
 
@@ -880,7 +994,8 @@ INSERT INTO `schedule_tbl` (`schedule_id`, `schedule_date`, `schedule_startTime`
 (48, '2023-09-18', '08:00:00', '17:00:00', 1, 1, 0, 0, '2023-09-04'),
 (49, '2023-09-22', '08:00:00', '17:00:00', 1, 2, 0, 0, '2023-09-04'),
 (50, '2023-09-04', '08:00:00', '17:00:00', 1, 1, 0, 0, '2023-09-04'),
-(51, '2023-09-13', '08:00:00', '17:00:00', 1, 2, 0, 0, '2023-09-05');
+(51, '2023-09-13', '08:00:00', '17:00:00', 1, 2, 0, 0, '2023-09-05'),
+(52, '2023-09-19', '08:00:00', '17:00:00', 1, 2, 0, 0, '2023-09-19');
 
 -- --------------------------------------------------------
 
@@ -951,21 +1066,29 @@ INSERT INTO `staff_schedule_tbl` (`staff_schedule_id`, `staff_idfk`, `appointmen
 (135, 20, 182, 47, 'cancel', 1, '08:00:00', '45', '08:45:00', '2023-09-04'),
 (137, 20, 184, 47, 'cancel', 1, '09:00:00', '45', '09:45:00', '2023-09-04'),
 (138, 20, 185, 47, 'assigned', 1, '10:00:00', '45', '10:45:00', '2023-09-04'),
-(140, 20, 187, 47, 'assigned', 1, '11:00:00', '45', '11:45:00', '2023-09-04'),
+(140, 20, 187, 47, 'completed', 1, '11:00:00', '45', '11:45:00', '2023-09-04'),
 (143, 20, 190, 47, 'completed', 1, '12:00:00', '45', '12:45:00', '2023-09-04'),
-(145, 20, 192, 49, 'assigned', 1, '08:00:00', '45', '08:45:00', '2023-09-04'),
-(146, 21, 193, 48, 'assigned', 1, '11:30:00', '45', '12:15:00', '2023-09-04'),
+(145, 20, 192, 49, 'completed', 1, '08:00:00', '45', '08:45:00', '2023-09-04'),
+(146, 21, 193, 48, 'completed', 1, '11:30:00', '45', '12:15:00', '2023-09-04'),
 (147, 21, 194, 48, 'assign', 1, '08:00:00', '45', '08:45:00', '2023-09-04'),
-(148, 20, 195, 46, 'assign', 1, '14:25:00', '90', '15:55:00', '2023-09-04'),
-(150, 20, 197, 47, 'assigned', 1, '15:00:00', '45', '15:45:00', '2023-09-04'),
+(148, 20, 195, 46, 'completed', 1, '14:25:00', '90', '15:55:00', '2023-09-04'),
+(150, 20, 197, 47, 'completed', 1, '15:00:00', '45', '15:45:00', '2023-09-04'),
 (151, 20, 198, 47, 'assigned', 1, '14:30:00', '45', '15:15:00', '2023-09-04'),
 (152, 20, 199, 47, 'assigned', 1, '16:30:00', '45', '17:15:00', '2023-09-04'),
 (153, 20, 200, 47, 'assigned', 1, '14:00:00', '45', '14:45:00', '2023-09-04'),
-(154, 20, 203, 49, 'assigned', 1, '13:00:00', '45', '13:45:00', '2023-09-05'),
-(155, 21, 227, 48, 'assign', 1, '14:45:00', '45', '15:30:00', '2023-09-05'),
-(156, 26, 229, 51, 'assign', 1, '12:15:00', '45', '13:00:00', '2023-09-05'),
-(157, 26, 230, 51, 'assign', 1, '08:00:00', '45', '08:45:00', '2023-09-05'),
-(158, 26, 232, 51, 'assigned', 1, '15:15:00', '45', '16:00:00', '2023-09-05');
+(154, 20, 203, 49, 'completed', 1, '13:00:00', '45', '13:45:00', '2023-09-05'),
+(155, 21, 227, 48, 'completed', 1, '14:45:00', '45', '15:30:00', '2023-09-05'),
+(156, 26, 229, 51, 'completed', 1, '12:15:00', '45', '13:00:00', '2023-09-05'),
+(157, 26, 230, 51, 'completed', 1, '08:00:00', '45', '08:45:00', '2023-09-05'),
+(158, 26, 232, 51, 'completed', 1, '15:15:00', '45', '16:00:00', '2023-09-05'),
+(159, 20, 233, 49, 'completed', 1, '09:00:00', '45', '09:45:00', '2023-09-18'),
+(160, 26, 234, 49, 'completed', 1, '08:00:00', '45', '08:45:00', '2023-09-18'),
+(161, 26, 235, 49, 'completed', 1, '09:00:00', '45', '09:45:00', '2023-09-18'),
+(162, 20, 236, 49, 'completed', 1, '09:00:00', '45', '09:45:00', '2023-09-18'),
+(163, 20, 237, 49, 'completed', 1, '08:00:00', '45', '08:45:00', '2023-09-19'),
+(164, 20, 238, 49, 'completed', 1, '09:00:00', '90', '10:30:00', '2023-09-19'),
+(165, 26, 239, 49, 'completed', 1, '08:00:00', '90', '09:30:00', '2023-09-19'),
+(166, 26, 240, 49, 'completed', 1, '08:00:00', '45', '08:45:00', '2023-09-19');
 
 -- --------------------------------------------------------
 
@@ -1109,7 +1232,10 @@ INSERT INTO `users_balagtas` (`id`, `user_id`, `email`, `user_name`, `last_name`
 (63, '3472421015', 'xname@gmail.com', 'Alex', 'inciong', '6040779063', 0, 1, 'active', '2023-09-04'),
 (64, '5164105561', 'jamiel.kaylor@feerock.com', 'Alex', 'inciong', '2039073218', 0, 1, 'active', '2023-09-04'),
 (65, '5585363436', 'dezion.calum@feerock.com', 'Mazel', 'Junio', '48654d07074efab8d33c138781af58cd', 0, 1, 'active', '2023-09-04'),
-(66, '3307697273', 'jamien.ram@feerock.com', 'Mazel', 'Inciong', '48654d07074efab8d33c138781af58cd', 0, 1, 'active', '2023-09-05');
+(66, '3307697273', 'jamien.ram@feerock.com', 'Mazel', 'Inciong', '48654d07074efab8d33c138781af58cd', 0, 1, 'active', '2023-09-05'),
+(67, '949857538', 'shinw73@gmail.com', 'David', 'Torres', 'a65bfb019e5cced702788d66e6abd134', 0, 1, 'active', '2023-09-06'),
+(68, '3613641239', 'davidjonathantorres1@gmail.com', 'Jonathan', 'Torres', 'torres123', 0, 1, 'active', '2023-09-15'),
+(69, '1070300732', 'ayon.croy@feerock.com', 'Alexander', 'inciong', '48654d07074efab8d33c138781af58cd', 0, 1, 'active', '2023-09-18');
 
 -- --------------------------------------------------------
 
@@ -1321,19 +1447,19 @@ ALTER TABLE `your_table_name`
 -- AUTO_INCREMENT for table `appointment_bill_tbl`
 --
 ALTER TABLE `appointment_bill_tbl`
-  MODIFY `appointment_bill_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `appointment_bill_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 
 --
 -- AUTO_INCREMENT for table `appointment_completed_tbl`
 --
 ALTER TABLE `appointment_completed_tbl`
-  MODIFY `appointment_completed_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=271;
+  MODIFY `appointment_completed_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=301;
 
 --
 -- AUTO_INCREMENT for table `appointment_tbl`
 --
 ALTER TABLE `appointment_tbl`
-  MODIFY `appointment_payment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=233;
+  MODIFY `appointment_payment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=241;
 
 --
 -- AUTO_INCREMENT for table `branch_tbl`
@@ -1369,7 +1495,7 @@ ALTER TABLE `item_tbl`
 -- AUTO_INCREMENT for table `notification`
 --
 ALTER TABLE `notification`
-  MODIFY `n_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `n_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `ordernum_tbl`
@@ -1381,43 +1507,43 @@ ALTER TABLE `ordernum_tbl`
 -- AUTO_INCREMENT for table `pets`
 --
 ALTER TABLE `pets`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=291;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=294;
 
 --
 -- AUTO_INCREMENT for table `pet_services_his_tbl`
 --
 ALTER TABLE `pet_services_his_tbl`
-  MODIFY `pet_services_his_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=643;
+  MODIFY `pet_services_his_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=653;
 
 --
 -- AUTO_INCREMENT for table `pet_services_tbl`
 --
 ALTER TABLE `pet_services_tbl`
-  MODIFY `pet_services_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=313;
+  MODIFY `pet_services_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=323;
 
 --
 -- AUTO_INCREMENT for table `pos_ordered_tbl`
 --
 ALTER TABLE `pos_ordered_tbl`
-  MODIFY `pos_ordered_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `pos_ordered_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT for table `pos_order_list_tbl`
 --
 ALTER TABLE `pos_order_list_tbl`
-  MODIFY `pos_order_list_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=483;
+  MODIFY `pos_order_list_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=519;
 
 --
 -- AUTO_INCREMENT for table `pos_purchase_his_tbl`
 --
 ALTER TABLE `pos_purchase_his_tbl`
-  MODIFY `pos_purchase_his_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=111;
+  MODIFY `pos_purchase_his_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=133;
 
 --
 -- AUTO_INCREMENT for table `pos_purchase_tbl`
 --
 ALTER TABLE `pos_purchase_tbl`
-  MODIFY `pos_purchase_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=309;
+  MODIFY `pos_purchase_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=603;
 
 --
 -- AUTO_INCREMENT for table `pos_trans_tbl`
@@ -1429,13 +1555,13 @@ ALTER TABLE `pos_trans_tbl`
 -- AUTO_INCREMENT for table `sample_tbl`
 --
 ALTER TABLE `sample_tbl`
-  MODIFY `sample_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=183;
+  MODIFY `sample_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=186;
 
 --
 -- AUTO_INCREMENT for table `schedule_tbl`
 --
 ALTER TABLE `schedule_tbl`
-  MODIFY `schedule_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+  MODIFY `schedule_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
 -- AUTO_INCREMENT for table `services_tbl`
@@ -1447,7 +1573,7 @@ ALTER TABLE `services_tbl`
 -- AUTO_INCREMENT for table `staff_schedule_tbl`
 --
 ALTER TABLE `staff_schedule_tbl`
-  MODIFY `staff_schedule_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=159;
+  MODIFY `staff_schedule_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=167;
 
 --
 -- AUTO_INCREMENT for table `staff_tbl`
@@ -1465,7 +1591,7 @@ ALTER TABLE `time_sched_tbl`
 -- AUTO_INCREMENT for table `users_balagtas`
 --
 ALTER TABLE `users_balagtas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
 
 --
 -- AUTO_INCREMENT for table `your_table_name`

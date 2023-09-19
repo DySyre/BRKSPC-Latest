@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 04, 2023 at 07:33 AM
+-- Generation Time: Aug 25, 2023 at 05:39 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -29,10 +29,18 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `notification` (
   `n_id` int(11) NOT NULL,
-  `user_petnotifid` int(11) NOT NULL,
-  `n_sub` varchar(15) NOT NULL,
-  `n_msg` varchar(255) NOT NULL
+  `n_sub` varchar(250) NOT NULL,
+  `n_msg` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `notification`
+--
+
+INSERT INTO `notification` (`n_id`, `n_sub`, `n_msg`) VALUES
+(11, 'Tae12', '123'),
+(12, 'daw', '123'),
+(13, 'air supply', 'somebody');
 
 --
 -- Indexes for dumped tables
@@ -42,22 +50,17 @@ CREATE TABLE `notification` (
 -- Indexes for table `notification`
 --
 ALTER TABLE `notification`
-  ADD PRIMARY KEY (`n_id`),
-  ADD UNIQUE KEY `user_petnotifid` (`user_petnotifid`),
-  ADD KEY `n_sub` (`n_sub`),
-  ADD KEY `n_msg` (`n_msg`);
+  ADD PRIMARY KEY (`n_id`);
 
 --
--- Constraints for dumped tables
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- Constraints for table `notification`
+-- AUTO_INCREMENT for table `notification`
 --
 ALTER TABLE `notification`
-  ADD CONSTRAINT `n_msg` FOREIGN KEY (`n_msg`) REFERENCES `appointment_tbl` (`appointment_coment`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `n_sub` FOREIGN KEY (`n_sub`) REFERENCES `appointment_tbl` (`appointment_payment_status`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `user_petnotifid` FOREIGN KEY (`user_petnotifid`) REFERENCES `users_balagtas` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  MODIFY `n_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

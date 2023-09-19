@@ -254,24 +254,49 @@
     });
     
     $('#myFormSale').on('click', '.btnAddSales', function(event) {
-  
-  var start_date = parseInt($('#start_date').val());
-   var end_date = $('#end_date').val();
 
-  $.ajax({
-    url: "item_sales_show.php",
-    method: "POST",
-    data: {
-      start_dates: start_date,
-      end_dates: end_date
-    },
-    success: function(data) {
-      // Remove the clicked row from the table
-      $("#ShowPruchases").html(data);
-      
-    }
-  });
+
+  
+var start_date = ($('#start_date').val());
+ var end_date = $('#end_date').val();
+
+
+
+$.ajax({
+  url: "item_sales_show.php",
+  method: "POST",
+  data: {
+    start_dates: start_date,
+    end_dates: end_date
+  },
+  success: function(data) {
+    // Remove the clicked row from the table
+    $("#ShowPruchases").html(data);
+    
+  }
 });
+});
+
+
+//     $('#myFormSale').on('click', '.btnAddSales', function(event) {
+  
+//   var start_date = parseInt($('#start_date').val());
+//    var end_date = $('#end_date').val();
+
+//   $.ajax({
+//     url: "item_sales_show.php",
+//     method: "POST",
+//     data: {
+//       start_dates: start_date,
+//       end_dates: end_date
+//     },
+//     success: function(data) {
+//       // Remove the clicked row from the table
+//       $("#ShowPruchases").html(data);
+      
+//     }
+//   });
+// });
 
     $(document).on('submit', '#addStaff', function(e) {
       e.preventDefault();

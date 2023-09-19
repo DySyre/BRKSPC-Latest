@@ -1,5 +1,6 @@
 <?php session_start();
 $ordernum = $_SESSION['ordernumSes'];
+
 include "../connect.php";
 
 	?>
@@ -66,7 +67,7 @@ include "../connect.php";
 					$result4 = mysqli_query($con,$sql4);
 					$row4 = mysqli_fetch_array($result4);
 
-            $sql5 = "SELECT * FROM `pos_purchase_his_tbl` WHERE pos_purchase_hisordrnum = '$ordernum' limit 1 ";
+          $sql5 = "SELECT * FROM `pos_purchase_his_tbl` WHERE pos_purchase_hisordrnum = '$ordernum' limit 1 ";
           $result5 = mysqli_query($con,$sql5);
           $row5 = mysqli_fetch_array($result5);
 
@@ -103,6 +104,9 @@ include "../connect.php";
     <br>
     <label style="font-weight: bold;">Total Amount: </label> ₱
     <input style="width: 20%; border: none;" type="text" name="" id="sumAmountId" value="<?php echo $row2['sumAmount'] ?>" readonly>
+
+   
+
     
     
           
@@ -127,6 +131,7 @@ include "../connect.php";
 
           </form>
           <button onclick="printTable()" style="float: right; margin-right: 10px;"  class="btn btn-print no-print btn-primary"><i class="fa fa-print"></i>Print</button>
+          <a href="./pos.php" class="btn btn-success">Back</a>
             </div>
           </div>
    <!-- modal-->
@@ -142,7 +147,23 @@ include "../connect.php";
 
 
        <script type="text/javascript">
+      
+      function updateTotalAmount() {
+    // Get the discount value from the discount input field
+    var discountValue = parseFloat(document.getElementById("discount").value) || 0;
+    
+    // Calculate the new total amount after applying the discount
+    var newTotalAmount = <?php echo $amountTotal; ?> - discountValue;
+    
+    // Update the Total Amount field with the new value
+    document.getElementById("TotalAmount").value = newTotalAmount.toFixed(2);
+  }
 
+  // Function for payment calculations (assuming you already have this)
+  function payment() {
+    // Your payment calculation logic here
+  }
+      
 
   const fontSizeSelect = document.getElementById('font-size-select');
   const table = document.getElementById('tabledataStaff');
@@ -152,6 +173,7 @@ include "../connect.php";
   });
 
   function printTable() {
+    
     var printContents = document.getElementById("tabledataStaff").outerHTML;
     printContents += document.getElementById("printDiv").outerHTML; // Add the HTML content of the div
     var originalContents = document.body.innerHTML;
@@ -187,6 +209,13 @@ include "../connect.php";
     popupWin.close();
     return false;
   }
+  function updateTotalAmount() {
+  // Get the discount value from the first form
+  var discount = parseFloat(document.getElementById("discount").value);
+
+  // Update the second form's input field with the same discount value
+  document.getElementById("discountInSecondForm").value = discount;
+}
 </script>
 	</html>
 	
